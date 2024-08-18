@@ -10,8 +10,6 @@ services:
     environment:
       - NODE_ENV=production
     volumes:
-      - ./:/app
-      - /app/node_modules
       - session-data:/app/sessions
     command: npm run start
 
