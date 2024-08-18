@@ -1,5 +1,6 @@
 crypto = require 'crypto'
 seo = require './seo'
+pkg = require '../../package.json'
 
 # App controller
 # Serves the application - Main Category
@@ -13,6 +14,7 @@ render = (request, response, page, obj) ->
 			seo: seo.generate page
 			page: page
 			remote: obj.hash if obj? and obj.hash?
+			pkg: pkg
 		if request.xhr then response.send data else response.render 'app', data
 
 class AppController
