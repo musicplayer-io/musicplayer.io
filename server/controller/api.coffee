@@ -143,11 +143,36 @@ class APIController
 							status: resp.statusCode
 							data: body
 
-	get: (request, response, callback) ->
-		url = 'https://www.reddit.com' + request.url.replace '/api/get', ''
-		headers = 
-			'user-agent': request.headers['user-agent']
-		req.get(url, {headers: headers}).pipe(response)
+	get: (request, response, callback) =>
+		if not request.user?.accessToken
+			return response.status(401).send
+				error:
+					type: 'NotAuthenticated'
+					message: 'You need to be logged in to access this API.'
+
+		url = request.url.replace '/api/get', ''
+		fullUrl = "https://oauth.reddit.com#{url}"
+		
+		options =
+			method: 'GET'
+			url: fullUrl
+			headers:
+				'Authorization': "bearer #{request.user.accessToken}"
+				'User-Agent': "Reddit Music Player/#{pkg.version} by illyism"
+
+		req(options, (err, resp, body) =>
+			if not err? and resp.statusCode is 200
+				response.send JSON.parse(body)
+			else if resp.statusCode is 401
+				refreshTokenReddit(request, response, => @get(request, response, callback))
+			else
+				response.status(resp.statusCode).send
+					error:
+						type: 'APIError'
+						message: 'Something went wrong with the Reddit API request.'
+						status: resp.statusCode
+						data: body
+		)
 
 	isAuthenticated: (request, response, callback) ->
 		return callback() if request.isAuthenticated()
