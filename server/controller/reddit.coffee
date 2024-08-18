@@ -57,6 +57,7 @@ class RedditController
 		@render request, response, data, 'multi'
 	render: (request, response, data, page) ->
 		data.user = request.user._json if request.user?
+		data.user_json = JSON.stringify(request.user._json) if request.user?
 		data.seo = seo.generate page
 		data.page = page
 		response.render 'app', data
