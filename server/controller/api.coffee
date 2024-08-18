@@ -65,7 +65,43 @@ refreshTokenReddit = (request, response, callback) ->
 			request.user.accessToken = request.session.accessToken = request.user._json.token = p.access_token if p.access_token?
 			callback(request, response) if callback?
 
+
+getAppOnlyToken = ->
+	new Promise (resolve, reject) ->
+		options =
+			method: 'POST'
+			url: 'https://www.reddit.com/api/v1/access_token'
+			form:
+				grant_type: 'client_credentials'
+			auth:
+				user: process.env.REDDIT_CLIENT_ID
+				pass: process.env.REDDIT_CLIENT_SECRET
+			headers:
+				'User-Agent': "Reddit Music Player/#{pkg.version} by illyism"
+
+		req options, (err, resp, body) ->
+			if err
+				reject(err)
+			else if resp.statusCode isnt 200
+				reject(new Error("Failed to get app-only token: #{resp.statusCode}"))
+			else
+				token = JSON.parse(body)
+				resolve(token.access_token)
 class APIController
+	constructor: ->
+		@appOnlyToken = null
+		@tokenExpiration = 0
+
+	refreshAppOnlyTokenIfNeeded: ->
+		now = Date.now()
+		if not @appOnlyToken or now >= @tokenExpiration
+			getAppOnlyToken()
+				.then (token) =>
+					@appOnlyToken = token
+					@tokenExpiration = now + 3600000  # Token expires in 1 hour
+				.catch (err) ->
+					console.error('Failed to refresh app-only token:', err)
+
 	add_comment: (request, response, callback) =>
 		if not request.body.thing_id? then return response.send
 			error:
@@ -144,38 +180,34 @@ class APIController
 							data: body
 
 	get: (request, response, callback) =>
-		url = request.url.replace '/api/get', ''
-		
-		if request.user?.accessToken
-			# Authenticated request
-			fullUrl = "https://oauth.reddit.com#{url}"
-			headers =
-				'Authorization': "bearer #{request.user.accessToken}"
-				'User-Agent': "Reddit Music Player/#{pkg.version} by illyism"
-		else
-			# Unauthenticated request
-			fullUrl = "https://www.reddit.com#{url}"
-			headers =
-				'User-Agent': "Reddit Music Player/#{pkg.version} by illyism"
+		@refreshAppOnlyTokenIfNeeded()
+			.then =>
+				url = request.url.replace '/api/get', ''
+				fullUrl = "https://oauth.reddit.com#{url}"
+				
+				options =
+					method: 'GET'
+					url: fullUrl
+					headers:
+						'Authorization': "bearer #{@appOnlyToken}"
+						'User-Agent': "Reddit Music Player/#{pkg.version} by illyism"
 
-		options =
-			method: 'GET'
-			url: fullUrl
-			headers: headers
-
-		req(options, (err, resp, body) =>
-			if not err? and resp.statusCode is 200
-				response.send JSON.parse(body)
-			else if resp.statusCode is 401 and request.user?.accessToken
-				refreshTokenReddit(request, response, => @get(request, response, callback))
-			else
-				response.status(resp.statusCode).send
+				req options, (err, resp, body) =>
+					if not err? and resp.statusCode is 200
+						response.send JSON.parse(body)
+					else
+						response.status(resp.statusCode).send
+							error:
+								type: 'APIError'
+								message: 'Something went wrong with the Reddit API request.'
+								status: resp.statusCode
+								data: body
+			.catch (err) ->
+				response.status(500).send
 					error:
-						type: 'APIError'
-						message: 'Something went wrong with the Reddit API request.'
-						status: resp.statusCode
-						data: body
-		)
+						type: 'AuthError'
+						message: 'Failed to authenticate with Reddit API'
+						data: err.message
 
 	isAuthenticated: (request, response, callback) ->
 		return callback() if request.isAuthenticated()
