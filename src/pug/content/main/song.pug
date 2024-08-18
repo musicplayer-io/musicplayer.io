@@ -1,17 +1,33 @@
 .content.song
-	.switcher.phone-hide
-		i.icon.music
-		span.page Current Song
-	include ../video
-	.current.song.ui.inverted.segment
-	.ui.inverted.segment.comments.root
-		h2.ui.header
-			span.num_comments
-			|  Comments
-		.ui.comments.overview
-		form.ui.reply.form
-			.field
-				textarea.comment_text
-			.ui.button.gold.submit.labeled.icon.fluid.add_comment
-				i.icon.edit
-				|  Add Comment
+  .switcher.phone-hide
+    i.icon.music
+    span.page Current Song
+  include ../video
+  .current.song.ui.inverted.segment
+    .ui.list
+      a.item(href="https://seoaudit.me", target="_blank")
+        i.icon.comment.alternate.outline
+        .content
+          .header SEO Audit
+          .description Get a SEO audit for your website
+      a.item(href="https://linkdr.com", target="_blank")
+        i.icon.newspaper.outline
+        .content
+          .header LinkDR
+          .description Link Building Services
+      a.item(href="https://magicspace.agency", target="_blank")
+        i.icon.chart.line
+        .content
+          .header MagicSpace SEO
+          .description The best SEO agency for SaaS
+  .ui.inverted.segment.comments.root
+    h2.ui.header
+      span.num_comments
+      |  Comments
+    .ui.comments.overview
+    form.ui.reply.form
+      .field
+        textarea.comment_text
+      .ui.button.gold.submit.labeled.icon.fluid.add_comment
+        i.icon.edit
+        |  Add Comment
