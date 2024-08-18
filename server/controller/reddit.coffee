@@ -18,6 +18,7 @@ class RedditController
 		data = {subreddits: subreddits}
 		data.autoplay = true if request.query.autoplay?
 		data.user = request.user._json if request.user?
+		data.user_json = JSON.stringify(request.user._json) if request.user?
 		data.page = 'subreddits'
 		if subreddits.length > 1
 			data.title = subreddits.join(', ')
