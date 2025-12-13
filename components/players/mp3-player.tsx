@@ -55,37 +55,37 @@ export function MP3Player({
     const handleTimeUpdate = () => {
       // Only update if this is still the current song
       if (audio.src === song.url || audio.src.endsWith(song.url)) {
-        onTimeUpdate?.(audio.currentTime)
+      onTimeUpdate?.(audio.currentTime)
       }
     }
 
     const handleDurationChange = () => {
       // Only update if this is still the current song and duration is valid
       if ((audio.src === song.url || audio.src.endsWith(song.url)) && audio.duration > 0 && isFinite(audio.duration)) {
-        onDurationChange?.(audio.duration)
+      onDurationChange?.(audio.duration)
       }
     }
 
     const handlePlay = () => {
       if (audio.src === song.url || audio.src.endsWith(song.url)) {
-        onStateChange?.(true)
+      onStateChange?.(true)
       }
     }
 
     const handlePause = () => {
       if (audio.src === song.url || audio.src.endsWith(song.url)) {
-        onStateChange?.(false)
+      onStateChange?.(false)
       }
     }
 
     const handleEnded = () => {
       if (audio.src === song.url || audio.src.endsWith(song.url)) {
-        onStateChange?.(false)
-        // Auto-play next song when current finishes
-        const { usePlaylistStore } = require("@/lib/store")
-        const store = usePlaylistStore.getState()
-        if (store.currentIndex < store.songs.length - 1) {
-          store.forward()
+      onStateChange?.(false)
+      // Auto-play next song when current finishes
+      const { usePlaylistStore } = require("@/lib/store")
+      const store = usePlaylistStore.getState()
+      if (store.currentIndex < store.songs.length - 1) {
+        store.forward()
         }
       }
     }

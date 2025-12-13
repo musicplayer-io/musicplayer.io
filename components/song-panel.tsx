@@ -33,19 +33,10 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
     seekTo,
   } = usePlaylistStore()
   
-  // Update ref when song changes and reset player state
+  // Update ref when song changes
   useEffect(() => {
-    const newSongId = currentSong?.id || null
-    const oldSongId = currentSongIdRef.current
-    
-    // If song changed, reset time and duration immediately
-    if (oldSongId !== null && oldSongId !== newSongId) {
-      setCurrentTime(0, newSongId)
-      setDuration(0, newSongId)
-    }
-    
-    currentSongIdRef.current = newSongId
-  }, [currentSong?.id, setCurrentTime, setDuration])
+    currentSongIdRef.current = currentSong?.id || null
+  }, [currentSong?.id])
   
   // Create stable callbacks that include song ID
   const handleTimeUpdate = useCallback((time: number) => {
@@ -57,7 +48,7 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
   
   const handleDurationChange = useCallback((dur: number) => {
     const songId = currentSongIdRef.current
-    if (songId && dur > 0 && isFinite(dur)) {
+    if (songId) {
       setDuration(dur, songId)
     }
   }, [setDuration])
@@ -135,7 +126,7 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
             href="https://seoaudit.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="group flex items-start gap-4 p-4 rounded-lg bg-[#1a1a1a] border border-white/5 hover:bg-[#252525] hover:border-[#FDC00F]/30 transition-all duration-200"
+            className="group flex items-start gap-4 p-4 rounded-lg bg-[#181818] border border-white/5 hover:bg-[#222222] hover:border-[#FDC00F]/30 transition-all duration-200"
           >
             <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-[#FDC00F]/20 to-[#f99b1d]/20 flex items-center justify-center group-hover:scale-105 transition-transform">
               <MessageCircle className="w-5 h-5 text-[#FDC00F]" />
@@ -151,7 +142,7 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
             href="https://linkdr.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="group flex items-start gap-4 p-4 rounded-lg bg-[#1a1a1a] border border-white/5 hover:bg-[#252525] hover:border-[#FDC00F]/30 transition-all duration-200"
+            className="group flex items-start gap-4 p-4 rounded-lg bg-[#181818] border border-white/5 hover:bg-[#222222] hover:border-[#FDC00F]/30 transition-all duration-200"
           >
             <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-600/20 flex items-center justify-center group-hover:scale-105 transition-transform">
               <Building2 className="w-5 h-5 text-blue-400" />
@@ -167,7 +158,7 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
             href="https://magicspaceseo.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="group flex items-start gap-4 p-4 rounded-lg bg-[#1a1a1a] border border-white/5 hover:bg-[#252525] hover:border-[#FDC00F]/30 transition-all duration-200"
+            className="group flex items-start gap-4 p-4 rounded-lg bg-[#181818] border border-white/5 hover:bg-[#222222] hover:border-[#FDC00F]/30 transition-all duration-200"
           >
             <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
               <TrendingUp className="w-5 h-5 text-purple-400" />
@@ -190,14 +181,17 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
   }
 
   return (
-    <div className="content-song py-4 md:py-6 px-4 bg-[#121212] w-full h-full">
+    <div className="content-song py-4 md:py-6 px-4 md:px-6 bg-[#131313] w-full h-full overflow-y-auto pb-24 md:pb-28">
       {/* Header - Clean & Compact with Mobile Close */}
-      <div className="mb-4 md:mb-6 flex items-center justify-between">
-        <h1 className="text-base md:text-lg font-semibold text-white">Now Playing</h1>
+      <div className="mb-6 md:mb-8 flex items-center justify-between">
+        <div>
+          <h1 className="text-base md:text-lg font-bold text-white mb-1">Now Playing</h1>
+          <p className="text-xs text-gray-500">Current track details</p>
+        </div>
         {onClose && (
           <button
             onClick={onClose}
-            className="md:hidden p-2 rounded-md text-gray-400 hover:text-white hover:bg-white/10 transition-colors touch-manipulation"
+            className="md:hidden p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-all touch-manipulation"
             aria-label="Close"
           >
             <X className="w-5 h-5" />
@@ -205,10 +199,10 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
         )}
       </div>
 
-      {/* Video Player Area - Clean */}
-      <div className="mb-6">
+      {/* Video Player Area - Enhanced */}
+      <div className="mb-8">
         {currentSong.type === "youtube" && (
-          <div className="aspect-video bg-black rounded-lg overflow-hidden shadow-lg">
+          <div className="aspect-video bg-black rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10" style={{ boxShadow: '0 0 40px rgba(253, 192, 15, 0.15), 0 0 80px rgba(253, 192, 15, 0.08), 0 20px 40px rgba(0, 0, 0, 0.5)' }}>
             <YouTubePlayer
               song={currentSong}
               isPlaying={isPlaying}
@@ -221,7 +215,7 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
           </div>
         )}
         {currentSong.type === "soundcloud" && (
-          <div className="aspect-video bg-black rounded-lg overflow-hidden shadow-lg">
+          <div className="aspect-video bg-black rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10" style={{ boxShadow: '0 0 40px rgba(253, 192, 15, 0.15), 0 0 80px rgba(253, 192, 15, 0.08), 0 20px 40px rgba(0, 0, 0, 0.5)' }}>
             <SoundCloudPlayer
               song={currentSong}
               isPlaying={isPlaying}
@@ -234,7 +228,7 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
           </div>
         )}
         {currentSong.type === "vimeo" && (
-          <div className="aspect-video bg-black rounded-lg overflow-hidden shadow-lg">
+          <div className="aspect-video bg-black rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10" style={{ boxShadow: '0 0 40px rgba(253, 192, 15, 0.15), 0 0 80px rgba(253, 192, 15, 0.08), 0 20px 40px rgba(0, 0, 0, 0.5)' }}>
             <VimeoPlayer
               song={currentSong}
               isPlaying={isPlaying}
@@ -247,7 +241,7 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
           </div>
         )}
         {currentSong.type === "mp3" && (
-          <div className="aspect-video bg-black rounded-lg overflow-hidden relative shadow-lg">
+          <div className="aspect-video bg-black rounded-xl overflow-hidden relative shadow-2xl ring-1 ring-white/10" style={{ boxShadow: '0 0 40px rgba(253, 192, 15, 0.15), 0 0 80px rgba(253, 192, 15, 0.08), 0 20px 40px rgba(0, 0, 0, 0.5)' }}>
             {currentSong.thumbnail && 
              currentSong.thumbnail !== "self" && 
              currentSong.thumbnail !== "default" && 
@@ -280,10 +274,11 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
       </div>
 
       {/* Song Title & Actions */}
-      <div className="mb-4 md:mb-6 px-4 md:px-0">
-        <h2 className="text-base md:text-xl font-bold text-white mb-3 md:mb-4 leading-tight">{currentSong.title}</h2>
+      <div className="mb-8 px-4 md:px-0">
+        <h2 className="text-base md:text-lg font-bold text-white mb-2 leading-tight">{currentSong.title}</h2>
+        <p className="text-sm text-gray-400 mb-6">by {currentSong.author}</p>
         
-        {/* Action Buttons - Icon on Top, Text Below */}
+        {/* Action Buttons - Clean */}
         <div className="flex items-center justify-center gap-2 md:gap-3 mb-3 md:mb-4">
           <button
             onClick={() => handleVote(1)}
@@ -359,25 +354,25 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
 
         {/* Metadata - Clean Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 px-4 md:px-0">
-          <div className="p-3 bg-[#1a1a1a] rounded-lg border border-white/5 hover:border-white/10 transition-colors">
+          <div className="p-3 bg-[#181818] rounded-lg border border-white/5 hover:border-white/10 transition-colors">
             <div className="text-[10px] font-bold text-[#FDC00F] mb-1 leading-none">
               {currentSong.score?.toLocaleString() || '0'}
             </div>
             <div className="text-[10px] font-medium text-gray-400 uppercase tracking-wide">Karma</div>
           </div>
-          <div className="p-3 bg-[#1a1a1a] rounded-lg border border-white/5 hover:border-white/10 transition-colors">
+          <div className="p-3 bg-[#181818] rounded-lg border border-white/5 hover:border-white/10 transition-colors">
             <div className="text-[10px] font-semibold text-white mb-1 truncate leading-tight" title={`/u/${currentSong.author}`}>
               /u/{currentSong.author || 'Unknown'}
             </div>
             <div className="text-[10px] font-medium text-gray-400 uppercase tracking-wide">Author</div>
           </div>
-          <div className="p-3 bg-[#1a1a1a] rounded-lg border border-white/5 hover:border-white/10 transition-colors">
+          <div className="p-3 bg-[#181818] rounded-lg border border-white/5 hover:border-white/10 transition-colors">
             <div className="text-[10px] font-semibold text-gray-300 mb-1 leading-tight">
-              {currentSong.created_ago || 'N/A'}
+              {currentSong.created_ago ? currentSong.created_ago.replace(' ago', '') : 'N/A'}
             </div>
             <div className="text-[10px] font-medium text-gray-400 uppercase tracking-wide">Age</div>
           </div>
-          <div className="p-3 bg-[#1a1a1a] rounded-lg border border-white/5 hover:border-white/10 transition-colors">
+          <div className="p-3 bg-[#181818] rounded-lg border border-white/5 hover:border-white/10 transition-colors">
             <div className="text-[10px] font-semibold text-gray-300 mb-1 truncate leading-tight" title={`/r/${currentSong.subreddit}`}>
               /r/{currentSong.subreddit || 'Unknown'}
             </div>
@@ -388,27 +383,27 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
       
       {/* Selftext */}
       {currentSong.selftext && (
-        <div className="mb-6 p-4 bg-[#1a1a1a] rounded-lg border border-white/5">
+        <div className="mb-8 p-5 bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl border border-white/10 hover:border-white/20 transition-all duration-200 shadow-lg">
           <div className="text-sm text-gray-300 leading-relaxed prose prose-invert max-w-none">
             <div dangerouslySetInnerHTML={{ __html: currentSong.selftext }} />
           </div>
         </div>
       )}
 
-      {/* Comments Section - Clean */}
-      <div className="mb-6 w-full max-w-full overflow-x-hidden">
-        <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/5">
+      {/* Comments Section - Enhanced */}
+      <div className="mb-6 w-full max-w-full overflow-x-hidden pb-8">
+        <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
           <div>
-            <h2 className="text-lg font-semibold text-white mb-0.5">Comments</h2>
+            <h2 className="text-xl font-bold text-white mb-1">Comments</h2>
             <p className="text-xs text-gray-500">{currentSong.num_comments} {currentSong.num_comments === 1 ? 'comment' : 'comments'}</p>
           </div>
         </div>
         <div className="mb-4 w-full max-w-full overflow-x-hidden">
           <Comments permalink={currentSong.permalink} />
         </div>
-        {/* Comment Form - Clean */}
+        {/* Comment Form - Enhanced */}
         <form 
-          className="mt-4 pt-4 border-t border-white/5 space-y-3"
+          className="mt-6 pt-6 border-t border-white/10 space-y-4"
           onSubmit={async (e) => {
             e.preventDefault()
             const formData = new FormData(e.currentTarget)
@@ -477,15 +472,15 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
         >
           <Textarea
             name="comment"
-            className="w-full p-3 bg-white/5 border border-white/10 text-white rounded-md resize-none focus:outline-none focus:border-[#FDC00F]/50 focus-visible:ring-0 focus-visible:ring-offset-0 text-sm min-h-[80px]"
+            className="w-full p-4 bg-[#181818] border border-white/10 text-white rounded-xl resize-none focus:outline-none focus:border-[#FDC00F]/50 focus:ring-2 focus:ring-[#FDC00F]/20 focus-visible:ring-offset-0 text-sm min-h-[100px] transition-all duration-200"
             placeholder={isAuthenticated ? "Add a comment..." : "Log in to add a comment..."}
-            rows={3}
+            rows={4}
             disabled={!isAuthenticated}
           />
           <Button
             type="submit"
             disabled={!isAuthenticated}
-            className="w-full bg-[#FDC00F] hover:bg-[#f99b1d] text-black font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-[#FDC00F] hover:bg-[#f99b1d] text-black font-semibold disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-[#FDC00F]/20 hover:shadow-[#FDC00F]/40 transition-all duration-200 py-3 rounded-xl"
           >
             {isAuthenticated ? "Post Comment" : "Log In to Comment"}
           </Button>

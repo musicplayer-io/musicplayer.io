@@ -188,13 +188,13 @@ export function YouTubePlayer({
     // Update immediately when ready
     try {
       if (checkVideoId()) {
-        const currentTime = player.getCurrentTime()
-        const duration = player.getDuration()
+      const currentTime = player.getCurrentTime()
+      const duration = player.getDuration()
         if (duration > 0 && isFinite(duration)) {
-          onDurationChange?.(duration)
-        }
+        onDurationChange?.(duration)
+      }
         if (currentTime >= 0) {
-          onTimeUpdate?.(currentTime)
+        onTimeUpdate?.(currentTime)
         }
       }
     } catch (e) {
@@ -211,7 +211,7 @@ export function YouTubePlayer({
         const duration = player.getDuration()
         // Always update time, even if 0 (for initial state)
         if (currentTime >= 0 && isFinite(currentTime)) {
-          onTimeUpdate?.(currentTime)
+        onTimeUpdate?.(currentTime)
         }
         // Only update duration if valid
         if (duration > 0 && isFinite(duration)) {

@@ -15,16 +15,16 @@ import {
   Music2, 
   User, 
   ExternalLink, 
-  Sparkles, 
   Bot, 
   Newspaper, 
   LogIn, 
   LogOut,
-  Radio,
-  Code2,
-  Globe,
   Menu,
-  ChevronDown
+  ChevronDown,
+  Github,
+  MessageSquare,
+  Link as LinkIcon,
+  TrendingUp
 } from "lucide-react"
 import { useAuth } from "@/lib/hooks/use-auth"
 import { usePlaylistStore } from "@/lib/store"
@@ -69,7 +69,7 @@ export function TitleBar() {
   return (
     <>
       {/* Desktop Title Bar - Super Cool & Compact */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-[#111] border-t border-white/5 border-b border-white/5 backdrop-blur-xl">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-[#111111] border-t border-white/5 border-b border-white/5 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.5)]">
         <div className="flex items-center justify-between px-4 h-12">
           {/* Logo & Brand */}
           <div className="flex items-center gap-2">
@@ -80,7 +80,7 @@ export function TitleBar() {
               <img 
                 src="/favicon.ico" 
                 alt="Reddit Music Player"
-                className="w-6 h-6 flex-shrink-0"
+                className="w-6 h-6 flex-shrink-0 rounded-md"
               />
               <span className="hidden md:inline font-semibold text-base">Reddit Music</span>
               <span className="hidden lg:inline text-xs text-gray-500 ml-1">v{VERSION}</span>
@@ -94,7 +94,7 @@ export function TitleBar() {
               <div className="flex items-center">
                 {isAuthenticated && user ? (
                   <DropdownMenu>
-                    <DropdownMenuTrigger className="flex items-center gap-1.5 px-2 py-1 rounded-md text-white hover:bg-white/10 transition-all group">
+                    <DropdownMenuTrigger className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-white hover:bg-[#252525] transition-all group focus:outline-none focus:ring-0">
                       {user.icon_img && (
                         <img 
                           src={user.icon_img.replace(/&amp;/g, '&')} 
@@ -106,31 +106,35 @@ export function TitleBar() {
                       <ChevronDown className="w-3 h-3 hidden md:block opacity-50 group-hover:opacity-100 transition-opacity" />
                       <User className="w-4 h-4 md:hidden" />
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end" className="glass border-white/10 min-w-[200px] p-2">
-                      <DropdownMenuLabel className="text-gray-400 text-xs font-semibold uppercase tracking-wide px-2 py-1.5">
+                    <DropdownMenuContent align="end" className="bg-[#1a1a1a] border border-white/10 min-w-[220px] p-2 shadow-xl backdrop-blur-xl">
+                      <DropdownMenuLabel className="text-gray-400 text-xs font-semibold uppercase tracking-wide px-3 py-2 mb-1">
                         Account
                       </DropdownMenuLabel>
-                      <DropdownMenuItem className="text-white cursor-default px-3 py-2 rounded-md">
-                        <User className="w-4 h-4 mr-3 text-gray-400" />
-                        <div className="flex flex-col">
-                          <span className="text-sm font-medium">{user.name}</span>
+                      <DropdownMenuItem className="text-white cursor-default px-3 py-2.5 rounded-md hover:bg-[#252525] transition-colors">
+                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#FDC00F]/20 to-[#f99b1d]/20 flex items-center justify-center mr-3 flex-shrink-0">
+                          <User className="w-4 h-4 text-[#FDC00F]" />
+                        </div>
+                        <div className="flex flex-col min-w-0">
+                          <span className="text-sm font-semibold truncate">{user.name}</span>
                           <span className="text-xs text-gray-400">Logged in</span>
                         </div>
                       </DropdownMenuItem>
-                      <DropdownMenuSeparator className="bg-white/10 my-1" />
+                      <DropdownMenuSeparator className="bg-white/10 my-2" />
                       <DropdownMenuItem 
                         onClick={logout}
-                        className="text-white hover:bg-red-500/20 hover:text-red-400 px-3 py-2 rounded-md transition-colors"
+                        className="text-white hover:bg-red-500/20 hover:text-red-400 px-3 py-2.5 rounded-md transition-all duration-200 cursor-pointer group"
                       >
-                        <LogOut className="w-4 h-4 mr-3" />
-                        Sign Out
+                        <div className="w-8 h-8 rounded-full bg-red-500/10 flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-red-500/20 transition-colors">
+                          <LogOut className="w-4 h-4 text-red-400" />
+                        </div>
+                        <span className="font-medium">Sign Out</span>
                       </DropdownMenuItem>
                     </DropdownMenuContent>
                   </DropdownMenu>
                 ) : (
                   <button
                     onClick={login}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-white/10 hover:bg-white/20 text-white text-sm font-medium transition-all"
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[#FDC00F] hover:bg-[#f99b1d] text-black text-sm font-semibold transition-all duration-200 shadow-lg shadow-[#FDC00F]/20 hover:shadow-[#FDC00F]/40 active:scale-95 focus:outline-none focus:ring-0"
                   >
                     <LogIn className="w-3.5 h-3.5" />
                     <span className="hidden md:inline">Sign In</span>
@@ -141,45 +145,13 @@ export function TitleBar() {
             
             {/* Main Menu */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1.5 px-2 py-1 rounded-md text-white hover:bg-white/10 transition-all group">
+              <DropdownMenuTrigger className="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-white hover:bg-[#252525] transition-all group focus:outline-none focus:ring-0">
                 <Menu className="w-4 h-4" />
                 <span className="hidden md:inline text-sm font-medium">Menu</span>
                 <ChevronDown className="w-3 h-3 hidden md:block opacity-50 group-hover:opacity-100 transition-opacity" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="glass border-white/10 min-w-[220px] p-2">
-                <DropdownMenuLabel className="text-gray-400 text-xs font-semibold uppercase tracking-wide px-3 py-2">
-                  Navigation
-                </DropdownMenuLabel>
-                
-                <DropdownMenuItem 
-                  className={`px-3 py-2.5 rounded-md transition-all ${
-                    activePage === "/playlist" 
-                      ? "bg-[#FDC00F]/20 text-[#FDC00F]" 
-                      : "text-white hover:bg-white/10"
-                  }`}
-                  onClick={() => setActivePage("/playlist")}
-                >
-                  <Music2 className="w-4 h-4 mr-3" />
-                  <span className="font-medium">Playlist</span>
-                </DropdownMenuItem>
-                
-                <DropdownMenuItem asChild>
-                  <Link 
-                    href="/remote"
-                    className={`flex items-center px-3 py-2.5 rounded-md transition-all ${
-                      activePage === "/remote" 
-                        ? "bg-[#FDC00F]/20 text-[#FDC00F]" 
-                        : "text-white hover:bg-white/10"
-                    }`}
-                  >
-                    <Radio className="w-4 h-4 mr-3" />
-                    <span className="font-medium">Remote Control</span>
-                  </Link>
-                </DropdownMenuItem>
-                
-                <DropdownMenuSeparator className="bg-white/10 my-2" />
-                
-                <DropdownMenuLabel className="text-gray-400 text-xs font-semibold uppercase tracking-wide px-3 py-2">
+              <DropdownMenuContent align="end" className="bg-[#1a1a1a] border border-white/10 min-w-[240px] p-2 shadow-xl backdrop-blur-xl">
+                <DropdownMenuLabel className="text-gray-400 text-xs font-semibold uppercase tracking-wide px-3 py-2 mb-1">
                   Resources
                 </DropdownMenuLabel>
                 
@@ -188,11 +160,13 @@ export function TitleBar() {
                     href="https://github.com/musicplayer-io/redditmusicplayer" 
                     target="_blank" 
                     rel="nofollow" 
-                    className="flex items-center px-3 py-2.5 rounded-md text-white hover:bg-white/10 transition-colors"
+                    className="flex items-center px-3 py-2.5 rounded-md text-white hover:bg-[#252525] hover:text-[#FDC00F] transition-all duration-200 cursor-pointer group"
                   >
-                    <Code2 className="w-4 h-4 mr-3 text-gray-400" />
+                    <div className="w-8 h-8 rounded-md bg-[#252525] flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-[#FDC00F]/10 transition-colors">
+                      <Github className="w-4 h-4 text-gray-400 group-hover:text-[#FDC00F] transition-colors" />
+                    </div>
                     <span className="font-medium">Source Code</span>
-                    <ExternalLink className="w-3 h-3 ml-auto opacity-50" />
+                    <ExternalLink className="w-3 h-3 ml-auto opacity-50 group-hover:opacity-100 group-hover:text-[#FDC00F] transition-all" />
                   </Link>
                 </DropdownMenuItem>
                 
@@ -201,17 +175,19 @@ export function TitleBar() {
                     href="https://www.reddit.com/r/musicplayer" 
                     target="_blank" 
                     rel="nofollow" 
-                    className="flex items-center px-3 py-2.5 rounded-md text-white hover:bg-white/10 transition-colors"
+                    className="flex items-center px-3 py-2.5 rounded-md text-white hover:bg-[#252525] hover:text-[#FDC00F] transition-all duration-200 cursor-pointer group"
                   >
-                    <Globe className="w-4 h-4 mr-3 text-gray-400" />
+                    <div className="w-8 h-8 rounded-md bg-[#252525] flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-[#FDC00F]/10 transition-colors">
+                      <MessageSquare className="w-4 h-4 text-gray-400 group-hover:text-[#FDC00F] transition-colors" />
+                    </div>
                     <span className="font-medium">Reddit Community</span>
-                    <ExternalLink className="w-3 h-3 ml-auto opacity-50" />
+                    <ExternalLink className="w-3 h-3 ml-auto opacity-50 group-hover:opacity-100 group-hover:text-[#FDC00F] transition-all" />
                   </Link>
                 </DropdownMenuItem>
                 
                 <DropdownMenuSeparator className="bg-white/10 my-2" />
                 
-                <DropdownMenuLabel className="text-gray-400 text-xs font-semibold uppercase tracking-wide px-3 py-2">
+                <DropdownMenuLabel className="text-gray-400 text-xs font-semibold uppercase tracking-wide px-3 py-2 mb-1">
                   More Projects
                 </DropdownMenuLabel>
                 
@@ -219,11 +195,13 @@ export function TitleBar() {
                   <Link 
                     href="https://il.ly" 
                     target="_blank" 
-                    className="flex items-center px-3 py-2.5 rounded-md text-white hover:bg-white/10 transition-colors"
+                    className="flex items-center px-3 py-2.5 rounded-md text-white hover:bg-[#252525] hover:text-[#FDC00F] transition-all duration-200 cursor-pointer group"
                   >
-                    <Sparkles className="w-4 h-4 mr-3 text-gray-400" />
+                    <div className="w-8 h-8 rounded-md bg-[#252525] flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-[#FDC00F]/10 transition-colors">
+                      <LinkIcon className="w-4 h-4 text-gray-400 group-hover:text-[#FDC00F] transition-colors" />
+                    </div>
                     <span className="font-medium">Ilias Ism</span>
-                    <ExternalLink className="w-3 h-3 ml-auto opacity-50" />
+                    <ExternalLink className="w-3 h-3 ml-auto opacity-50 group-hover:opacity-100 group-hover:text-[#FDC00F] transition-all" />
                   </Link>
                 </DropdownMenuItem>
                 
@@ -231,11 +209,13 @@ export function TitleBar() {
                   <Link 
                     href="https://magicbuddy.chat" 
                     target="_blank" 
-                    className="flex items-center px-3 py-2.5 rounded-md text-white hover:bg-white/10 transition-colors"
+                    className="flex items-center px-3 py-2.5 rounded-md text-white hover:bg-[#252525] hover:text-[#FDC00F] transition-all duration-200 cursor-pointer group"
                   >
-                    <Bot className="w-4 h-4 mr-3 text-gray-400" />
+                    <div className="w-8 h-8 rounded-md bg-[#252525] flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-[#FDC00F]/10 transition-colors">
+                      <Bot className="w-4 h-4 text-gray-400 group-hover:text-[#FDC00F] transition-colors" />
+                    </div>
                     <span className="font-medium">ChatGPT in Telegram</span>
-                    <ExternalLink className="w-3 h-3 ml-auto opacity-50" />
+                    <ExternalLink className="w-3 h-3 ml-auto opacity-50 group-hover:opacity-100 group-hover:text-[#FDC00F] transition-all" />
                   </Link>
                 </DropdownMenuItem>
                 
@@ -243,11 +223,13 @@ export function TitleBar() {
                   <Link 
                     href="https://swissobserver.com" 
                     target="_blank" 
-                    className="flex items-center px-3 py-2.5 rounded-md text-white hover:bg-white/10 transition-colors"
+                    className="flex items-center px-3 py-2.5 rounded-md text-white hover:bg-[#252525] hover:text-[#FDC00F] transition-all duration-200 cursor-pointer group"
                   >
-                    <Newspaper className="w-4 h-4 mr-3 text-gray-400" />
+                    <div className="w-8 h-8 rounded-md bg-[#252525] flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-[#FDC00F]/10 transition-colors">
+                      <Newspaper className="w-4 h-4 text-gray-400 group-hover:text-[#FDC00F] transition-colors" />
+                    </div>
                     <span className="font-medium">Swiss News</span>
-                    <ExternalLink className="w-3 h-3 ml-auto opacity-50" />
+                    <ExternalLink className="w-3 h-3 ml-auto opacity-50 group-hover:opacity-100 group-hover:text-[#FDC00F] transition-all" />
                   </Link>
                 </DropdownMenuItem>
                 
@@ -255,11 +237,13 @@ export function TitleBar() {
                   <Link 
                     href="https://magicspace.agency" 
                     target="_blank" 
-                    className="flex items-center px-3 py-2.5 rounded-md text-white hover:bg-white/10 transition-colors"
+                    className="flex items-center px-3 py-2.5 rounded-md text-white hover:bg-[#252525] hover:text-[#FDC00F] transition-all duration-200 cursor-pointer group"
                   >
-                    <Sparkles className="w-4 h-4 mr-3 text-gray-400" />
+                    <div className="w-8 h-8 rounded-md bg-[#252525] flex items-center justify-center mr-3 flex-shrink-0 group-hover:bg-[#FDC00F]/10 transition-colors">
+                      <TrendingUp className="w-4 h-4 text-gray-400 group-hover:text-[#FDC00F] transition-colors" />
+                    </div>
                     <span className="font-medium">MagicSpace SEO</span>
-                    <ExternalLink className="w-3 h-3 ml-auto opacity-50" />
+                    <ExternalLink className="w-3 h-3 ml-auto opacity-50 group-hover:opacity-100 group-hover:text-[#FDC00F] transition-all" />
                   </Link>
                 </DropdownMenuItem>
               </DropdownMenuContent>

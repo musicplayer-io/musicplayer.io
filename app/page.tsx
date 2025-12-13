@@ -82,26 +82,24 @@ function HomeContent() {
     <>
       <PageTitle />
       <MessageToast />
-      <main className="flex flex-col md:flex-row h-screen pt-24 md:pt-12 pb-20 md:pb-16 bg-[#0a0a0a]">
-        {/* Browse Panel - Mobile: Show when browse tab is active, Tablet+: Sidebar */}
-        <div className={`md:block md:w-[18%] lg:w-[18%] bg-[#121212] border-r border-white/5 overflow-y-auto ${
+      <main className="flex flex-col md:flex-row h-screen pt-24 md:pt-12 pb-24 md:pb-20 bg-[#0a0a0a]">
+        {/* Browse Panel - Left Sidebar */}
+        <div className={`md:block md:w-[17%] lg:w-[19%] bg-[#111111] border-r border-white/5 overflow-y-auto ${
           mobileView === "browse" ? "block" : "hidden"
         }`}>
           <BrowsePanel />
         </div>
         
-        {/* Playlist Panel - Mobile: Show when playlist tab is active, Tablet: 60%, Desktop: 54% */}
-        <div className={`md:w-[60%] lg:w-[54%] bg-[#121212] md:border-r border-white/5 overflow-y-auto ${
+        {/* Playlist Panel - Middle Panel - Medium Gray */}
+        <div className={`md:w-[63%] lg:w-[55%] bg-[#121212] md:border-r border-white/5 overflow-y-auto ${
           mobileView === "playlist" ? "block w-full" : "hidden md:block"
         }`}>
           <PlaylistPanel />
         </div>
         
-        {/* Song Panel - Single instance, always mounted */}
-        {/* Desktop: Always visible as side panel (md:flex flex-1 overrides everything) */}
-        {/* Mobile: Only visible when song tab active */}
+        {/* Song Panel - Right Panel - Slightly Lighter Gray */}
         <div className={`
-          bg-[#121212] overflow-y-auto
+          bg-[#131313] overflow-y-auto
           ${mobileView === "song" 
             ? "fixed inset-0 top-24 bottom-20 z-40 block md:relative md:inset-auto md:top-auto md:bottom-auto md:z-auto md:flex md:flex-1" 
             : "hidden md:flex flex-1"

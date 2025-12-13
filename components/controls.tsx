@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import { Play, Pause, SkipBack, SkipForward, Volume2, VolumeX, Music } from "lucide-react"
+import { Play, Pause, SkipBack, SkipForward, Volume2, VolumeX } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { usePlaylistStore } from "@/lib/store"
 
@@ -135,7 +135,18 @@ export function Controls() {
     // Force reset progress bar when song changes
     // The store should already have currentTime: 0 and duration: 0 from setCurrentSong/forward/backward
     // But we ensure seekingTime is cleared for visual reset
-  }, [currentSong?.id])
+    
+    // Also clear any stale SoundCloud widget references if song type changed
+    if (currentSong?.type !== 'soundcloud') {
+      // Don't clear if it's still SoundCloud, just ensure URL matches
+      const scUrl = (window as any).__soundcloudUrl
+      if (scUrl && scUrl !== currentSong?.url) {
+        // Clear stale reference
+        ;(window as any).__soundcloudWidget = null
+        ;(window as any).__soundcloudUrl = null
+      }
+    }
+  }, [currentSong?.id, currentSong?.type, currentSong?.url])
 
   // Reset seeking time when currentTime updates from player
   useEffect(() => {
@@ -158,102 +169,97 @@ export function Controls() {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#1a1a1a] border-t-2 border-black backdrop-blur-xl pb-2 md:pb-4">
-      <div className="flex items-center gap-2 md:gap-4 px-3 md:px-6 h-14 md:h-16">
-        {/* Playback Controls */}
-        <div className="flex items-center gap-1 md:gap-2 flex-shrink-0">
-          <Button
-            onClick={handleBackward}
-            variant="ghost"
-            size="icon"
-            className="text-white hover:text-white/80 hover:bg-white/10 transition-all h-9 w-9 md:h-10 md:w-10 touch-manipulation"
-          >
-            <SkipBack className="w-4 h-4 md:w-5 md:h-5" />
-          </Button>
-          <Button
-            onClick={handlePlayPause}
-            variant="ghost"
-            size="icon"
-            className="text-white hover:text-white/80 hover:bg-white/10 transition-all h-9 w-9 md:h-10 md:w-10 touch-manipulation"
-          >
-            {isPlaying ? (
-              <Pause className="w-4 h-4 md:w-5 md:h-5" />
-            ) : (
-              <Play className="w-4 h-4 md:w-5 md:h-5 ml-0.5" />
-            )}
-          </Button>
-          <Button
-            onClick={handleForward}
-            variant="ghost"
-            size="icon"
-            className="text-white hover:text-white/80 hover:bg-white/10 transition-all h-9 w-9 md:h-10 md:w-10 touch-manipulation"
-          >
-            <SkipForward className="w-4 h-4 md:w-5 md:h-5" />
-          </Button>
-        </div>
-
-        {/* Progress Bar - Super Smooth Water Flow */}
-        <div className="flex items-center gap-3 flex-1 min-w-0">
-          <span className="text-xs text-white w-12 text-right font-mono tabular-nums flex-shrink-0">
-            {formatTime(displayTime)}
-          </span>
-          <div
-            ref={progressBarRef}
-            className="flex-1 cursor-pointer relative h-4 min-w-0"
-            onClick={handleSeek}
-          >
-            {/* Background track - dark gray */}
-            <div className="absolute top-1/2 left-0 right-0 h-2.5 -translate-y-1/2 bg-gray-800 rounded-full" />
-            
-            {/* Completed portion - yellow filled, water-smooth animation */}
-            <div
-              className="absolute top-1/2 left-0 h-2.5 -translate-y-1/2 bg-[#FDC00F] rounded-full transition-[width] duration-75 ease-linear will-change-[width]"
-              style={{ width: `${displayPercentage}%` }}
-            />
-            
-            {/* Yellow vertical marker at current position, water-smooth */}
-            <div
-              className="absolute top-0 bottom-0 w-1 bg-[#FDC00F] rounded-full transition-[left] duration-75 ease-linear will-change-[left] shadow-lg z-10"
-              style={{ left: `${displayPercentage}%`, transform: 'translateX(-50%)' }}
-            />
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#141414] border-t border-[#FDC00F]/20 backdrop-blur-xl shadow-[0_-4px_24px_rgba(0,0,0,0.5)]">
+      <div className="flex flex-col">
+        {/* Main Controls Row */}
+        <div className="flex items-center gap-3 md:gap-4 px-4 md:px-6 h-16 md:h-18">
+          {/* Playback Controls */}
+          <div className="flex items-center gap-1 flex-shrink-0">
+            <button
+              onClick={handleBackward}
+              className="flex items-center justify-center w-10 h-10 md:w-11 md:h-11 rounded-full text-white hover:text-[#FDC00F] hover:bg-white/10 transition-all duration-200 touch-manipulation active:scale-95"
+            >
+              <SkipBack className="w-5 h-5" />
+            </button>
+            <button
+              onClick={handlePlayPause}
+              className="flex items-center justify-center w-10 h-10 md:w-11 md:h-11 rounded-full bg-[#FDC00F] hover:bg-[#f99b1d] text-black transition-all duration-200 shadow-lg shadow-[#FDC00F]/30 hover:shadow-[#FDC00F]/50 touch-manipulation active:scale-95"
+            >
+              {isPlaying ? (
+                <Pause className="w-5 h-5" />
+              ) : (
+                <Play className="w-5 h-5 ml-0.5" />
+              )}
+            </button>
+            <button
+              onClick={handleForward}
+              className="flex items-center justify-center w-10 h-10 md:w-11 md:h-11 rounded-full text-white hover:text-[#FDC00F] hover:bg-white/10 transition-all duration-200 touch-manipulation active:scale-95"
+            >
+              <SkipForward className="w-5 h-5" />
+            </button>
           </div>
-          <span className="text-[10px] md:text-xs text-white w-10 md:w-12 font-mono tabular-nums flex-shrink-0">
-            {formatTime(duration)}
-          </span>
-        </div>
 
-        {/* Right Volume Control */}
-        <div className="relative flex items-center gap-1 md:gap-3">
-          <Button
-            onClick={() => setShowVolumeSlider(!showVolumeSlider)}
-            variant="ghost"
-            size="icon"
-            className="text-white hover:text-white/80 hover:bg-white/10 transition-all h-9 w-9 md:h-10 md:w-10 touch-manipulation hidden md:flex"
-          >
-            {volume === 0 ? (
-              <VolumeX className="w-4 h-4 md:w-5 md:h-5" />
-            ) : (
-              <Volume2 className="w-4 h-4 md:w-5 md:h-5" />
-            )}
-          </Button>
-          {showVolumeSlider && (
-            <div className="absolute bottom-full right-0 mb-3 w-10 h-32 bg-[#1a1a1a] border border-white/10 rounded-lg p-3 slide-in-right shadow-xl">
+          {/* Progress Bar Section - Separated */}
+          <div className="flex items-center gap-3 flex-1 min-w-0">
+            <span className="text-xs text-white w-14 text-right font-mono tabular-nums flex-shrink-0">
+              {formatTime(displayTime)}
+            </span>
+            <div
+              ref={progressBarRef}
+              className="flex-1 cursor-pointer relative h-2 min-w-0 group"
+              onClick={handleSeek}
+            >
+              {/* Background track */}
+              <div className="absolute top-1/2 left-0 right-0 h-full -translate-y-1/2 bg-gray-800/60 rounded-full" />
+              
+              {/* Completed portion - yellow filled */}
               <div
-                className="w-full h-full flex flex-col-reverse cursor-pointer rounded"
-                onClick={(e) => {
-                  const rect = e.currentTarget.getBoundingClientRect()
-                  const y = e.clientY - rect.top
-                  const percentage = ((rect.height - y) / rect.height) * 100
-                  handleVolumeChange(Math.max(0, Math.min(100, percentage)))
-                }}
-              >
-                <div
-                  className="w-full bg-gradient-to-t from-[#FDC00F] to-[#f99b1d] rounded transition-all"
-                  style={{ height: `${volume}%` }}
-                />
-              </div>
+                className="absolute top-1/2 left-0 h-full -translate-y-1/2 bg-[#FDC00F] rounded-full transition-[width] duration-75 ease-linear will-change-[width]"
+                style={{ width: `${displayPercentage}%` }}
+              />
+              
+              {/* Yellow dot at current position - appears on hover */}
+              <div
+                className="absolute top-1/2 -translate-y-1/2 w-3.5 h-3.5 bg-[#FDC00F] rounded-full transition-[left] duration-75 ease-linear will-change-[left] shadow-lg shadow-[#FDC00F]/50 opacity-0 group-hover:opacity-100 z-10 border-2 border-[#141414]"
+                style={{ left: `${displayPercentage}%`, transform: 'translate(-50%, -50%)' }}
+              />
             </div>
-          )}
+            <span className="text-xs text-white w-14 font-mono tabular-nums flex-shrink-0">
+              {formatTime(duration)}
+            </span>
+          </div>
+
+          {/* Right Volume Control */}
+          <div className="relative flex items-center gap-1 flex-shrink-0">
+            <button
+              onClick={() => setShowVolumeSlider(!showVolumeSlider)}
+              className="flex items-center justify-center w-10 h-10 md:w-11 md:h-11 rounded-full text-white hover:text-[#FDC00F] hover:bg-white/10 transition-all duration-200 touch-manipulation active:scale-95"
+            >
+              {volume === 0 ? (
+                <VolumeX className="w-5 h-5" />
+              ) : (
+                <Volume2 className="w-5 h-5" />
+              )}
+            </button>
+            {showVolumeSlider && (
+              <div className="absolute bottom-full right-0 mb-3 w-10 h-32 bg-[#181818] border border-white/10 rounded-lg p-3 slide-in-right shadow-xl">
+                <div
+                  className="w-full h-full flex flex-col-reverse cursor-pointer rounded"
+                  onClick={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect()
+                    const y = e.clientY - rect.top
+                    const percentage = ((rect.height - y) / rect.height) * 100
+                    handleVolumeChange(Math.max(0, Math.min(100, percentage)))
+                  }}
+                >
+                  <div
+                    className="w-full bg-gradient-to-t from-[#FDC00F] to-[#f99b1d] rounded transition-all shadow-sm shadow-[#FDC00F]/20"
+                    style={{ height: `${volume}%` }}
+                  />
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

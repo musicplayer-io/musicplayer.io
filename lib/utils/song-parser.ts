@@ -71,27 +71,37 @@ export function parseSong(item: any): Song {
 function timeSince(date: Date): string {
   const seconds = Math.floor((new Date().getTime() - date.getTime()) / 1000)
   
-  let interval = seconds / 31536000
-  if (interval > 1) {
-    return Math.floor(interval) + "y"
+  if (seconds < 60) {
+    return `${seconds} ${seconds === 1 ? 'second' : 'seconds'} ago`
   }
-  interval = seconds / 2592000
-  if (interval > 1) {
-    return Math.floor(interval) + "mo"
+  
+  const minutes = Math.floor(seconds / 60)
+  if (minutes < 60) {
+    return `${minutes} ${minutes === 1 ? 'minute' : 'minutes'} ago`
   }
-  interval = seconds / 86400
-  if (interval > 1) {
-    return Math.floor(interval) + "d"
+  
+  const hours = Math.floor(seconds / 3600)
+  if (hours < 24) {
+    return `${hours} ${hours === 1 ? 'hour' : 'hours'} ago`
   }
-  interval = seconds / 3600
-  if (interval > 1) {
-    return Math.floor(interval) + "h"
+  
+  const days = Math.floor(seconds / 86400)
+  if (days < 7) {
+    return `${days} ${days === 1 ? 'day' : 'days'} ago`
   }
-  interval = seconds / 60
-  if (interval > 1) {
-    return Math.floor(interval) + "m"
+  
+  const weeks = Math.floor(days / 7)
+  if (weeks < 4) {
+    return `${weeks} ${weeks === 1 ? 'week' : 'weeks'} ago`
   }
-  return Math.floor(seconds) + "s"
+  
+  const months = Math.floor(days / 30)
+  if (months < 12) {
+    return `${months} ${months === 1 ? 'month' : 'months'} ago`
+  }
+  
+  const years = Math.floor(days / 365)
+  return `${years} ${years === 1 ? 'year' : 'years'} ago`
 }
 
 export function filterPlayableSongs(items: any[]): any[] {

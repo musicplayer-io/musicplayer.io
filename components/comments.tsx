@@ -119,13 +119,38 @@ export function Comments({ permalink }: CommentsProps) {
 
   const formatTime = (timestamp: number) => {
     const seconds = Math.floor((Date.now() / 1000 - timestamp))
-    if (seconds < 60) return `${seconds}s ago`
-    if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`
-    if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`
+    
+    if (seconds < 60) {
+      return `${seconds} ${seconds === 1 ? 'second' : 'seconds'} ago`
+    }
+    
+    const minutes = Math.floor(seconds / 60)
+    if (minutes < 60) {
+      return `${minutes} ${minutes === 1 ? 'minute' : 'minutes'} ago`
+    }
+    
+    const hours = Math.floor(seconds / 3600)
+    if (hours < 24) {
+      return `${hours} ${hours === 1 ? 'hour' : 'hours'} ago`
+    }
+    
     const days = Math.floor(seconds / 86400)
-    if (days < 365) return `${days}d ago`
+    if (days < 7) {
+      return `${days} ${days === 1 ? 'day' : 'days'} ago`
+    }
+    
+    const weeks = Math.floor(days / 7)
+    if (weeks < 4) {
+      return `${weeks} ${weeks === 1 ? 'week' : 'weeks'} ago`
+    }
+    
+    const months = Math.floor(days / 30)
+    if (months < 12) {
+      return `${months} ${months === 1 ? 'month' : 'months'} ago`
+    }
+    
     const years = Math.floor(days / 365)
-    return `${years}y ago`
+    return `${years} ${years === 1 ? 'year' : 'years'} ago`
   }
 
   // Decode HTML entities - exactly like original _.unescape from Underscore.js
@@ -186,11 +211,7 @@ export function Comments({ permalink }: CommentsProps) {
       : rawHtml
 
     return (
-      <div 
-        key={comment.data.id} 
-        className="comment-item mb-4 pb-4 border-b border-white/5 last:border-0"
-        style={{ maxWidth: '100%' }}
-      >
+      <>
         {/* Comment - Flat List Style */}
         <div>
           {/* Username and metadata */}
@@ -218,7 +239,7 @@ export function Comments({ permalink }: CommentsProps) {
             dangerouslySetInnerHTML={{ __html: htmlContent }}
           />
         </div>
-      </div>
+      </>
     )
   }
 
@@ -285,7 +306,15 @@ export function Comments({ permalink }: CommentsProps) {
       
       {/* Comments List - Flat, One by One */}
       <div className="w-full max-w-full overflow-x-hidden">
-        {flattenComments(comments).map((comment) => renderComment(comment))}
+        {flattenComments(comments).map((comment, index) => (
+          <div 
+            key={`${comment.data.id || 'comment'}-${index}`}
+            className="comment-item mb-4 pb-4 border-b border-white/5 last:border-0"
+            style={{ maxWidth: '100%' }}
+          >
+            {renderComment(comment)}
+          </div>
+        ))}
       </div>
     </div>
   )

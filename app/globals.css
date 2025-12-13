@@ -47,6 +47,15 @@
     --spotify-light-gray: #282828;
     --apple-music-red: #FA243C;
     --gold-accent: #FDC00F;
+    
+    /* Gray Color System - Cohesive Panel Colors */
+    --bg-main: #0a0a0a;
+    --bg-left-panel: #111111;
+    --bg-middle-panel: #121212;
+    --bg-right-panel: #131313;
+    --bg-controls: #141414;
+    --bg-card: #1a1a1a;
+    --bg-card-hover: #252525;
   }
 
   .dark {
@@ -383,6 +392,37 @@
   box-shadow: 0 0 0 3px rgba(253, 192, 15, 0.1);
 }
 
+/* Enhanced button hover effects */
+.btn-yellow {
+  background: linear-gradient(135deg, #FDC00F 0%, #f99b1d 100%);
+  box-shadow: 0 4px 12px rgba(253, 192, 15, 0.25);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-yellow:hover {
+  background: linear-gradient(135deg, #f99b1d 0%, #FDC00F 100%);
+  box-shadow: 0 6px 20px rgba(253, 192, 15, 0.4);
+  transform: translateY(-1px);
+}
+
+.btn-yellow:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(253, 192, 15, 0.3);
+}
+
+/* Plus icon button enhancement */
+.btn-plus {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-plus:hover {
+  transform: scale(1.1);
+}
+
+.btn-plus:active {
+  transform: scale(0.95);
+}
+
 /* Fade in animation */
 @keyframes fadeIn {
   from {
@@ -429,4 +469,16 @@
 
 .scale-in {
   animation: scaleIn 0.2s ease-out;
+}
+
+/* Fade in and slide from left animation */
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }

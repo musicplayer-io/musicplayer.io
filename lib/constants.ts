@@ -9,9 +9,6 @@ export const Constants = {
   CONTROLS_BACKWARD: 'CONTROLS_BACKWARD',
   CONTROLS_PLAY: 'CONTROLS_PLAY',
   
-  // Remote
-  REMOTE_SUBREDDITS: 'REMOTE_SUBREDDITS',
-  
   // Music
   GET_MUSIC: 'GET_MUSIC',
   LOADED_MUSIC: 'LOADED_MUSIC',
@@ -21,9 +18,6 @@ export const Constants = {
   
   // Authentication
   AUTHENTICATED: 'AUTHENTICATED',
-  
-  // Remote
-  LOADED_REMOTE: 'LOADED_REMOTE',
   
   // Messages
   MESSAGE: 'MESSAGE',

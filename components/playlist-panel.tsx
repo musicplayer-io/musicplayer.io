@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { Shuffle, ArrowUp, Wifi, Play } from "lucide-react"
+import { Shuffle, ArrowUp, Play } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   Select,
@@ -88,33 +88,23 @@ export function PlaylistPanel() {
         </div>
       )}
       
-      {/* Header - Compact */}
-      <div className="mb-4 md:mb-6">
-        <div className="flex items-center justify-between mb-3 md:mb-4">
+      {/* Header - Enhanced */}
+      <div className="mb-6 md:mb-8">
+        <div className="flex items-center justify-between mb-4 md:mb-6">
           <div>
-            <h1 className="text-base md:text-lg font-semibold text-white mb-0.5">Playlist</h1>
-            <p className="text-[10px] md:text-xs text-gray-500">{songs.length} {songs.length === 1 ? 'song' : 'songs'}</p>
+            <h1 className="text-base md:text-lg font-bold text-white mb-1">Playlist</h1>
+            <p className="text-xs md:text-sm text-gray-500">{songs.length} {songs.length === 1 ? 'song' : 'songs'}</p>
           </div>
           <div className="flex items-center gap-1">
             <Button
               onClick={handleShuffle}
               variant="ghost"
               size="sm"
-              className="text-gray-400 hover:text-white h-8 w-8 p-0"
+              className="text-gray-400 hover:text-[#FDC00F] hover:bg-white/5 h-8 w-8 p-0 transition-all duration-200"
               title="Shuffle"
             >
               <Shuffle className="w-4 h-4" />
             </Button>
-            <Link href="/remote">
-              <Button
-                variant="ghost"
-                size="sm"
-                className="text-gray-400 hover:text-white h-8 w-8 p-0"
-                title="Remote"
-              >
-                <Wifi className="w-4 h-4" />
-              </Button>
-            </Link>
           </div>
         </div>
 
@@ -123,10 +113,10 @@ export function PlaylistPanel() {
           <Button
             onClick={() => handleSortChange("hot")}
             variant="ghost"
-            className={`px-4 py-2 text-sm font-medium rounded-full transition-colors h-auto ${
+            className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 h-auto ${
               sortMethod === "hot"
-                ? "bg-white text-black hover:bg-white hover:text-black"
-                : "text-gray-400 hover:text-[#FDC00F] hover:bg-transparent"
+                ? "bg-[#FDC00F] text-black hover:bg-[#f99b1d] shadow-lg shadow-[#FDC00F]/20"
+                : "text-gray-400 hover:text-[#FDC00F] hover:bg-white/5"
             }`}
           >
             Hot
@@ -134,10 +124,10 @@ export function PlaylistPanel() {
           <Button
             onClick={() => handleSortChange("new")}
             variant="ghost"
-            className={`px-4 py-2 text-sm font-medium rounded-full transition-colors h-auto ${
+            className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 h-auto ${
               sortMethod === "new"
-                ? "bg-white text-black hover:bg-white hover:text-black"
-                : "text-gray-400 hover:text-[#FDC00F] hover:bg-transparent"
+                ? "bg-[#FDC00F] text-black hover:bg-[#f99b1d] shadow-lg shadow-[#FDC00F]/20"
+                : "text-gray-400 hover:text-[#FDC00F] hover:bg-white/5"
             }`}
           >
             New
@@ -145,10 +135,10 @@ export function PlaylistPanel() {
           <Button
             onClick={() => handleSortChange("top")}
             variant="ghost"
-            className={`px-4 py-2 text-sm font-medium rounded-full transition-colors h-auto ${
+            className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-200 h-auto ${
               sortMethod === "top"
-                ? "bg-white text-black hover:bg-white hover:text-black"
-                : "text-gray-400 hover:text-[#FDC00F] hover:bg-transparent"
+                ? "bg-[#FDC00F] text-black hover:bg-[#f99b1d] shadow-lg shadow-[#FDC00F]/20"
+                : "text-gray-400 hover:text-[#FDC00F] hover:bg-white/5"
             }`}
           >
             Top
@@ -161,7 +151,7 @@ export function PlaylistPanel() {
               <SelectTrigger className="ml-2 px-3 py-2 text-sm bg-transparent border border-white/20 text-white rounded-full hover:border-white/40 transition-colors focus:outline-none focus:border-white/60 focus:ring-0 focus-visible:ring-0 focus-visible:ring-offset-0 h-auto w-auto min-w-[140px]">
                 <SelectValue />
               </SelectTrigger>
-              <SelectContent className="bg-[#1a1a1a] border-white/20 text-white">
+              <SelectContent className="bg-[#181818] border-white/20 text-white shadow-xl">
                 <SelectItem value="day" className="text-white hover:bg-[#FDC00F]/20 hover:text-[#FDC00F] focus:bg-[#FDC00F]/20 focus:text-[#FDC00F]">Today</SelectItem>
                 <SelectItem value="week" className="text-white hover:bg-[#FDC00F]/20 hover:text-[#FDC00F] focus:bg-[#FDC00F]/20 focus:text-[#FDC00F]">This Week</SelectItem>
                 <SelectItem value="month" className="text-white hover:bg-[#FDC00F]/20 hover:text-[#FDC00F] focus:bg-[#FDC00F]/20 focus:text-[#FDC00F]">This Month</SelectItem>
@@ -191,49 +181,49 @@ export function PlaylistPanel() {
           </div>
         ) : (
           <div>
-            {/* Column Headers - Spotify Style - Responsive */}
-            <div className="hidden md:grid grid-cols-[24px_2fr_1fr_90px_60px] gap-4 px-2 mx-2 py-2 border-b border-white/5 mb-1">
-              <div className="text-xs font-medium text-gray-400 text-center">#</div>
-              <div className="text-xs font-medium text-gray-400">Title</div>
-              <div className="text-xs font-medium text-gray-400">Subreddit</div>
-              <div className="text-xs font-medium text-gray-400">Date added</div>
-              <div className="text-xs font-medium text-gray-400 text-right">Karma</div>
+            {/* Column Headers - Spotify Style - Responsive - Compact */}
+            <div className="hidden md:grid grid-cols-[20px_1.5fr_120px_100px_50px] gap-1.5 px-2 mx-2 py-1 border-b border-white/5 mb-0.5">
+              <div className="text-[10px] font-medium text-gray-400 text-center">#</div>
+              <div className="text-[10px] font-medium text-gray-400">Title</div>
+              <div className="text-[10px] font-medium text-gray-400">Subreddit</div>
+              <div className="text-[10px] font-medium text-gray-400">Date</div>
+              <div className="text-[10px] font-medium text-gray-400 text-right">Karma</div>
             </div>
 
-            {/* Song Rows - Spotify Style - Responsive */}
+            {/* Song Rows - Spotify Style - Responsive - Compact */}
             <div>
               {songs.map((song, index) => (
                 <div
                   key={`${song.id}-${song.name}-${index}`}
                   onClick={() => handleSongClick(song, index)}
-                  className={`group hidden md:grid grid-cols-[24px_2fr_1fr_90px_60px] gap-4 px-2 py-1.5 mx-2 rounded-md cursor-pointer transition-colors ${
+                  className={`group hidden md:grid grid-cols-[20px_1.5fr_120px_100px_50px] gap-1.5 px-2 py-1 mx-2 rounded-md cursor-pointer transition-all duration-200 ${
                     currentIndex === index
-                      ? "bg-white/10"
-                      : "hover:bg-[#1a1a1a]"
+                      ? "bg-[#FDC00F]/10 border-l-2 border-[#FDC00F]"
+                      : "hover:bg-[#181818] hover:border-l-2 hover:border-white/10"
                   }`}
                 >
                   {/* Track Number / Playing Indicator */}
-                  <div className="flex items-center justify-center min-w-[24px]">
+                  <div className="flex items-center justify-center min-w-[20px]">
                     {currentIndex === index && isPlaying ? (
-                      <div className="flex gap-0.5 items-end h-4">
-                        <div className="w-0.5 h-3 bg-[#FDC00F] rounded-full animate-pulse" style={{ animationDelay: '0ms' }} />
-                        <div className="w-0.5 h-4 bg-[#FDC00F] rounded-full animate-pulse" style={{ animationDelay: '150ms' }} />
-                        <div className="w-0.5 h-2 bg-[#FDC00F] rounded-full animate-pulse" style={{ animationDelay: '300ms' }} />
+                      <div className="flex gap-0.5 items-end h-3">
+                        <div className="w-0.5 h-2 bg-[#FDC00F] rounded-full animate-pulse" style={{ animationDelay: '0ms' }} />
+                        <div className="w-0.5 h-3 bg-[#FDC00F] rounded-full animate-pulse" style={{ animationDelay: '150ms' }} />
+                        <div className="w-0.5 h-1.5 bg-[#FDC00F] rounded-full animate-pulse" style={{ animationDelay: '300ms' }} />
                       </div>
                     ) : (
                       <>
-                        <span className="text-xs text-gray-400 group-hover:hidden">
+                        <span className="text-[10px] text-gray-400 group-hover:hidden">
                           {index + 1}
                         </span>
-                        <Play className="w-3.5 h-3.5 text-white hidden group-hover:block" />
+                        <Play className="w-3 h-3 text-white hidden group-hover:block" />
                       </>
                     )}
                   </div>
 
                   {/* Title Column */}
-                  <div className="flex items-center gap-3 min-w-0">
+                  <div className="flex items-center gap-2 min-w-0">
                     {/* Thumbnail */}
-                    <div className="relative flex-shrink-0 w-10 h-10">
+                    <div className="relative flex-shrink-0 w-8 h-8">
                       {song.thumbnail && 
                        song.thumbnail !== "self" && 
                        song.thumbnail !== "default" && 
@@ -256,34 +246,34 @@ export function PlaylistPanel() {
                     </div>
                     {/* Title & Artist */}
                     <div className="min-w-0 flex-1">
-                      <p className={`text-sm font-medium truncate ${
+                      <p className={`text-xs font-medium truncate leading-tight ${
                         currentIndex === index ? "text-[#FDC00F]" : "text-white"
                       }`}>
                         {song.title}
                       </p>
-                      <p className="text-xs text-gray-400 truncate mt-0.5">
+                      <p className="text-[10px] text-gray-400 truncate leading-tight mt-0.5">
                         {song.author}
                       </p>
                     </div>
                   </div>
 
                   {/* Subreddit Column */}
-                  <div className="flex items-center min-w-0">
-                    <p className="text-sm text-gray-400 truncate">
+                  <div className="flex items-center min-w-0 max-w-[120px]">
+                    <p className="text-xs text-gray-400 truncate">
                       {song.subreddit}
                     </p>
                   </div>
 
                   {/* Date Added Column */}
-                  <div className="flex items-center min-w-[100px]">
-                    <p className="text-xs text-gray-400 truncate">
+                  <div className="flex items-center min-w-0 max-w-[100px]">
+                    <p className="text-[10px] text-gray-400 truncate">
                       {song.created_ago || '—'}
                     </p>
                   </div>
 
                   {/* Score Column */}
                   <div className="flex items-center justify-end min-w-[50px]">
-                    <span className="text-xs text-gray-400">
+                    <span className="text-[10px] text-gray-400">
                       {song.score}
                     </span>
                   </div>
@@ -297,10 +287,10 @@ export function PlaylistPanel() {
                 <div
                   key={`${song.id}-${song.name}-${index}-mobile`}
                   onClick={() => handleSongClick(song, index)}
-                  className={`p-3 rounded-lg border border-white/5 cursor-pointer transition-colors ${
+                  className={`p-3 rounded-lg border cursor-pointer transition-all duration-200 ${
                     currentIndex === index
-                      ? "bg-white/10 border-[#FDC00F]/30"
-                      : "bg-[#1a1a1a] hover:bg-white/5"
+                      ? "bg-[#FDC00F]/10 border-[#FDC00F]/40 shadow-sm shadow-[#FDC00F]/10"
+                      : "bg-[#181818] border-white/5 hover:bg-[#222222] hover:border-white/10"
                   }`}
                 >
                   <div className="flex items-center gap-3">
