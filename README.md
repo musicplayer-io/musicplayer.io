@@ -11,6 +11,15 @@
 
 > A free and open-source streaming music web player using data from Reddit.
 
+## 📦 Repository Structure
+
+This repository contains two versions:
+
+- **`main` branch** (default): Modern Next.js 16/React/TypeScript implementation
+- **`coffeescript` branch**: Legacy CoffeeScript/Backbone.js version (v0.6.14)
+
+The `main` branch is the active development branch with all the latest features and improvements.
+
 ## 🚀 Quick Start
 
 ### Installation
@@ -24,7 +33,7 @@ cd redditmusicplayer
 npm install
 
 # Set up environment variables
-cp .env.example .env.local
+cp .env.local.example .env.local
 # Edit .env.local with your Reddit OAuth credentials (optional, for voting/commenting)
 
 # Run development server
@@ -156,6 +165,8 @@ This project has been migrated from CoffeeScript/Backbone.js to Next.js 16/React
 
 **Conversion Progress**: 100% complete - All features fully functional!
 
+The original CoffeeScript/Backbone.js codebase is preserved in the [`coffeescript` branch](https://github.com/musicplayer-io/redditmusicplayer/tree/coffeescript) for reference.
+
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
@@ -167,5 +178,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 ## 🙏 Acknowledgments
 
 - Original project by [Ilias Ismanalijev](https://il.ly)
+- Next.js migration by [mdanassaif](https://github.com/mdanassaif)
 - Built with [Next.js](https://nextjs.org/)
 - UI components from [shadcn/ui](https://ui.shadcn.com/)
