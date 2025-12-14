@@ -76,17 +76,17 @@ export function ShareModal({ isOpen, onClose, subreddits }: ShareModalProps) {
       onClick={onClose}
     >
       <div
-        className="bg-[#1a1a1a] border border-border rounded-lg p-6 max-w-md w-full mx-4 shadow-xl"
+        className="bg-card border border-border rounded-lg p-6 max-w-md w-full mx-4 shadow-xl"
         onClick={e => e.stopPropagation()}
       >
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-white text-lg font-medium">Share Your Subreddit Playlist</h2>
+          <h2 className="text-lg font-medium">Share Your Subreddit Playlist</h2>
           <Button
             onClick={onClose}
             variant="ghost"
             size="icon"
-            className="text-gray-400 hover:text-white transition-colors h-auto w-auto p-0"
+            className="text-muted-foreground hover:text-foreground transition-colors h-auto w-auto p-0"
           >
             <X className="w-5 h-5" />
           </Button>
@@ -96,7 +96,7 @@ export function ShareModal({ isOpen, onClose, subreddits }: ShareModalProps) {
         <div className="space-y-4">
           {/* Full URL */}
           <div>
-            <label htmlFor="shareLink" className="block text-sm text-gray-400 mb-2">
+            <label htmlFor="shareLink" className="block text-sm text-muted-foreground mb-2">
               Full URL
             </label>
             <div className="flex gap-2">
@@ -105,14 +105,14 @@ export function ShareModal({ isOpen, onClose, subreddits }: ShareModalProps) {
                 type="text"
                 value={fullLink}
                 readOnly
-                className="flex-1 bg-[#111] border-border text-white text-sm"
+                className="flex-1 bg-background border-border text-sm"
                 onClick={e => (e.target as HTMLInputElement).select()}
               />
               <Button
                 onClick={() => handleCopy(fullLink, 'full')}
                 size="sm"
                 variant="ghost"
-                className="text-white hover:text-[#FDC00F]"
+                className="hover:text-primary"
               >
                 {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
               </Button>
@@ -121,7 +121,7 @@ export function ShareModal({ isOpen, onClose, subreddits }: ShareModalProps) {
 
           {/* Short URL */}
           <div>
-            <label htmlFor="shareShortLink" className="block text-sm text-gray-400 mb-2">
+            <label htmlFor="shareShortLink" className="block text-sm text-muted-foreground mb-2">
               Short URL
             </label>
             <div className="flex gap-2">
@@ -130,14 +130,14 @@ export function ShareModal({ isOpen, onClose, subreddits }: ShareModalProps) {
                 type="text"
                 value={shortLink}
                 readOnly
-                className="flex-1 bg-[#111] border-border text-white text-sm"
+                className="flex-1 bg-background border-border text-sm"
                 onClick={e => (e.target as HTMLInputElement).select()}
               />
               <Button
                 onClick={() => handleCopy(shortLink, 'short')}
                 size="sm"
                 variant="ghost"
-                className="text-white hover:text-[#FDC00F]"
+                className="hover:text-primary"
               >
                 {copiedShort ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
               </Button>
@@ -165,7 +165,7 @@ export function ShareModal({ isOpen, onClose, subreddits }: ShareModalProps) {
             <Button
               onClick={() => handleShare('reddit')}
               size="sm"
-              className="flex-1 bg-[#FF4500] hover:bg-[#e63e00] text-white"
+              className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground"
             >
               <Share2 className="w-4 h-4 mr-2" />
               Reddit

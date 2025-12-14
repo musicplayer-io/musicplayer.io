@@ -129,7 +129,7 @@ export async function loginWithReddit(code: string) {
     }
   } catch (error) {
     if (error instanceof z.ZodError) {
-      console.error('Validation error:', error.errors)
+      console.error('Validation error:', error)
       return { success: false, error: 'Invalid input data' }
     }
     console.error('Reddit auth error:', error)

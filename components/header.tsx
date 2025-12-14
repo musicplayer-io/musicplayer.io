@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { Menu, LogIn, Keyboard, LogOut, User } from 'lucide-react'
 import { usePlayerStore } from '@/lib/store/player-store'
 import { LoginModal } from './login-modal'
+import { ThemeToggle } from './theme-toggle'
 import { useAuth } from '@/lib/hooks/use-auth'
 import { useState } from 'react'
 import {
@@ -28,7 +29,7 @@ interface HeaderProps {
 
 export function Header({ showKeyboardModal, setShowKeyboardModal }: HeaderProps) {
   const { mobileView, setMobileView, currentSong } = usePlayerStore()
-  const { isAuthenticated, username, login, logout } = useAuth()
+  const { isAuthenticated, username, logout } = useAuth()
   const [showLoginModal, setShowLoginModal] = useState(false)
   const [internalShowKeyboardModal, setInternalShowKeyboardModal] = useState(false)
 
@@ -56,6 +57,8 @@ export function Header({ showKeyboardModal, setShowKeyboardModal }: HeaderProps)
 
         {/* Desktop - Login and Menu */}
         <div className="ml-auto hidden md:flex items-center gap-2">
+          {/* Theme Toggle */}
+          <ThemeToggle />
           {/* Keyboard Shortcuts Button */}
           <Button
             variant="ghost"

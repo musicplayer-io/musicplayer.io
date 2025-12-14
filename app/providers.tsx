@@ -1,13 +1,14 @@
 'use client'
 
 import Script from 'next/script'
+import { ThemeProvider } from 'next-themes'
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN
   const plausibleHost = process.env.NEXT_PUBLIC_PLAUSIBLE_HOST || 'https://plausible.io'
 
   return (
-    <>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
       {plausibleDomain && (
         <Script
           defer
@@ -17,6 +18,6 @@ export function Providers({ children }: { children: React.ReactNode }) {
         />
       )}
       {children}
-    </>
+    </ThemeProvider>
   )
 }

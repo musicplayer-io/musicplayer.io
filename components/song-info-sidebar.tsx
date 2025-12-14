@@ -236,18 +236,18 @@ export function SongInfoSidebar() {
           <div className="space-y-8">
             {/* Song Title & Actions */}
             <div className="px-6">
-              <h2 className="text-base md:text-lg font-bold text-white mb-2 leading-tight line-clamp-2">
+              <h2 className="text-base md:text-lg font-bold mb-2 leading-tight line-clamp-2">
                 {currentSong.title}
               </h2>
-              <p className="text-sm text-gray-400 mb-6">
-                by <span className="font-medium text-gray-300">{currentSong.author}</span>
+              <p className="text-sm text-muted-foreground mb-6">
+                by <span className="font-medium">{currentSong.author}</span>
               </p>
 
               {/* Action Buttons - Clean & Polished */}
               <div className="flex items-center justify-center gap-3 mb-6">
                 <button
                   onClick={() => handleLogin('upvote')}
-                  className="group flex flex-col items-center justify-center px-4 py-3 rounded-xl transition-all duration-200 min-h-[70px] text-center text-gray-400 hover:text-[#FDC00F] hover:bg-[#FDC00F]/10 hover:shadow-lg hover:shadow-[#FDC00F]/20"
+                  className="group flex flex-col items-center justify-center px-4 py-3 rounded-xl transition-all duration-200 min-h-[70px] text-center text-muted-foreground hover:text-primary hover:bg-primary/10 hover:shadow-lg hover:shadow-primary/20"
                   title="Upvote"
                 >
                   <ArrowUp
@@ -258,7 +258,7 @@ export function SongInfoSidebar() {
                 </button>
                 <button
                   onClick={() => handleLogin('downvote')}
-                  className="group flex flex-col items-center justify-center px-4 py-3 rounded-xl transition-all duration-200 min-h-[70px] text-center text-gray-400 hover:text-red-400 hover:bg-red-500/10 hover:shadow-lg hover:shadow-red-500/20"
+                  className="group flex flex-col items-center justify-center px-4 py-3 rounded-xl transition-all duration-200 min-h-[70px] text-center text-muted-foreground hover:text-destructive hover:bg-destructive/10 hover:shadow-lg hover:shadow-destructive/20"
                   title="Downvote"
                 >
                   <ArrowDown
@@ -271,7 +271,7 @@ export function SongInfoSidebar() {
                   href={`https://www.reddit.com${currentSong.permalink}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex flex-col items-center justify-center px-4 py-3 rounded-xl text-gray-400 hover:text-[#FF4500] hover:bg-[#FF4500]/10 transition-all duration-200 min-h-[70px] text-center hover:shadow-lg hover:shadow-[#FF4500]/20"
+                  className="group flex flex-col items-center justify-center px-4 py-3 rounded-xl text-muted-foreground hover:text-accent hover:bg-accent/10 transition-all duration-200 min-h-[70px] text-center hover:shadow-lg hover:shadow-accent/20"
                   title="View on Reddit"
                 >
                   <svg
@@ -302,8 +302,8 @@ export function SongInfoSidebar() {
                     rel="noopener noreferrer"
                     className={`group flex flex-col items-center justify-center px-4 py-3 rounded-xl transition-all duration-200 min-h-[70px] text-center ${
                       currentSong.domain === 'youtube.com' || currentSong.domain === 'youtu.be'
-                        ? 'text-gray-400 hover:text-red-500 hover:bg-red-500/10 hover:shadow-lg hover:shadow-red-500/20'
-                        : 'text-gray-400 hover:text-white hover:bg-white/10 hover:shadow-lg'
+                        ? 'text-muted-foreground hover:text-destructive hover:bg-destructive/10 hover:shadow-lg hover:shadow-destructive/20'
+                        : 'text-muted-foreground hover:text-foreground hover:bg-secondary hover:shadow-lg'
                     }`}
                     title={`Open on ${currentSong.domain === 'youtube.com' || currentSong.domain === 'youtu.be' ? 'YouTube' : currentSong.domain}`}
                   >
@@ -331,41 +331,41 @@ export function SongInfoSidebar() {
 
               {/* Metadata - 2x2 Grid Only */}
               <div className="grid grid-cols-2 gap-3">
-                <div className="group p-4 bg-linear-to-br from-[#1a1a1a] to-[#161616] rounded-xl border border-white/5 hover:border-[#FDC00F]/30 transition-all duration-200 hover:shadow-lg hover:shadow-[#FDC00F]/10">
-                  <div className="text-xl font-bold text-[#FDC00F] mb-1.5 leading-none">
+                <div className="group p-4 bg-secondary rounded-xl border border-border hover:border-primary/30 transition-all duration-200 hover:shadow-lg hover:shadow-primary/10">
+                  <div className="text-xl font-bold text-primary mb-1.5 leading-none">
                     {currentSong.score?.toLocaleString() || '0'}
                   </div>
-                  <div className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">
+                  <div className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">
                     Karma
                   </div>
                 </div>
-                <div className="group p-4 bg-linear-to-br from-[#1a1a1a] to-[#161616] rounded-xl border border-white/5 hover:border-white/20 transition-all duration-200 hover:shadow-lg">
+                <div className="group p-4 bg-secondary rounded-xl border border-border hover:border-border/80 transition-all duration-200 hover:shadow-lg">
                   <div
-                    className="text-sm font-bold text-white mb-1.5 truncate leading-tight"
+                    className="text-sm font-bold mb-1.5 truncate leading-tight"
                     title={`/u/${currentSong.author}`}
                   >
                     /u/{currentSong.author || 'Unknown'}
                   </div>
-                  <div className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">
+                  <div className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">
                     Author
                   </div>
                 </div>
-                <div className="group p-4 bg-linear-to-br from-[#1a1a1a] to-[#161616] rounded-xl border border-white/5 hover:border-white/20 transition-all duration-200 hover:shadow-lg">
-                  <div className="text-sm font-bold text-gray-200 mb-1.5 leading-tight">
+                <div className="group p-4 bg-secondary rounded-xl border border-border hover:border-border/80 transition-all duration-200 hover:shadow-lg">
+                  <div className="text-sm font-bold mb-1.5 leading-tight">
                     {currentSong.created_ago ? currentSong.created_ago.replace(' ago', '') : 'N/A'}
                   </div>
-                  <div className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">
+                  <div className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">
                     Age
                   </div>
                 </div>
-                <div className="group p-4 bg-linear-to-br from-[#1a1a1a] to-[#161616] rounded-xl border border-white/5 hover:border-white/20 transition-all duration-200 hover:shadow-lg">
+                <div className="group p-4 bg-secondary rounded-xl border border-border hover:border-border/80 transition-all duration-200 hover:shadow-lg">
                   <div
-                    className="text-sm font-bold text-gray-200 mb-1.5 truncate leading-tight"
+                    className="text-sm font-bold mb-1.5 truncate leading-tight"
                     title={`/r/${currentSong.subreddit}`}
                   >
                     /r/{currentSong.subreddit || 'Unknown'}
                   </div>
-                  <div className="text-[10px] font-semibold text-gray-500 uppercase tracking-wider">
+                  <div className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">
                     Subreddit
                   </div>
                 </div>
@@ -374,8 +374,8 @@ export function SongInfoSidebar() {
 
             {/* Selftext */}
             {currentSong.selftext && (
-              <div className="mx-6 p-6 bg-linear-to-br from-[#1a1a1a] to-[#141414] rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 shadow-xl">
-                <div className="text-sm text-gray-300 leading-relaxed prose prose-invert max-w-none">
+              <div className="mx-6 p-6 bg-card rounded-2xl border border-border hover:border-border/80 transition-all duration-300 shadow-xl">
+                <div className="text-sm leading-relaxed prose prose-invert max-w-none">
                   <div dangerouslySetInnerHTML={{ __html: currentSong.selftext }} />
                 </div>
               </div>

@@ -222,7 +222,7 @@ export function BrowsePanel() {
 
         {/* Add Custom Subreddit */}
         <div className="flex gap-2 items-center">
-          <div className="px-3 h-11 bg-[#1a1a1a] rounded-lg flex items-center justify-center text-sm font-medium text-gray-400 border border-white/10 shrink-0">
+          <div className="px-3 h-11 bg-card rounded-lg flex items-center justify-center text-sm font-medium text-muted-foreground border border-border shrink-0">
             /r/
           </div>
           <input
@@ -231,11 +231,11 @@ export function BrowsePanel() {
             value={customSubreddit}
             onChange={e => setCustomSubreddit(e.target.value)}
             onKeyDown={e => e.key === 'Enter' && addCustomSubreddit()}
-            className="flex-1 min-w-0 px-3 h-11 bg-[#1a1a1a] border border-white/10 rounded-lg text-sm text-gray-300 placeholder:text-gray-600 focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-transparent"
+            className="flex-1 min-w-0 px-3 h-11 bg-card border border-border rounded-lg text-sm placeholder:text-muted-foreground focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-transparent"
           />
           <button
             onClick={addCustomSubreddit}
-            className="h-11 w-11 flex items-center justify-center bg-[#FDC00F] text-black rounded-lg hover:bg-[#f99b1d] transition-colors shrink-0"
+            className="h-11 w-11 flex items-center justify-center bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors shrink-0"
           >
             <Plus className="h-5 w-5" />
           </button>

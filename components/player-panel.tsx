@@ -101,7 +101,7 @@ export function PlayerPanel() {
     }
 
     loadComments()
-  }, [currentSong?.permalink])
+  }, [currentSong])
 
   const handleLogin = (action: string) => {
     setLoginAction(action)

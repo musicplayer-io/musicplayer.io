@@ -57,7 +57,7 @@ export function LoginModal({ isOpen, onClose, action }: LoginModalProps) {
           <Button
             type="button"
             onClick={handleLogin}
-            className="flex-1 sm:flex-initial bg-[#FF4500] hover:bg-[#ff5722] text-white"
+            className="flex-1 sm:flex-initial bg-primary hover:bg-primary/90 text-primary-foreground"
           >
             Sign in with Reddit
           </Button>

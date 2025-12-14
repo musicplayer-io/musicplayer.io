@@ -23,24 +23,26 @@ function CommentItem({ comment, depth = 0 }: { comment: Comment; depth?: number 
   const hasReplies = comment.replies && comment.replies.length > 0
 
   return (
-    <div className={depth > 0 ? 'ml-4 pl-4 border-l-2 border-white/10' : ''}>
-      <div className="p-4 rounded-lg bg-[#181818] border border-white/5 mb-3 hover:border-white/10 transition-colors">
+    <div className={depth > 0 ? 'ml-4 pl-4 border-l-2 border-border' : ''}>
+      <div className="p-4 rounded-lg bg-card border border-border mb-3 hover:border-border/80 transition-colors">
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-2">
-          <div className="text-sm font-medium text-white truncate">/u/{comment.author}</div>
-          <div className="text-xs text-gray-500 whitespace-nowrap">• {comment.created_ago}</div>
+          <div className="text-sm font-medium truncate">/u/{comment.author}</div>
+          <div className="text-xs text-muted-foreground whitespace-nowrap">
+            • {comment.created_ago}
+          </div>
         </div>
-        <p className="text-sm text-gray-300 whitespace-pre-wrap wrap-break-word leading-relaxed">
+        <p className="text-sm whitespace-pre-wrap wrap-break-word leading-relaxed">
           {comment.body}
         </p>
         <div className="flex items-center gap-4 mt-3 flex-wrap">
-          <div className="text-xs text-gray-400 flex items-center gap-1">
+          <div className="text-xs text-muted-foreground flex items-center gap-1">
             <ArrowUp className="h-3 w-3" />
             <span>{comment.score}</span>
           </div>
           {hasReplies && (
             <button
               onClick={() => setShowReplies(!showReplies)}
-              className="text-xs text-[#FDC00F] hover:text-[#f99b1d] transition-colors"
+              className="text-xs text-primary hover:text-primary/80 transition-colors"
             >
               {showReplies ? 'Hide' : 'Show'} {comment.replies.length}{' '}
               {comment.replies.length === 1 ? 'reply' : 'replies'}
@@ -90,16 +92,16 @@ export function Comments({ permalink }: CommentsProps) {
   if (loading) {
     return (
       <div className="text-center py-8">
-        <div className="w-8 h-8 border-4 border-[#FDC00F] border-t-transparent rounded-full animate-spin mx-auto mb-2" />
-        <p className="text-sm text-gray-400">Loading comments...</p>
+        <div className="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-2" />
+        <p className="text-sm text-muted-foreground">Loading comments...</p>
       </div>
     )
   }
 
   if (comments.length === 0) {
     return (
-      <div className="text-center py-8 px-4 bg-[#181818] border border-white/5 rounded-xl">
-        <p className="text-sm text-gray-400">No comments yet. Be the first to comment!</p>
+      <div className="text-center py-8 px-4 bg-card border border-border rounded-xl">
+        <p className="text-sm text-muted-foreground">No comments yet. Be the first to comment!</p>
       </div>
     )
   }

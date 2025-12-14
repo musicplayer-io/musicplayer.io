@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useMemo, useState, useEffect } from 'react'
+import { useCallback, useState, useEffect } from 'react'
 import { getAuthStatus, logout as logoutAction } from '@/lib/actions/auth'
 
 export function useAuth() {

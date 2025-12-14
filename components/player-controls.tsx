@@ -144,13 +144,13 @@ export function PlayerControls() {
 
               {/* Volume Popup - Ultra Minimalistic */}
               <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 z-50">
-                <div className="bg-[#1a1a1a] rounded-lg p-2 shadow-xl border border-white/10 w-8">
+                <div className="bg-card rounded-lg p-2 shadow-xl border border-border w-8">
                   {/* Just Slider */}
                   <div className="flex justify-center">
-                    <div className="relative h-24 w-1 bg-white/10 rounded-full overflow-hidden">
+                    <div className="relative h-24 w-1 bg-secondary rounded-full overflow-hidden">
                       {/* Fill */}
                       <div
-                        className="absolute bottom-0 left-0 right-0 bg-[#FDC00F] rounded-full transition-all duration-150"
+                        className="absolute bottom-0 left-0 right-0 bg-primary rounded-full transition-all duration-150"
                         style={{ height: `${volume}%` }}
                       />
 
