@@ -123,7 +123,7 @@ export function SongInfoSidebar() {
 
   if (!currentSong) {
     return (
-      <div className="hidden lg:flex w-full border-l border-border bg-card flex-col">
+      <div className="hidden lg:flex w-full h-full border-l border-border bg-card flex-col">
         <div className="flex-1 overflow-y-auto pb-24">
           {/* Current Song Header */}
           <div className="p-6 border-b border-border">
