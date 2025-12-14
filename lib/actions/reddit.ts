@@ -96,10 +96,30 @@ async function fetchSubredditPostsCached(
   })
 
   if (!response.ok) {
-    if (response.status === 403) {
-      throw new Error('Access denied (403). Rate limited or private subreddit.')
+    let errorMessage = `Reddit API error: ${response.status}`
+
+    // Try to get error details from response body
+    try {
+      const errorData = await response
+        .clone()
+        .json()
+        .catch(() => null)
+      if (errorData?.reason) {
+        errorMessage = errorData.reason
+      } else if (errorData?.message) {
+        errorMessage = errorData.message
+      }
+    } catch {
+      // If JSON parsing fails, use default message
     }
-    throw new Error(`Reddit API error: ${response.status}`)
+
+    if (response.status === 403) {
+      throw new Error(`Access denied (403). ${errorMessage}`)
+    }
+    if (response.status === 429) {
+      throw new Error(`Rate limited (429). Please try again later.`)
+    }
+    throw new Error(errorMessage)
   }
 
   return response.json()
@@ -138,7 +158,30 @@ async function searchRedditCached(
   })
 
   if (!response.ok) {
-    throw new Error(`Reddit API error: ${response.status}`)
+    let errorMessage = `Reddit API error: ${response.status}`
+
+    // Try to get error details from response body
+    try {
+      const errorData = await response
+        .clone()
+        .json()
+        .catch(() => null)
+      if (errorData?.reason) {
+        errorMessage = errorData.reason
+      } else if (errorData?.message) {
+        errorMessage = errorData.message
+      }
+    } catch {
+      // If JSON parsing fails, use default message
+    }
+
+    if (response.status === 403) {
+      throw new Error(`Access denied (403). ${errorMessage}`)
+    }
+    if (response.status === 429) {
+      throw new Error(`Rate limited (429). Please try again later.`)
+    }
+    throw new Error(errorMessage)
   }
 
   return response.json()
@@ -162,7 +205,30 @@ async function getCommentsCached(permalink: string, accessToken: string | undefi
   })
 
   if (!response.ok) {
-    throw new Error(`Reddit API error: ${response.status}`)
+    let errorMessage = `Reddit API error: ${response.status}`
+
+    // Try to get error details from response body
+    try {
+      const errorData = await response
+        .clone()
+        .json()
+        .catch(() => null)
+      if (errorData?.reason) {
+        errorMessage = errorData.reason
+      } else if (errorData?.message) {
+        errorMessage = errorData.message
+      }
+    } catch {
+      // If JSON parsing fails, use default message
+    }
+
+    if (response.status === 403) {
+      throw new Error(`Access denied (403). ${errorMessage}`)
+    }
+    if (response.status === 429) {
+      throw new Error(`Rate limited (429). Please try again later.`)
+    }
+    throw new Error(errorMessage)
   }
 
   const data = await response.json()

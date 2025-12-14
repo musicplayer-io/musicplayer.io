@@ -16,12 +16,21 @@ if (!REDDIT_CLIENT_ID || !REDDIT_CLIENT_SECRET) {
 // Validation schemas
 const AuthCodeSchema = z.string().min(1).max(200)
 
-const RedditTokenResponseSchema = z.object({
-  access_token: z.string(),
-  refresh_token: z.string().optional(),
-  expires_in: z.number().optional(),
-  error: z.string().optional(),
-})
+// Reddit can return either a success response with access_token or an error response
+// Error responses may have error as a number (status code) or string, and no access_token
+const RedditTokenResponseSchema = z.union([
+  // Success response
+  z.object({
+    access_token: z.string(),
+    refresh_token: z.string().optional(),
+    expires_in: z.number().optional(),
+  }),
+  // Error response
+  z.object({
+    error: z.union([z.string(), z.number()]),
+    error_description: z.string().optional(),
+  }),
+])
 
 const RedditUserSchema = z.object({
   name: z.string().min(1).max(50),
@@ -60,19 +69,30 @@ export async function loginWithReddit(code: string) {
     const tokenDataRaw = await tokenResponse.json()
     const tokenData = RedditTokenResponseSchema.parse(tokenDataRaw)
 
-    if (tokenData.error) {
-      console.error('Reddit token exchange error:', tokenData.error)
-      return { success: false, error: 'Failed to exchange authorization code' }
+    // Check if this is an error response (no access_token means error)
+    if (!('access_token' in tokenData)) {
+      const errorMsg =
+        'error' in tokenData && typeof tokenData.error === 'string'
+          ? tokenData.error
+          : 'error' in tokenData && typeof tokenData.error === 'number'
+            ? `HTTP ${tokenData.error}`
+            : 'Unknown error'
+      const errorDescription =
+        'error_description' in tokenData ? tokenData.error_description : undefined
+      console.error('Reddit token exchange error:', errorMsg, errorDescription)
+      return {
+        success: false,
+        error: errorDescription || 'Failed to exchange authorization code',
+      }
     }
 
-    if (!tokenData.access_token) {
-      return { success: false, error: 'No access token received' }
-    }
+    // TypeScript now knows this is the success response type
+    const successTokenData = tokenData
 
     // Get user info
     const userResponse = await fetch('https://oauth.reddit.com/api/v1/me', {
       headers: {
-        Authorization: `Bearer ${tokenData.access_token}`,
+        Authorization: `Bearer ${successTokenData.access_token}`,
         'User-Agent':
           'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
       },
@@ -93,17 +113,17 @@ export async function loginWithReddit(code: string) {
     const cookieStore = await cookies()
 
     // Access token - HTTP-only, secure in production
-    cookieStore.set('reddit_access_token', tokenData.access_token, {
+    cookieStore.set('reddit_access_token', successTokenData.access_token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',
-      maxAge: tokenData.expires_in || 3600, // Default to 1 hour if not provided
+      maxAge: successTokenData.expires_in || 3600, // Default to 1 hour if not provided
       path: '/',
     })
 
     // Refresh token - HTTP-only, secure in production
-    if (tokenData.refresh_token) {
-      cookieStore.set('reddit_refresh_token', tokenData.refresh_token, {
+    if (successTokenData.refresh_token) {
+      cookieStore.set('reddit_refresh_token', successTokenData.refresh_token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'lax',
