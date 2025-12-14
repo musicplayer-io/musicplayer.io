@@ -27,10 +27,9 @@
     "@types/socket.io-client": "^1.4.36",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    
     "lodash": "^3.10.1",
     "lucide-react": "^0.454.0",
-    "next": "^16.0.0",
+    "next": "16.0.10",
     "next-auth": "^5.0.0-beta.30",
     "passport": "^0.3.0",
     "passport-reddit": "git+https://github.com/musicplayer-io/passport-reddit.git",
@@ -41,7 +40,7 @@
     "socket.io-client": "^4.8.1",
     "tailwind-merge": "^2.5.4",
     "zustand": "^5.0.9",
-     "js-yaml": "^4.1.0"
+    "js-yaml": "^4.1.0"
   },
   "devDependencies": {
     "@types/lodash": "^4.17.0",
