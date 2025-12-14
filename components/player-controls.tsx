@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { Play, Pause, SkipBack, SkipForward, Volume2, VolumeX } from "lucide-react"
-import { useState, useRef } from "react"
-import { usePlayerStore } from "@/lib/store/player-store"
-import { formatTime } from "@/lib/utils/song-utils"
+import { Play, Pause, SkipBack, SkipForward, Volume2, VolumeX } from 'lucide-react'
+import { useState, useRef } from 'react'
+import { usePlayerStore } from '@/lib/store/player-store'
+import { formatTime } from '@/lib/utils/song-utils'
 
 export function PlayerControls() {
   const {
@@ -35,27 +35,27 @@ export function PlayerControls() {
     // Seek in actual players
     if (currentSong) {
       // YouTube
-      if (currentSong.type === "youtube" && (window as any).YT && (window as any).__youtubePlayer) {
+      if (currentSong.type === 'youtube' && (window as any).YT && (window as any).__youtubePlayer) {
         try {
-          (window as any).__youtubePlayer.seekTo(newTime, true)
+          ;(window as any).__youtubePlayer.seekTo(newTime, true)
         } catch {}
       }
 
       // Vimeo
-      if (currentSong.type === "vimeo" && (window as any).__vimeoPlayer) {
+      if (currentSong.type === 'vimeo' && (window as any).__vimeoPlayer) {
         try {
-          (window as any).__vimeoPlayer.setCurrentTime(newTime)
+          ;(window as any).__vimeoPlayer.setCurrentTime(newTime)
         } catch {}
       }
 
       // MP3
-      if (currentSong.type === "mp3") {
-        const audio = document.querySelector("audio") as HTMLAudioElement
+      if (currentSong.type === 'mp3') {
+        const audio = document.querySelector('audio') as HTMLAudioElement
         if (audio) audio.currentTime = newTime
       }
 
       // SoundCloud
-      if (currentSong.type === "soundcloud" && (window as any).__soundcloudWidget) {
+      if (currentSong.type === 'soundcloud' && (window as any).__soundcloudWidget) {
         try {
           const widget = (window as any).__soundcloudWidget
           widget.getDuration((dur: number) => {
@@ -83,7 +83,7 @@ export function PlayerControls() {
         />
         <div
           className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
-          style={{ left: `${progress}%`, transform: "translate(-50%, -50%)" }}
+          style={{ left: `${progress}%`, transform: 'translate(-50%, -50%)' }}
         />
       </div>
 
@@ -110,11 +110,7 @@ export function PlayerControls() {
             className="p-3 bg-primary text-primary-foreground rounded-full hover:bg-primary/90 transition-colors disabled:opacity-50"
             disabled={!currentSong}
           >
-            {isPlaying ? (
-              <Pause className="h-5 w-5" />
-            ) : (
-              <Play className="h-5 w-5 ml-0.5" />
-            )}
+            {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5 ml-0.5" />}
           </button>
           <button
             onClick={next}
@@ -132,21 +128,14 @@ export function PlayerControls() {
             className="p-2 hover:bg-secondary rounded-full transition-colors"
             aria-label="Volume control"
           >
-            {volume === 0 ? (
-              <VolumeX className="h-5 w-5" />
-            ) : (
-              <Volume2 className="h-5 w-5" />
-            )}
+            {volume === 0 ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
           </button>
-          
+
           {showVolume && (
             <>
               {/* Backdrop */}
-              <div 
-                className="fixed inset-0 z-40" 
-                onClick={() => setShowVolume(false)}
-              />
-              
+              <div className="fixed inset-0 z-40" onClick={() => setShowVolume(false)} />
+
               {/* Volume Popup - Ultra Minimalistic */}
               <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 z-50">
                 <div className="bg-[#1a1a1a] rounded-lg p-2 shadow-xl border border-white/10 w-8">
@@ -154,25 +143,25 @@ export function PlayerControls() {
                   <div className="flex justify-center">
                     <div className="relative h-24 w-1 bg-white/10 rounded-full overflow-hidden">
                       {/* Fill */}
-                      <div 
+                      <div
                         className="absolute bottom-0 left-0 right-0 bg-[#FDC00F] rounded-full transition-all duration-150"
                         style={{ height: `${volume}%` }}
                       />
-                      
+
                       {/* Slider Input */}
                       <input
                         type="range"
                         min="0"
                         max="100"
                         value={volume}
-                        onChange={(e) => setVolume(Number(e.target.value))}
+                        onChange={e => setVolume(Number(e.target.value))}
                         className="absolute inset-0 w-24 h-1 origin-center -rotate-90 opacity-0 cursor-pointer"
                         style={{
                           transform: 'rotate(-90deg) translateX(-50%)',
                           transformOrigin: 'left center',
                           left: '50%',
                           top: '50%',
-                          marginTop: '-0.25rem'
+                          marginTop: '-0.25rem',
                         }}
                       />
                     </div>

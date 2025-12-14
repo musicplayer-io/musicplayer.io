@@ -1,20 +1,105 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-/* Icon Fonts */
-@font-face {
-  font-family: 'icons';
-  src: url('/fonts/icons.eot');
-  src: url('/fonts/icons.eot?#iefix') format('embedded-opentype'),
-       url('/fonts/icons.woff2') format('woff2'),
-       url('/fonts/icons.woff') format('woff'),
-       url('/fonts/icons.ttf') format('truetype'),
-       url('/fonts/icons.otf') format('opentype'),
-       url('/fonts/icons.svg#icons') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+@custom-variant dark (&:is(.dark *));
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
+
+@theme {
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: #fdc00f;
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@layer utilities {
+  /* Icon Fonts */
+  @font-face {
+    font-family: 'icons';
+    src: url('/fonts/icons.eot');
+    src:
+      url('/fonts/icons.eot?#iefix') format('embedded-opentype'),
+      url('/fonts/icons.woff2') format('woff2'),
+      url('/fonts/icons.woff') format('woff'),
+      url('/fonts/icons.ttf') format('truetype'),
+      url('/fonts/icons.otf') format('opentype'),
+      url('/fonts/icons.svg#icons') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
 }
 
 @layer base {
@@ -39,15 +124,15 @@
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
     --radius: 0.5rem;
-    
+
     /* Spotify/Apple Music inspired colors */
-    --spotify-green: #1DB954;
+    --spotify-green: #1db954;
     --spotify-dark: #121212;
     --spotify-gray: #181818;
     --spotify-light-gray: #282828;
-    --apple-music-red: #FA243C;
-    --gold-accent: #FDC00F;
-    
+    --apple-music-red: #fa243c;
+    --gold-accent: #fdc00f;
+
     /* Gray Color System - Cohesive Panel Colors */
     --bg-main: #0a0a0a;
     --bg-left-panel: #111111;
@@ -113,7 +198,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #FDC00F;
+  background: #fdc00f;
   border-radius: 2px;
 }
 
@@ -133,7 +218,7 @@
   .smooth-scroll {
     -webkit-overflow-scrolling: touch;
   }
-  
+
   /* Better text rendering on mobile */
   body {
     -webkit-font-smoothing: antialiased;
@@ -156,7 +241,7 @@
 
 .comment-author {
   font-weight: 600;
-  color: #FDC00F;
+  color: #fdc00f;
 }
 
 .comment-score {
@@ -181,7 +266,7 @@
 }
 
 .comment-body a {
-  color: #FDC00F;
+  color: #fdc00f;
   text-decoration: underline;
 }
 
@@ -256,7 +341,9 @@
 
 /* Hover effects */
 .hover-lift {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .hover-lift:hover {
@@ -280,7 +367,7 @@
 
 /* Gradient backgrounds */
 .gradient-primary {
-  background: linear-gradient(135deg, #FDC00F 0%, #f99b1d 100%);
+  background: linear-gradient(135deg, #fdc00f 0%, #f99b1d 100%);
 }
 
 .gradient-dark {
@@ -289,7 +376,7 @@
 
 /* Text gradients */
 .text-gradient {
-  background: linear-gradient(135deg, #FDC00F 0%, #ffffff 100%);
+  background: linear-gradient(135deg, #fdc00f 0%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -297,7 +384,8 @@
 
 /* Pulse animation for playing indicator */
 @keyframes pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     box-shadow: 0 0 0 0 rgba(253, 192, 15, 0.7);
   }
@@ -370,7 +458,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  background: linear-gradient(90deg, #FDC00F 0%, #f99b1d 100%);
+  background: linear-gradient(90deg, #fdc00f 0%, #f99b1d 100%);
   transition: width 0.1s linear;
   border-radius: 4px;
 }
@@ -394,13 +482,13 @@
 
 /* Enhanced button hover effects */
 .btn-yellow {
-  background: linear-gradient(135deg, #FDC00F 0%, #f99b1d 100%);
+  background: linear-gradient(135deg, #fdc00f 0%, #f99b1d 100%);
   box-shadow: 0 4px 12px rgba(253, 192, 15, 0.25);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-yellow:hover {
-  background: linear-gradient(135deg, #f99b1d 0%, #FDC00F 100%);
+  background: linear-gradient(135deg, #f99b1d 0%, #fdc00f 100%);
   box-shadow: 0 6px 20px rgba(253, 192, 15, 0.4);
   transform: translateY(-1px);
 }

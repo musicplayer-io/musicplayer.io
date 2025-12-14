@@ -1,8 +1,8 @@
-"use client"
+'use client'
 
-import { useEffect, useRef, useState } from "react"
-import { Song } from "@/lib/store/player-store"
-import { usePlayerStore } from "@/lib/store/player-store"
+import { useEffect, useRef, useState } from 'react'
+import { Song } from '@/lib/store/player-store'
+import { usePlayerStore } from '@/lib/store/player-store'
 
 declare global {
   interface Window {
@@ -39,9 +39,9 @@ export function SoundCloudPlayer({ song }: SoundCloudPlayerProps) {
 
         widget.bind(window.SC.Widget.Events.READY, () => {
           if (!mounted || songUrlRef.current !== song.url) return
-          
+
           setIsReady(true)
-          
+
           try {
             widget.setVolume(volume)
             if (isPlaying) widget.play()
@@ -52,7 +52,7 @@ export function SoundCloudPlayer({ song }: SoundCloudPlayerProps) {
           // Time updates
           widget.bind(window.SC.Widget.Events.PLAY_PROGRESS, (e: any) => {
             if (!mounted || songUrlRef.current !== song.url) return
-            
+
             try {
               if (e?.currentPosition && typeof e.currentPosition === 'number') {
                 setCurrentTime(e.currentPosition / 1000)
@@ -65,7 +65,7 @@ export function SoundCloudPlayer({ song }: SoundCloudPlayerProps) {
           // Duration
           widget.getDuration((dur: number) => {
             if (!mounted || songUrlRef.current !== song.url) return
-            
+
             try {
               if (dur > 0 && isFinite(dur)) {
                 setDuration(dur / 1000)
@@ -92,8 +92,8 @@ export function SoundCloudPlayer({ song }: SoundCloudPlayerProps) {
     }
 
     if (!window.SC) {
-      const script = document.createElement("script")
-      script.src = "https://w.soundcloud.com/player/api.js"
+      const script = document.createElement('script')
+      script.src = 'https://w.soundcloud.com/player/api.js'
       script.async = true
       script.onload = initWidget
       document.body.appendChild(script)
@@ -113,7 +113,7 @@ export function SoundCloudPlayer({ song }: SoundCloudPlayerProps) {
       mounted = false
       songUrlRef.current = null
       setIsReady(false)
-      
+
       if (widget) {
         try {
           widget.pause()
@@ -125,7 +125,7 @@ export function SoundCloudPlayer({ song }: SoundCloudPlayerProps) {
           // Silently ignore
         }
       }
-      
+
       widgetRef.current = null
     }
   }, [song.url])

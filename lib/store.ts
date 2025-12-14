@@ -1,5 +1,5 @@
 // lib/store.ts
-import { create } from "zustand"
+import { create } from 'zustand'
 
 export interface Song {
   id: string
@@ -20,7 +20,7 @@ export interface Song {
   is_self: boolean
   selftext?: string
   selftext_html?: string
-  type: "youtube" | "soundcloud" | "vimeo" | "mp3" | "none"
+  type: 'youtube' | 'soundcloud' | 'vimeo' | 'mp3' | 'none'
   playable: boolean
   media?: any
 }
@@ -31,8 +31,8 @@ interface PlaylistStore {
   currentSong: Song | null
   currentSongId: string | null // Track current song ID to prevent stale updates
   selectedSubreddits: string[]
-  sortMethod: "hot" | "new" | "top"
-  topMethod: "day" | "week" | "month" | "year" | "all"
+  sortMethod: 'hot' | 'new' | 'top'
+  topMethod: 'day' | 'week' | 'month' | 'year' | 'all'
   loading: boolean
   after: string | null
   searchQuery: string | null // Reddit search query
@@ -55,18 +55,28 @@ interface PlaylistStore {
   duration: number
   volume: number
   // Mobile navigation
-  mobileView: "browse" | "playlist" | "song"
-  
+  mobileView: 'browse' | 'playlist' | 'song'
+
   setSelectedSubreddits: (subreddits: string[]) => void
-  setSortMethod: (method: "hot" | "new" | "top") => void
-  setTopMethod: (method: "day" | "week" | "month" | "year" | "all") => void
+  setSortMethod: (method: 'hot' | 'new' | 'top') => void
+  setTopMethod: (method: 'day' | 'week' | 'month' | 'year' | 'all') => void
   setSongs: (songs: Song[]) => void
   addSongs: (songs: Song[]) => void
   setCurrentSong: (index: number) => void
   setLoading: (loading: boolean) => void
   setAfter: (after: string | null) => void
   setSearchQuery: (query: string | null) => void
-  addMessage: (message: { type: 'error' | 'success' | 'info'; text: string; buttons?: Array<{ text: string; className?: string; url?: string; callback?: () => void; action?: 'close' }> }) => void
+  addMessage: (message: {
+    type: 'error' | 'success' | 'info'
+    text: string
+    buttons?: Array<{
+      text: string
+      className?: string
+      url?: string
+      callback?: () => void
+      action?: 'close'
+    }>
+  }) => void
   removeMessage: (id: string) => void
   setIsPlaying: (isPlaying: boolean) => void
   setCurrentTime: (time: number, songId?: string) => void
@@ -76,7 +86,7 @@ interface PlaylistStore {
   forward: () => void
   backward: () => void
   seekTo: (time: number) => void
-  setMobileView: (view: "browse" | "playlist" | "song") => void
+  setMobileView: (view: 'browse' | 'playlist' | 'song') => void
 }
 
 // Load from localStorage on initialization
@@ -95,31 +105,31 @@ const loadSubredditsFromStorage = (): string[] => {
 }
 
 // Load sort method from localStorage
-const loadSortMethodFromStorage = (): "hot" | "new" | "top" => {
-  if (typeof window === 'undefined') return "hot"
+const loadSortMethodFromStorage = (): 'hot' | 'new' | 'top' => {
+  if (typeof window === 'undefined') return 'hot'
   try {
     const stored = localStorage.getItem('redditMusicPlayer_sortMethod')
-    if (stored && (stored === "hot" || stored === "new" || stored === "top")) {
+    if (stored && (stored === 'hot' || stored === 'new' || stored === 'top')) {
       return stored
     }
   } catch (e) {
     console.error('Failed to load sort method from localStorage:', e)
   }
-  return "hot"
+  return 'hot'
 }
 
 // Load top method from localStorage
-const loadTopMethodFromStorage = (): "day" | "week" | "month" | "year" | "all" => {
-  if (typeof window === 'undefined') return "week"
+const loadTopMethodFromStorage = (): 'day' | 'week' | 'month' | 'year' | 'all' => {
+  if (typeof window === 'undefined') return 'week'
   try {
     const stored = localStorage.getItem('redditMusicPlayer_topMethod')
-    if (stored && ["day", "week", "month", "year", "all"].includes(stored)) {
-      return stored as "day" | "week" | "month" | "year" | "all"
+    if (stored && ['day', 'week', 'month', 'year', 'all'].includes(stored)) {
+      return stored as 'day' | 'week' | 'month' | 'year' | 'all'
     }
   } catch (e) {
     console.error('Failed to load top method from localStorage:', e)
   }
-  return "week"
+  return 'week'
 }
 
 export const usePlaylistStore = create<PlaylistStore>((set, get) => ({
@@ -128,8 +138,8 @@ export const usePlaylistStore = create<PlaylistStore>((set, get) => ({
   currentSong: null,
   currentSongId: null,
   selectedSubreddits: [], // Initialize empty, load from localStorage on client
-  sortMethod: "hot", // Initialize with default, load from localStorage on client
-  topMethod: "week", // Initialize with default, load from localStorage on client
+  sortMethod: 'hot', // Initialize with default, load from localStorage on client
+  topMethod: 'week', // Initialize with default, load from localStorage on client
   loading: false,
   after: null,
   searchQuery: null,
@@ -140,9 +150,9 @@ export const usePlaylistStore = create<PlaylistStore>((set, get) => ({
   duration: 0,
   volume: 100,
   // Mobile navigation
-  mobileView: "playlist",
-  
-  setSelectedSubreddits: (subreddits) => {
+  mobileView: 'playlist',
+
+  setSelectedSubreddits: subreddits => {
     set({ selectedSubreddits: subreddits })
     // Persist to localStorage
     if (typeof window !== 'undefined') {
@@ -153,7 +163,7 @@ export const usePlaylistStore = create<PlaylistStore>((set, get) => ({
       }
     }
   },
-  setSortMethod: (method) => {
+  setSortMethod: method => {
     set({ sortMethod: method })
     // Persist to localStorage
     if (typeof window !== 'undefined') {
@@ -164,7 +174,7 @@ export const usePlaylistStore = create<PlaylistStore>((set, get) => ({
       }
     }
   },
-  setTopMethod: (method) => {
+  setTopMethod: method => {
     set({ topMethod: method })
     // Persist to localStorage
     if (typeof window !== 'undefined') {
@@ -175,27 +185,28 @@ export const usePlaylistStore = create<PlaylistStore>((set, get) => ({
       }
     }
   },
-  setSongs: (songs) => set({ songs, currentIndex: -1, currentSong: null, currentSongId: null }),
-  addSongs: (songs) => set((state) => ({ songs: [...state.songs, ...songs] })),
-  setCurrentSong: (index) => set((state) => {
-    const song = state.songs[index] || null
-    return {
-      currentIndex: index,
-      currentSong: song,
-      currentSongId: song?.id || null,
-      currentTime: 0,
-      duration: 0,
-      // Always auto-play when clicking a song (if playable)
-      isPlaying: song !== null && song.playable,
-    }
-  }),
-  setLoading: (loading) => set({ loading }),
-  setAfter: (after) => set({ after }),
-  setSearchQuery: (query) => set({ searchQuery: query }),
-  addMessage: (message) => {
+  setSongs: songs => set({ songs, currentIndex: -1, currentSong: null, currentSongId: null }),
+  addSongs: songs => set(state => ({ songs: [...state.songs, ...songs] })),
+  setCurrentSong: index =>
+    set(state => {
+      const song = state.songs[index] || null
+      return {
+        currentIndex: index,
+        currentSong: song,
+        currentSongId: song?.id || null,
+        currentTime: 0,
+        duration: 0,
+        // Always auto-play when clicking a song (if playable)
+        isPlaying: song !== null && song.playable,
+      }
+    }),
+  setLoading: loading => set({ loading }),
+  setAfter: after => set({ after }),
+  setSearchQuery: query => set({ searchQuery: query }),
+  addMessage: message => {
     const id = Math.random().toString(36).substring(7)
-    set((state) => ({
-      messages: [...state.messages, { ...message, id }]
+    set(state => ({
+      messages: [...state.messages, { ...message, id }],
     }))
     // Auto-remove success/info messages after 5 seconds
     if (message.type !== 'error') {
@@ -204,10 +215,11 @@ export const usePlaylistStore = create<PlaylistStore>((set, get) => ({
       }, 5000)
     }
   },
-  removeMessage: (id) => set((state) => ({
-    messages: state.messages.filter(m => m.id !== id)
-  })),
-  setIsPlaying: (isPlaying) => set({ isPlaying }),
+  removeMessage: id =>
+    set(state => ({
+      messages: state.messages.filter(m => m.id !== id),
+    })),
+  setIsPlaying: isPlaying => set({ isPlaying }),
   setCurrentTime: (time, songId) => {
     const state = get()
     // Only update if this update is for the current song (prevent stale updates from old players)
@@ -222,8 +234,8 @@ export const usePlaylistStore = create<PlaylistStore>((set, get) => ({
       set({ duration })
     }
   },
-  setVolume: (volume) => set({ volume }),
-  playPause: () => set((state) => ({ isPlaying: !state.isPlaying })),
+  setVolume: volume => set({ volume }),
+  playPause: () => set(state => ({ isPlaying: !state.isPlaying })),
   forward: () => {
     const state = get()
     if (state.currentIndex < state.songs.length - 1) {
@@ -235,13 +247,13 @@ export const usePlaylistStore = create<PlaylistStore>((set, get) => ({
         nextSong = state.songs[nextIndex]
       }
       if (nextSong && nextSong.playable) {
-        set({ 
-          currentIndex: nextIndex, 
+        set({
+          currentIndex: nextIndex,
           currentSong: nextSong,
           currentSongId: nextSong.id,
-          currentTime: 0, 
+          currentTime: 0,
           duration: 0,
-          isPlaying: true // Auto-play next song
+          isPlaying: true, // Auto-play next song
         })
       }
     }
@@ -257,17 +269,17 @@ export const usePlaylistStore = create<PlaylistStore>((set, get) => ({
         prevSong = state.songs[prevIndex]
       }
       if (prevSong && prevSong.playable) {
-        set({ 
-          currentIndex: prevIndex, 
+        set({
+          currentIndex: prevIndex,
           currentSong: prevSong,
           currentSongId: prevSong.id,
-          currentTime: 0, 
+          currentTime: 0,
           duration: 0,
-          isPlaying: true // Auto-play previous song
+          isPlaying: true, // Auto-play previous song
         })
       }
     }
   },
-  seekTo: (time) => set({ currentTime: time }),
-  setMobileView: (view) => set({ mobileView: view }),
+  seekTo: time => set({ currentTime: time }),
+  setMobileView: view => set({ mobileView: view }),
 }))

@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useEffect, useRef } from "react"
-import { useSearchParams, usePathname } from "next/navigation"
-import { usePlayerStore } from "@/lib/store/player-store"
-import { useRedditAPI } from "./use-reddit-api"
+import { useEffect, useRef } from 'react'
+import { useSearchParams, usePathname } from 'next/navigation'
+import { usePlayerStore } from '@/lib/store/player-store'
+import { useRedditAPI } from './use-reddit-api'
 
 /**
  * Initialize app on mount
@@ -34,8 +34,8 @@ export function useInitializeApp() {
     const pathMatch = pathname.match(/^\/r\/(.+)$/)
     if (pathMatch) {
       const subs = pathMatch[1]
-        .split("+")
-        .map((s) => s.trim().toLowerCase())
+        .split('+')
+        .map(s => s.trim().toLowerCase())
         .filter(Boolean)
 
       if (subs.length > 0) {
@@ -52,11 +52,11 @@ export function useInitializeApp() {
     }
 
     // Check query: ?r=music+listentothis (fallback for old URLs)
-    const rParam = searchParams.get("r")
+    const rParam = searchParams.get('r')
     if (rParam) {
       const subs = rParam
-        .split("+")
-        .map((s) => s.trim().toLowerCase())
+        .split('+')
+        .map(s => s.trim().toLowerCase())
         .filter(Boolean)
 
       if (subs.length > 0) {
@@ -80,7 +80,7 @@ export function useInitializeApp() {
         fetchFromSubreddits(selectedSubreddits)
       } else {
         hasInitialized.current = true
-        const defaultSubs = ["listentothis"]
+        const defaultSubs = ['listentothis']
         setSelectedSubreddits(defaultSubs)
         fetchFromSubreddits(defaultSubs)
       }
@@ -94,16 +94,12 @@ export function useInitializeApp() {
     function handleKeyDown(e: KeyboardEvent) {
       // Ignore if typing in input
       const target = e.target as HTMLElement
-      if (
-        target.tagName === "INPUT" ||
-        target.tagName === "TEXTAREA" ||
-        target.isContentEditable
-      ) {
+      if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) {
         return
       }
 
       // Space: Play/Pause
-      if (e.code === "Space") {
+      if (e.code === 'Space') {
         e.preventDefault()
         togglePlay()
         return
@@ -114,19 +110,19 @@ export function useInitializeApp() {
 
       if (mod) {
         switch (e.code) {
-          case "ArrowLeft":
+          case 'ArrowLeft':
             e.preventDefault()
             previous()
             break
-          case "ArrowRight":
+          case 'ArrowRight':
             e.preventDefault()
             next()
             break
-          case "ArrowUp":
+          case 'ArrowUp':
             e.preventDefault()
             setVolume(Math.min(100, volume + 10))
             break
-          case "ArrowDown":
+          case 'ArrowDown':
             e.preventDefault()
             setVolume(Math.max(0, volume - 10))
             break
@@ -134,7 +130,7 @@ export function useInitializeApp() {
       }
     }
 
-    window.addEventListener("keydown", handleKeyDown)
-    return () => window.removeEventListener("keydown", handleKeyDown)
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
   }, [togglePlay, next, previous, setVolume, volume])
 }

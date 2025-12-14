@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useEffect, useState } from "react"
-import { Play, Pause, Shuffle, ChevronDown } from "lucide-react"
-import { usePlayerStore } from "@/lib/store/player-store"
-import { useRedditAPI } from "@/lib/hooks/use-reddit-api"
+import { useEffect, useState } from 'react'
+import { Play, Pause, Shuffle, ChevronDown } from 'lucide-react'
+import { usePlayerStore } from '@/lib/store/player-store'
+import { useRedditAPI } from '@/lib/hooks/use-reddit-api'
 
 export function PlaylistPanel() {
   const [isTransitioning, setIsTransitioning] = useState(false)
@@ -43,12 +43,12 @@ export function PlaylistPanel() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sortMethod, topPeriod])
 
-  const handleSortChange = (newSort: "hot" | "new" | "top") => {
+  const handleSortChange = (newSort: 'hot' | 'new' | 'top') => {
     if (newSort === sortMethod) return // Don't reload if same
     setSortMethod(newSort)
   }
 
-  const handleTopPeriodChange = (newPeriod: "day" | "week" | "month" | "year" | "all") => {
+  const handleTopPeriodChange = (newPeriod: 'day' | 'week' | 'month' | 'year' | 'all') => {
     if (newPeriod === topPeriod) return // Don't reload if same
     setTopPeriod(newPeriod)
   }
@@ -67,7 +67,7 @@ export function PlaylistPanel() {
           <div>
             <h2 className="text-lg font-bold mb-1">Playlist</h2>
             <p className="text-sm text-muted-foreground">
-              {songs.length} {songs.length === 1 ? "song" : "songs"}
+              {songs.length} {songs.length === 1 ? 'song' : 'songs'}
             </p>
           </div>
           <button
@@ -82,56 +82,56 @@ export function PlaylistPanel() {
         {/* Sort Controls */}
         <div className="flex items-center gap-2 flex-wrap">
           <button
-            onClick={() => handleSortChange("hot")}
+            onClick={() => handleSortChange('hot')}
             disabled={loading}
             className={`px-3 py-1.5 text-xs font-medium rounded-full transition-colors ${
-              sortMethod === "hot"
-                ? "bg-primary text-primary-foreground"
-                : "bg-secondary hover:bg-secondary/80"
-            } ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
+              sortMethod === 'hot'
+                ? 'bg-primary text-primary-foreground'
+                : 'bg-secondary hover:bg-secondary/80'
+            } ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
-            {loading && sortMethod === "hot" && (
+            {loading && sortMethod === 'hot' && (
               <span className="inline-block w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin mr-1" />
             )}
             Hot
           </button>
           <button
-            onClick={() => handleSortChange("new")}
+            onClick={() => handleSortChange('new')}
             disabled={loading}
             className={`px-3 py-1.5 text-xs font-medium rounded-full transition-colors ${
-              sortMethod === "new"
-                ? "bg-primary text-primary-foreground"
-                : "bg-secondary hover:bg-secondary/80"
-            } ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
+              sortMethod === 'new'
+                ? 'bg-primary text-primary-foreground'
+                : 'bg-secondary hover:bg-secondary/80'
+            } ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
-            {loading && sortMethod === "new" && (
+            {loading && sortMethod === 'new' && (
               <span className="inline-block w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin mr-1" />
             )}
             New
           </button>
           <button
-            onClick={() => handleSortChange("top")}
+            onClick={() => handleSortChange('top')}
             disabled={loading}
             className={`px-3 py-1.5 text-xs font-medium rounded-full transition-colors ${
-              sortMethod === "top"
-                ? "bg-primary text-primary-foreground"
-                : "bg-secondary hover:bg-secondary/80"
-            } ${loading ? "opacity-50 cursor-not-allowed" : ""}`}
+              sortMethod === 'top'
+                ? 'bg-primary text-primary-foreground'
+                : 'bg-secondary hover:bg-secondary/80'
+            } ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
           >
-            {loading && sortMethod === "top" && (
+            {loading && sortMethod === 'top' && (
               <span className="inline-block w-3 h-3 border-2 border-white border-t-transparent rounded-full animate-spin mr-1" />
             )}
             Top
           </button>
 
-          {sortMethod === "top" && (
+          {sortMethod === 'top' && (
             <div className="relative">
               <select
                 value={topPeriod}
-                onChange={(e) => handleTopPeriodChange(e.target.value as any)}
+                onChange={e => handleTopPeriodChange(e.target.value as any)}
                 disabled={loading}
-                className={`pl-3 pr-8 py-1.5 text-xs font-medium bg-secondary rounded-full appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-ring ${
-                  loading ? "opacity-50 cursor-not-allowed" : ""
+                className={`pl-3 pr-8 py-1.5 text-xs font-medium bg-secondary rounded-full appearance-none cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-ring ${
+                  loading ? 'opacity-50 cursor-not-allowed' : ''
                 }`}
               >
                 <option value="day">Today</option>
@@ -147,9 +147,12 @@ export function PlaylistPanel() {
       </div>
 
       {/* Song List */}
-      <div className={`flex-1 overflow-y-auto pb-24 transition-opacity duration-300 ${
-        isTransitioning ? 'opacity-0' : 'opacity-100'
-      }`}>{/* pb-24 = 96px for player controls */}
+      <div
+        className={`flex-1 overflow-y-auto pb-24 transition-opacity duration-300 ${
+          isTransitioning ? 'opacity-0' : 'opacity-100'
+        }`}
+      >
+        {/* pb-24 = 96px for player controls */}
         {loading && songs.length === 0 ? (
           <div className="flex items-center justify-center h-64">
             <div className="flex flex-col items-center gap-3">
@@ -171,7 +174,7 @@ export function PlaylistPanel() {
             {/* Desktop Table */}
             <div className="hidden md:block">
               <table className="w-full table-fixed">
-                <thead className="sticky top-0 bg-background/95 backdrop-blur z-10">
+                <thead className="sticky top-0 bg-background/95 backdrop-blur-sm z-10">
                   <tr className="border-b border-border text-xs text-muted-foreground">
                     <th className="w-[50px] text-center py-3">#</th>
                     <th className="text-left py-3 px-4">Title</th>
@@ -186,9 +189,7 @@ export function PlaylistPanel() {
                       key={`${song.id}-${index}`}
                       onClick={() => setCurrentSong(index)}
                       className={`group cursor-pointer transition-colors ${
-                        currentIndex === index
-                          ? "bg-primary/10"
-                          : "hover:bg-secondary/50"
+                        currentIndex === index ? 'bg-primary/10' : 'hover:bg-secondary/50'
                       }`}
                     >
                       <td className="text-center py-3 w-[50px]">
@@ -211,44 +212,36 @@ export function PlaylistPanel() {
                       </td>
                       <td className="py-3 px-4 overflow-hidden">
                         <div className="flex items-center gap-3 min-w-0">
-                          {song.thumbnail && song.thumbnail !== "self" && (
+                          {song.thumbnail && song.thumbnail !== 'self' && (
                             <img
                               src={song.thumbnail}
                               alt=""
-                              className="w-10 h-10 rounded object-cover flex-shrink-0"
-                              onError={(e) => {
-                                e.currentTarget.style.display = "none"
+                              className="w-10 h-10 rounded object-cover shrink-0"
+                              onError={e => {
+                                e.currentTarget.style.display = 'none'
                               }}
                             />
                           )}
                           <div className="min-w-0 flex-1">
                             <p
                               className={`text-sm font-medium truncate ${
-                                currentIndex === index ? "text-primary" : ""
+                                currentIndex === index ? 'text-primary' : ''
                               }`}
                             >
                               {song.title}
                             </p>
-                            <p className="text-xs text-muted-foreground truncate">
-                              {song.author}
-                            </p>
+                            <p className="text-xs text-muted-foreground truncate">{song.author}</p>
                           </div>
                         </div>
                       </td>
                       <td className="py-3 px-4 w-[140px]">
-                        <p className="text-xs text-muted-foreground truncate">
-                          r/{song.subreddit}
-                        </p>
+                        <p className="text-xs text-muted-foreground truncate">r/{song.subreddit}</p>
                       </td>
                       <td className="py-3 px-4 w-[110px]">
-                        <p className="text-xs text-muted-foreground truncate">
-                          {song.created_ago}
-                        </p>
+                        <p className="text-xs text-muted-foreground truncate">{song.created_ago}</p>
                       </td>
                       <td className="py-3 px-4 text-right w-[80px]">
-                        <p className="text-xs text-muted-foreground">
-                          {song.score}
-                        </p>
+                        <p className="text-xs text-muted-foreground">{song.score}</p>
                       </td>
                     </tr>
                   ))}
@@ -264,25 +257,25 @@ export function PlaylistPanel() {
                   onClick={() => setCurrentSong(index)}
                   className={`p-3 rounded-lg cursor-pointer transition-colors ${
                     currentIndex === index
-                      ? "bg-primary/10 border border-primary/20"
-                      : "bg-card border border-border hover:bg-secondary"
+                      ? 'bg-primary/10 border border-primary/20'
+                      : 'bg-card border border-border hover:bg-secondary'
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    {song.thumbnail && song.thumbnail !== "self" && (
+                    {song.thumbnail && song.thumbnail !== 'self' && (
                       <img
                         src={song.thumbnail}
                         alt=""
-                        className="w-12 h-12 rounded object-cover flex-shrink-0"
-                        onError={(e) => {
-                          e.currentTarget.style.display = "none"
+                        className="w-12 h-12 rounded object-cover shrink-0"
+                        onError={e => {
+                          e.currentTarget.style.display = 'none'
                         }}
                       />
                     )}
                     <div className="min-w-0 flex-1">
                       <p
                         className={`text-sm font-medium truncate ${
-                          currentIndex === index ? "text-primary" : ""
+                          currentIndex === index ? 'text-primary' : ''
                         }`}
                       >
                         {song.title}
@@ -306,7 +299,7 @@ export function PlaylistPanel() {
                   disabled={loading}
                   className="w-full py-2 text-sm text-muted-foreground hover:text-foreground disabled:opacity-50 transition-colors"
                 >
-                  {loading ? "Loading..." : "Load More"}
+                  {loading ? 'Loading...' : 'Load More'}
                 </button>
               </div>
             )}

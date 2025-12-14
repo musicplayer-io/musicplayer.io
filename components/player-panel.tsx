@@ -1,13 +1,13 @@
-"use client"
+'use client'
 
-import { Music, ExternalLink, MessageCircle, ArrowUp, Send } from "lucide-react"
-import { usePlayerStore } from "@/lib/store/player-store"
-import { LoginModal } from "./login-modal"
-import { YouTubePlayer } from "./players/youtube-player"
-import { SoundCloudPlayer } from "./players/soundcloud-player"
-import { VimeoPlayer } from "./players/vimeo-player"
-import { MP3Player } from "./players/mp3-player"
-import { useState, useEffect } from "react"
+import { Music, ExternalLink, MessageCircle, ArrowUp, Send } from 'lucide-react'
+import { usePlayerStore } from '@/lib/store/player-store'
+import { LoginModal } from './login-modal'
+import { YouTubePlayer } from './players/youtube-player'
+import { SoundCloudPlayer } from './players/soundcloud-player'
+import { VimeoPlayer } from './players/vimeo-player'
+import { MP3Player } from './players/mp3-player'
+import { useState, useEffect } from 'react'
 
 interface Comment {
   id: string
@@ -20,22 +20,28 @@ interface Comment {
 }
 
 // Comment Component for Mobile
-function CommentItem({ comment, depth = 0, onLogin }: { comment: Comment, depth?: number, onLogin: (action: string) => void }) {
+function CommentItem({
+  comment,
+  depth = 0,
+  onLogin,
+}: {
+  comment: Comment
+  depth?: number
+  onLogin: (action: string) => void
+}) {
   const [showReplies, setShowReplies] = useState(true)
   const hasReplies = comment.replies && comment.replies.length > 0
 
   return (
-    <div className={depth > 0 ? "ml-4 pl-4 border-l-2 border-border" : ""}>
+    <div className={depth > 0 ? 'ml-4 pl-4 border-l-2 border-border' : ''}>
       <div className="p-3 rounded-lg bg-secondary mb-2">
         <div className="flex items-center gap-2 mb-2 text-xs">
           <span className="font-medium">/u/{comment.author}</span>
           <span className="text-muted-foreground">• {comment.created_ago}</span>
         </div>
-        <p className="text-sm whitespace-pre-wrap break-words mb-2">
-          {comment.body}
-        </p>
+        <p className="text-sm whitespace-pre-wrap wrap-break-word mb-2">{comment.body}</p>
         <div className="flex items-center gap-3">
-          <button 
+          <button
             onClick={() => onLogin('vote')}
             className="text-xs text-muted-foreground hover:text-foreground flex items-center gap-1"
           >
@@ -47,14 +53,15 @@ function CommentItem({ comment, depth = 0, onLogin }: { comment: Comment, depth?
               onClick={() => setShowReplies(!showReplies)}
               className="text-xs text-muted-foreground hover:text-foreground"
             >
-              {showReplies ? 'Hide' : 'Show'} {comment.replies.length} {comment.replies.length === 1 ? 'reply' : 'replies'}
+              {showReplies ? 'Hide' : 'Show'} {comment.replies.length}{' '}
+              {comment.replies.length === 1 ? 'reply' : 'replies'}
             </button>
           )}
         </div>
       </div>
       {hasReplies && showReplies && (
         <div className="mt-2">
-          {comment.replies.map((reply) => (
+          {comment.replies.map(reply => (
             <CommentItem key={reply.id} comment={reply} depth={depth + 1} onLogin={onLogin} />
           ))}
         </div>
@@ -64,11 +71,11 @@ function CommentItem({ comment, depth = 0, onLogin }: { comment: Comment, depth?
 }
 
 export function PlayerPanel() {
-  const currentSong = usePlayerStore((state) => state.currentSong)
+  const currentSong = usePlayerStore(state => state.currentSong)
   const [comments, setComments] = useState<Comment[]>([])
   const [loadingComments, setLoadingComments] = useState(false)
   const [showLoginModal, setShowLoginModal] = useState(false)
-  const [loginAction, setLoginAction] = useState("")
+  const [loginAction, setLoginAction] = useState('')
 
   // Fetch comments when song changes
   useEffect(() => {
@@ -90,7 +97,7 @@ export function PlayerPanel() {
         setLoadingComments(false)
       })
       .catch(err => {
-        console.error("[Mobile] Failed to load comments:", err)
+        console.error('[Mobile] Failed to load comments:', err)
         setLoadingComments(false)
       })
   }, [currentSong?.id])
@@ -117,12 +124,12 @@ export function PlayerPanel() {
   return (
     <div className="flex flex-col h-full overflow-y-auto pb-24">
       {/* Player */}
-      <div className="relative aspect-video bg-black flex-shrink-0">
-        {currentSong.type === "youtube" && <YouTubePlayer song={currentSong} />}
-        {currentSong.type === "soundcloud" && <SoundCloudPlayer song={currentSong} />}
-        {currentSong.type === "vimeo" && <VimeoPlayer song={currentSong} />}
-        {currentSong.type === "mp3" && <MP3Player song={currentSong} />}
-        {currentSong.type === "none" && (
+      <div className="relative aspect-video bg-black shrink-0">
+        {currentSong.type === 'youtube' && <YouTubePlayer song={currentSong} />}
+        {currentSong.type === 'soundcloud' && <SoundCloudPlayer song={currentSong} />}
+        {currentSong.type === 'vimeo' && <VimeoPlayer song={currentSong} />}
+        {currentSong.type === 'mp3' && <MP3Player song={currentSong} />}
+        {currentSong.type === 'none' && (
           <div className="flex items-center justify-center h-full">
             <p className="text-muted-foreground">Cannot play this media</p>
           </div>
@@ -198,7 +205,9 @@ export function PlayerPanel() {
           <div className="flex items-center gap-2 mb-4">
             <MessageCircle className="h-5 w-5 text-primary" />
             <h3 className="text-base font-bold">Comments</h3>
-            <span className="text-sm text-muted-foreground">({currentSong.num_comments.toLocaleString()})</span>
+            <span className="text-sm text-muted-foreground">
+              ({currentSong.num_comments.toLocaleString()})
+            </span>
           </div>
 
           {loadingComments ? (
@@ -208,8 +217,10 @@ export function PlayerPanel() {
             </div>
           ) : comments.length > 0 ? (
             <div className="space-y-2">
-              <p className="text-xs text-muted-foreground mb-2">Showing {comments.length} top comments</p>
-              {comments.map((comment) => (
+              <p className="text-xs text-muted-foreground mb-2">
+                Showing {comments.length} top comments
+              </p>
+              {comments.map(comment => (
                 <CommentItem key={comment.id} comment={comment} onLogin={handleLogin} />
               ))}
             </div>
@@ -224,9 +235,9 @@ export function PlayerPanel() {
       </div>
 
       {/* Login Modal */}
-      <LoginModal 
-        isOpen={showLoginModal} 
-        onClose={() => setShowLoginModal(false)} 
+      <LoginModal
+        isOpen={showLoginModal}
+        onClose={() => setShowLoginModal(false)}
         action={loginAction}
       />
     </div>

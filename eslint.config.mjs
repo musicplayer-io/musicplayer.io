@@ -7,11 +7,6 @@ export default [
   ...nextTs,
   prettierConfig,
   {
-    ignores: [
-      '.next/**',
-      'out/**',
-      'build/**',
-      'next-env.d.ts',
-    ],
+    ignores: ['.next/**', 'out/**', 'build/**', 'next-env.d.ts'],
   },
 ]

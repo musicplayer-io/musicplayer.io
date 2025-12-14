@@ -1,4 +1,4 @@
-import { create } from "zustand"
+import { create } from 'zustand'
 
 // ============================================================================
 // TYPES
@@ -23,7 +23,7 @@ export interface Song {
   is_self: boolean
   selftext?: string
   selftext_html?: string
-  type: "youtube" | "soundcloud" | "vimeo" | "mp3" | "none"
+  type: 'youtube' | 'soundcloud' | 'vimeo' | 'mp3' | 'none'
   playable: boolean
   media?: any
 }
@@ -34,20 +34,20 @@ export interface PlayerState {
   currentIndex: number
   currentSong: Song | null
   selectedSubreddits: string[]
-  sortMethod: "hot" | "new" | "top"
-  topPeriod: "day" | "week" | "month" | "year" | "all"
+  sortMethod: 'hot' | 'new' | 'top'
+  topPeriod: 'day' | 'week' | 'month' | 'year' | 'all'
   searchQuery: string | null
   loading: boolean
   after: string | null // Pagination
-  
+
   // Playback
   isPlaying: boolean
   currentTime: number
   duration: number
   volume: number
-  
+
   // UI
-  mobileView: "browse" | "playlist" | "player"
+  mobileView: 'browse' | 'playlist' | 'player'
 }
 
 export interface PlayerActions {
@@ -56,13 +56,13 @@ export interface PlayerActions {
   addSongs: (songs: Song[]) => void
   setCurrentSong: (index: number) => void
   setSelectedSubreddits: (subreddits: string[]) => void
-  setSortMethod: (method: PlayerState["sortMethod"]) => void
-  setTopPeriod: (period: PlayerState["topPeriod"]) => void
+  setSortMethod: (method: PlayerState['sortMethod']) => void
+  setTopPeriod: (period: PlayerState['topPeriod']) => void
   setSearchQuery: (query: string | null) => void
   setLoading: (loading: boolean) => void
   setAfter: (after: string | null) => void
   shufflePlaylist: () => void
-  
+
   // Playback actions
   play: () => void
   pause: () => void
@@ -73,9 +73,9 @@ export interface PlayerActions {
   setVolume: (volume: number) => void
   setCurrentTime: (time: number) => void
   setDuration: (duration: number) => void
-  
+
   // UI actions
-  setMobileView: (view: PlayerState["mobileView"]) => void
+  setMobileView: (view: PlayerState['mobileView']) => void
 }
 
 export type PlayerStore = PlayerState & PlayerActions
@@ -85,14 +85,14 @@ export type PlayerStore = PlayerState & PlayerActions
 // ============================================================================
 
 const STORAGE_KEYS = {
-  subreddits: "reddit_music_player_subreddits",
-  sortMethod: "reddit_music_player_sort_method",
-  topPeriod: "reddit_music_player_top_period",
-  volume: "reddit_music_player_volume",
+  subreddits: 'reddit_music_player_subreddits',
+  sortMethod: 'reddit_music_player_sort_method',
+  topPeriod: 'reddit_music_player_top_period',
+  volume: 'reddit_music_player_volume',
 } as const
 
 function loadFromStorage<T>(key: string, defaultValue: T): T {
-  if (typeof window === "undefined") return defaultValue
+  if (typeof window === 'undefined') return defaultValue
   try {
     const item = localStorage.getItem(key)
     return item ? JSON.parse(item) : defaultValue
@@ -102,7 +102,7 @@ function loadFromStorage<T>(key: string, defaultValue: T): T {
 }
 
 function saveToStorage<T>(key: string, value: T): void {
-  if (typeof window === "undefined") return
+  if (typeof window === 'undefined') return
   try {
     localStorage.setItem(key, JSON.stringify(value))
   } catch (error) {
@@ -121,45 +121,45 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
   songs: [],
   currentIndex: -1,
   currentSong: null,
-  selectedSubreddits: ["listentothis"], // Static default
-  sortMethod: "hot", // Static default
-  topPeriod: "week", // Static default
+  selectedSubreddits: ['listentothis'], // Static default
+  sortMethod: 'hot', // Static default
+  topPeriod: 'week', // Static default
   searchQuery: null,
   loading: false,
   after: null,
-  
+
   isPlaying: false,
   currentTime: 0,
   duration: 0,
   volume: 100, // Static default
-  
-  mobileView: "playlist",
-  
+
+  mobileView: 'playlist',
+
   // ========================================
   // PLAYLIST ACTIONS
   // ========================================
-  setSongs: (songs) => {
-    set({ 
-      songs, 
-      currentIndex: -1, 
+  setSongs: songs => {
+    set({
+      songs,
+      currentIndex: -1,
       currentSong: null,
       currentTime: 0,
       duration: 0,
     })
   },
-  
-  addSongs: (newSongs) => {
-    set((state) => ({ 
-      songs: [...state.songs, ...newSongs] 
+
+  addSongs: newSongs => {
+    set(state => ({
+      songs: [...state.songs, ...newSongs],
     }))
   },
-  
-  setCurrentSong: (index) => {
+
+  setCurrentSong: index => {
     const songs = get().songs
     const song = songs[index]
-    
+
     if (!song) return
-    
+
     set({
       currentIndex: index,
       currentSong: song,
@@ -168,68 +168,68 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
       isPlaying: song.playable,
     })
   },
-  
-  setSelectedSubreddits: (subreddits) => {
+
+  setSelectedSubreddits: subreddits => {
     set({ selectedSubreddits: subreddits })
     saveToStorage(STORAGE_KEYS.subreddits, subreddits)
   },
-  
-  setSortMethod: (method) => {
+
+  setSortMethod: method => {
     set({ sortMethod: method })
     saveToStorage(STORAGE_KEYS.sortMethod, method)
   },
-  
-  setTopPeriod: (period) => {
+
+  setTopPeriod: period => {
     set({ topPeriod: period })
     saveToStorage(STORAGE_KEYS.topPeriod, period)
   },
-  
-  setSearchQuery: (query) => {
+
+  setSearchQuery: query => {
     set({ searchQuery: query })
   },
-  
-  setLoading: (loading) => {
+
+  setLoading: loading => {
     set({ loading })
   },
-  
-  setAfter: (after) => {
+
+  setAfter: after => {
     set({ after })
   },
-  
+
   shufflePlaylist: () => {
     const { songs, currentSong } = get()
     const shuffled = [...songs].sort(() => Math.random() - 0.5)
-    
+
     // If there's a current song, find its new index in shuffled array
     if (currentSong) {
       const newIndex = shuffled.findIndex(song => song.id === currentSong.id)
-      set({ 
+      set({
         songs: shuffled,
-        currentIndex: newIndex >= 0 ? newIndex : -1
+        currentIndex: newIndex >= 0 ? newIndex : -1,
       })
     } else {
       set({ songs: shuffled })
     }
   },
-  
+
   // ========================================
   // PLAYBACK ACTIONS
   // ========================================
   play: () => {
     set({ isPlaying: true })
   },
-  
+
   pause: () => {
     set({ isPlaying: false })
   },
-  
+
   togglePlay: () => {
-    set((state) => ({ isPlaying: !state.isPlaying }))
+    set(state => ({ isPlaying: !state.isPlaying }))
   },
-  
+
   next: () => {
     const { songs, currentIndex } = get()
-    
+
     // Find next playable song
     let nextIndex = currentIndex + 1
     while (nextIndex < songs.length) {
@@ -240,7 +240,7 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
       }
       nextIndex++
     }
-    
+
     // If no next song found, loop back to first playable song
     nextIndex = 0
     while (nextIndex < songs.length) {
@@ -252,10 +252,10 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
       nextIndex++
     }
   },
-  
+
   previous: () => {
     const { songs, currentIndex } = get()
-    
+
     // Find previous playable song
     let prevIndex = currentIndex - 1
     while (prevIndex >= 0) {
@@ -267,31 +267,31 @@ export const usePlayerStore = create<PlayerStore>((set, get) => ({
       prevIndex--
     }
   },
-  
-  seekTo: (time) => {
+
+  seekTo: time => {
     set({ currentTime: time })
   },
-  
-  setVolume: (volume) => {
+
+  setVolume: volume => {
     const clampedVolume = Math.max(0, Math.min(100, volume))
     set({ volume: clampedVolume })
     saveToStorage(STORAGE_KEYS.volume, clampedVolume)
   },
-  
-  setCurrentTime: (time) => {
+
+  setCurrentTime: time => {
     set({ currentTime: time })
   },
-  
-  setDuration: (duration) => {
+
+  setDuration: duration => {
     if (duration > 0 && isFinite(duration)) {
       set({ duration })
     }
   },
-  
+
   // ========================================
   // UI ACTIONS
   // ========================================
-  setMobileView: (view) => {
+  setMobileView: view => {
     set({ mobileView: view })
   },
 }))

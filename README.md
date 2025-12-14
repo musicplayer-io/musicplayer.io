@@ -68,7 +68,7 @@ The app will be available at `http://localhost:3000`
 
 ## 📋 Requirements
 
-- Node.js 18+ 
+- Node.js 18+
 - npm or yarn
 - Reddit OAuth app (optional, for authentication features)
 

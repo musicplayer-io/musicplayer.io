@@ -5,9 +5,9 @@
   key: 1960s
   category: Other
   title: The 1960s
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 1767
   created: 1356556073
   url: /r/80sElectro/
@@ -16,7 +16,7 @@
   category: Electronic
   title: Music and nostalgia for your ears
   header_tite: "80's Electro for your ears."
-  header_image: ""
+  header_image: ''
   description: "*80's Synthwave / Retro Electro for your ears.*"
 - subscribers: 1767
   created: 1356556073
@@ -25,8 +25,8 @@
   key: TheTikiHut
   category: Other
   title: TheTikiHut
-  header_tite: "TheTikiHut"
-  header_image: ""
+  header_tite: 'TheTikiHut'
+  header_image: ''
   description: "Music curated for you by some of the best curators in the world AND now also from our Member DJs! The best from the 50's, 60's,70's, 80's ,90's, 00s, 10's, 20's"
 - subscribers: 6906
   created: 1234339860
@@ -35,8 +35,8 @@
   key: 80smusic
   category: Other
   title: "80's Music"
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: "80's music!!"
 - subscribers: 7956
   created: 1337011089
@@ -45,8 +45,8 @@
   key: 90salternative
   category: Other
   title: "90's Alternative Music"
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: "A place to share alternative rock of the '90s."
 - subscribers: 10824
   created: 1337012548
@@ -56,7 +56,7 @@
   category: Rap / Hip Hop
   title: "90's Hip Hop"
   header_tite: Can I kick it?
-  header_image: ""
+  header_image: ''
   description: "A place to share '90s rap and hip-hop music."
 - subscribers: 6425
   created: 1302219337
@@ -65,8 +65,8 @@
   key: 90smusic
   category: Other
   title: 90s Music
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: "90's music. Rock, Pop, Hip-Hop, etc..."
 - subscribers: 1834
   created: 1350590604
@@ -75,8 +75,8 @@
   key: 90spunk
   category: Alternative
   title: "90's Punk, Pop-Punk, Ska-Punk "
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: "Punk, Pop-Punk and Ska-Punk music from the 1990's"
 - subscribers: 759
   created: 1358996783
@@ -85,9 +85,9 @@
   key: abletonproductions
   category: Other
   title: Ableton Productions
-  header_tite: ""
-  header_image: ""
-  description: "This is a subreddit for songs produced with Ableton Live software. This was created for two purposes: 1. To reduce the amount of links in r/ableton that were songs created with Ableton, which (I hope) will open up that sub to more Ableton discussions. 2. To discuss techniques, tools, and tricks that apply to Ableton in the process of writing and creating music. Hope you guys enjoy!"
+  header_tite: ''
+  header_image: ''
+  description: 'This is a subreddit for songs produced with Ableton Live software. This was created for two purposes: 1. To reduce the amount of links in r/ableton that were songs created with Ableton, which (I hope) will open up that sub to more Ableton discussions. 2. To discuss techniques, tools, and tricks that apply to Ableton in the process of writing and creating music. Hope you guys enjoy!'
 - subscribers: 2470
   created: 1319049405
   url: /r/AcousticOriginals/
@@ -95,18 +95,18 @@
   key: acousticoriginals
   category: Other
   title: For songwriters looking for feedback
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 1648
   created: 1300932575
   url: /r/afrobeat/
   name: afrobeat
   key: afrobeat
   category: Electronic
-  title: "reddit.com - Afrobeat: Big tunes from the Dark Continent"
-  header_tite: ""
-  header_image: ""
+  title: 'reddit.com - Afrobeat: Big tunes from the Dark Continent'
+  header_tite: ''
+  header_image: ''
   description: |-
     Music from, and inspired by, 60's &amp; 70's Africa.
 
@@ -118,8 +118,8 @@
   key: allcore
   category: Core
   title: FUCK GENRES
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: "Welcome to /r/allcore, the place where hardcore music matters and genres don't."
 - subscribers: 11888
   created: 1304990872
@@ -128,8 +128,8 @@
   key: alternativerock
   category: Rock
   title: Alternative Rock
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: A place to share and discover new and old alternative rock.
 - subscribers: 5000
   created: 1222384443
@@ -139,8 +139,8 @@
   category: Electronic
   title: "ambient: relax, you'll live longer"
   header_tite: A sub-reddit for pure ambient music.
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 15929
   created: 1270782268
   url: /r/ambientmusic/
@@ -148,19 +148,19 @@
   key: ambientmusic
   category: Other
   title: Ambient music
-  header_tite: ""
-  header_image: ""
-  description: "A subreddit for fans of [ambient music](https://en.wikipedia.org/wiki/Ambient_music), and all its sub-genres."
+  header_tite: ''
+  header_image: ''
+  description: 'A subreddit for fans of [ambient music](https://en.wikipedia.org/wiki/Ambient_music), and all its sub-genres.'
 - subscribers: 30269
   created: 1219789019
   url: /r/animation/
   name: animation
   key: animation
   category: Video
-  title: "News, Shorts, and Everything Else in the World of Animation"
-  header_tite: ""
-  header_image: ""
-  description: "For animators and fans of animation - news, shorts, discussions, and everything else!"
+  title: 'News, Shorts, and Everything Else in the World of Animation'
+  header_tite: ''
+  header_image: ''
+  description: 'For animators and fans of animation - news, shorts, discussions, and everything else!'
 - subscribers: 151126
   created: 1297162860
   url: /r/ArtisanVideos/
@@ -168,9 +168,9 @@
   key: artisanvideos
   category: Video
   title: Videos of tradesmen performing their work.
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 2715
   created: 1333390767
   url: /r/astateoftrance/
@@ -179,7 +179,7 @@
   category: Electronic
   title: A State of Trance
   header_tite: "Don't forget to subscribe before you head back :D"
-  header_image: ""
+  header_image: ''
   description: >-
     A state of trance is Armin van Buuren's weekly episode of the best in trance
     and progressive.
@@ -202,7 +202,7 @@
   category: Electronic
   title: Atmospheric Drum and Bass
   header_tite: AtmosphericDnB
-  header_image: ""
+  header_image: ''
   description: Atmospheric Drum and Bass / Jungle Music
 - subscribers: 1278
   created: 1233536206
@@ -211,9 +211,9 @@
   key: avantgardemusic
   category: Other
   title: Avant Garde Music
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 358
   created: 1392690760
   url: /r/barbervideos/
@@ -221,8 +221,8 @@
   key: barbervideos
   category: Video
   title: BarberVideos - Non-Instructional Barber Videos
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: This subreddit is for non-instructional barber videos to showcase the wide variety of barbers from around the world.
 - subscribers: 2220
   created: 1342146774
@@ -231,8 +231,8 @@
   key: bassheavy
   category: Electronic
   title: Challenge That Subwoofer.
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: >-
     For those who appreciate the tracks that use bass in an amazing way. Any
     genre goes. Please have a subwoofer or good audio equipment before
@@ -249,18 +249,18 @@
   key: bestofworldstar
   category: Video
   title: The Best Of World Star Hip-Hop
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 4949
   created: 1358540460
   url: /r/BigRoom/
   name: BigRoom
   key: bigroom
   category: Other
-  title: "Happy Holidays! "
-  header_tite: ""
-  header_image: ""
+  title: 'Happy Holidays! '
+  header_tite: ''
+  header_image: ''
   description: Big Room is characterized by emotional intros/breakdowns with build-ups followed by an energetic/uplifting and melodic/harmonic drop.
 - subscribers: 16589
   created: 1222625890
@@ -268,19 +268,19 @@
   name: blues
   key: blues
   category: Blues / Funk / Jazz / Country
-  title: "Blues: for all blue and bluesy music, artists and instruments."
-  header_tite: "Reddit has the Blues!"
-  header_image: ""
-  description: "A place for the blues!"
+  title: 'Blues: for all blue and bluesy music, artists and instruments.'
+  header_tite: 'Reddit has the Blues!'
+  header_image: ''
+  description: 'A place for the blues!'
 - subscribers: 4315
   created: 1317896801
   url: /r/bluesrock/
   name: bluesrock
   key: bluesrock
   category: Rock
-  title: "Filthy blues rock!"
-  header_tite: ""
-  header_image: ""
+  title: 'Filthy blues rock!'
+  header_tite: ''
+  header_image: ''
   description: A subreddit for all things bluesrock.
 - subscribers: 1248
   created: 1343408979
@@ -289,8 +289,8 @@
   key: boneyard
   category: Other
   title: Classic Hard Rock and Metal
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: Classic Hard Rock and Metal
 - subscribers: 1510
   created: 1372194944
@@ -298,9 +298,9 @@
   name: boogiemusic
   key: boogiemusic
   category: Other
-  title: "boogiemusic: a special place for 80s funk lovers"
-  header_tite: ""
-  header_image: ""
+  title: 'boogiemusic: a special place for 80s funk lovers'
+  header_tite: ''
+  header_image: ''
   description: >-
     /r/boogiemusic - 80's sound, timeless groove!
 
@@ -321,8 +321,8 @@
   key: brazilianmusic
   category: Other
   title: Brazilian Music - Musica do Brasil
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: Musica do Brasil - Brazilian music
 - subscribers: 3551
   created: 1279001663
@@ -331,19 +331,19 @@
   key: breakbeat
   category: Electronic
   title: Breakbeat FTW
-  header_tite: "BREAK THAT SHIT!"
-  header_image: ""
-  description: ""
+  header_tite: 'BREAK THAT SHIT!'
+  header_image: ''
+  description: ''
 - subscribers: 3762
   created: 1255500769
   url: /r/breakcore/
   name: breakcore
   key: breakcore
   category: Electronic
-  title: "shrapnel beats, glitchy melodies and the occasional pop culture samples"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  title: 'shrapnel beats, glitchy melodies and the occasional pop culture samples'
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 4291
   created: 1271011037
   url: /r/Brostep/
@@ -352,8 +352,8 @@
   category: Electronic
   title: Wub Wub Wub
   header_tite: Sup Bro
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 1312
   created: 1320522334
   url: /r/calireggae/
@@ -361,9 +361,9 @@
   key: calireggae
   category: Other
   title: r/calireggae
-  header_tite: "Somebody clear these stormy skies!"
-  header_image: ""
-  description: "A community for sharing cali reggae (reggae rock) photos, music, and links!"
+  header_tite: 'Somebody clear these stormy skies!'
+  header_image: ''
+  description: 'A community for sharing cali reggae (reggae rock) photos, music, and links!'
 - subscribers: 1077
   created: 1263895255
   url: /r/CanadianMusic/
@@ -371,9 +371,9 @@
   key: canadianmusic
   category: Other
   title: Canadian Music
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 27691
   created: 1270967794
   url: /r/chillmusic/
@@ -382,7 +382,7 @@
   category: Other
   title: Chill Music
   header_tite: Music that is best turned down low.
-  header_image: ""
+  header_image: ''
   description: "Genre's are irrelevant, a place to talk about music that is best turned down low."
 - subscribers: 11083
   created: 1299700686
@@ -390,9 +390,9 @@
   name: chillstep
   key: chillstep
   category: Electronic
-  title: "Chillstep: Progressive Dubstep, Electrostep, Experimental Dubstep, Minimal, Chilled Vibes!"
-  header_tite: "Hi, my name is Danbo!"
-  header_image: ""
+  title: 'Chillstep: Progressive Dubstep, Electrostep, Experimental Dubstep, Minimal, Chilled Vibes!'
+  header_tite: 'Hi, my name is Danbo!'
+  header_image: ''
   description: A place for chilled music influenced mainly by dubstep or similar genres.
 - subscribers: 7167
   created: 1270400410
@@ -400,10 +400,10 @@
   name: chillwave
   key: chillwave
   category: Other
-  title: "chill news, all the chill time"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  title: 'chill news, all the chill time'
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 741
   created: 1339008881
   url: /r/Chipbreak/
@@ -411,8 +411,8 @@
   key: chipbreak
   category: Electronic
   title: Chipbreak
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: A subreddit for the musical genre of chipbreak
 - subscribers: 17809
   created: 1219789321
@@ -420,10 +420,10 @@
   name: chiptunes
   key: chiptunes
   category: Electronic
-  title: "The place on Reddit for Chiptune music!"
-  header_tite: ""
-  header_image: ""
-  description: "A community dedicated to new music that gets the most out of the least. New music in the style of old games, eg, C64, Atari, NES, Gameboy, Sega Genesis, Adlib, OPM, MOD, etc."
+  title: 'The place on Reddit for Chiptune music!'
+  header_tite: ''
+  header_image: ''
+  description: 'A community dedicated to new music that gets the most out of the least. New music in the style of old games, eg, C64, Atari, NES, Gameboy, Sega Genesis, Adlib, OPM, MOD, etc.'
 - subscribers: 3014
   created: 1278136743
   url: /r/choralmusic/
@@ -431,19 +431,19 @@
   key: choralmusic
   category: Other
   title: Choral Music
-  header_tite: ""
-  header_image: ""
-  description: "A subreddit for makers, enjoyers, or others interested in choral music, choruses, vocal ensembles, and other associated topics."
+  header_tite: ''
+  header_image: ''
+  description: 'A subreddit for makers, enjoyers, or others interested in choral music, choruses, vocal ensembles, and other associated topics.'
 - subscribers: 833
   created: 1344409488
   url: /r/christcore/
   name: christcore
   key: christcore
   category: Core
-  title: "Christian metal, metalcore, and post-hardcore."
-  header_tite: ""
-  header_image: ""
-  description: "This subreddit is all about the Christcore genre and culture. Bands like Underoath, August Burns Red, Norma Jean, Impending Doom, and Agraceful, along with any bands that represent Christ through heavy music."
+  title: 'Christian metal, metalcore, and post-hardcore.'
+  header_tite: ''
+  header_image: ''
+  description: 'This subreddit is all about the Christcore genre and culture. Bands like Underoath, August Burns Red, Norma Jean, Impending Doom, and Agraceful, along with any bands that represent Christ through heavy music.'
 - subscribers: 2779
   created: 1219779302
   url: /r/ChristianMusic/
@@ -452,17 +452,17 @@
   category: Other
   title: Christian Music
   header_tite: Sing to Him a new song
-  header_image: ""
-  description: "A place to discuss your favorite Christian songs and artists. Post reviews, videos, discussion, or anything music related. Please feel free to message the mods if you have any questions or if there is anything else you would like to see on the subreddit."
+  header_image: ''
+  description: 'A place to discuss your favorite Christian songs and artists. Post reviews, videos, discussion, or anything music related. Please feel free to message the mods if you have any questions or if there is anything else you would like to see on the subreddit.'
 - subscribers: 1853
   created: 1350601937
   url: /r/CircleMusic/
   name: CircleMusic
   key: circlemusic
   category: Other
-  title: "Music discussion, and recommendations."
+  title: 'Music discussion, and recommendations.'
   header_tite: d a e
-  header_image: ""
+  header_image: ''
   description: /r/circlemusic. No radiohead. We encourage variety.
 - subscribers: 362
   created: 1339616765
@@ -472,7 +472,7 @@
   category: Electronic
   title: "Yes, I still have a pair of JNCO's"
   header_tite: /r/classicbeats
-  header_image: ""
+  header_image: ''
   description: Discover the finest electronic music from back in the day.
 - subscribers: 65010
   created: 1210472696
@@ -482,7 +482,7 @@
   category: Other
   title: Classical Music
   header_tite: Allegreddito
-  header_image: ""
+  header_image: ''
   description: "Whether you're a musician, a newbie, a composer or a listener, welcome. Please turn off your phone, and applaud between threads, not individual posts."
 - subscribers: 10849
   created: 1248988448
@@ -491,8 +491,8 @@
   key: classicrock
   category: Rock
   title: The Classic Rock Subreddit
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: "Anything relating to rock up to the early 90's."
 - subscribers: 6974
   created: 1298575380
@@ -501,8 +501,8 @@
   key: complextro
   category: Electronic
   title: Complextro
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: >-
     A sub genre of 'electro'. This music is complex, hence the name, with artists
     producing basslines/leads that are very intricate sometimes involving 8+
@@ -520,7 +520,7 @@
   category: Video
   title: Contagious Laughter
   header_tite: '"It''s almost like I have friends" - TheLeviathong'
-  header_image: ""
+  header_image: ''
   description: |-
     Something to put you in a good mood
 
@@ -532,8 +532,8 @@
   key: country
   category: Blues / Funk / Jazz / Country
   title: Country Music
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: Country Music
 - subscribers: 1505
   created: 1247292624
@@ -542,9 +542,9 @@
   key: countrymusic
   category: Blues / Funk / Jazz / Country
   title: "CountryMusic: News about the genre's artists and events"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 26402
   created: 1262889758
   url: /r/coversongs/
@@ -553,28 +553,28 @@
   category: Other
   title: Cover Songs
   header_tite: Get it?
-  header_image: ""
-  description: "For lovers of musical reimagination... remixes, mashups and collaborations are welcome too."
+  header_image: ''
+  description: 'For lovers of musical reimagination... remixes, mashups and collaborations are welcome too.'
 - subscribers: 2130
   created: 1301542269
   url: /r/cpop/
   name: cpop
   key: cpop
   category: Asian
-  title: "CPOP: A music sharing community"
-  header_tite: ""
-  header_image: ""
-  description: "Explore and share music produced by Chinese artists!"
+  title: 'CPOP: A music sharing community'
+  header_tite: ''
+  header_image: ''
+  description: 'Explore and share music produced by Chinese artists!'
 - subscribers: 838
   created: 1305783228
   url: /r/cratedigging/
   name: cratedigging
   key: cratedigging
   category: Other
-  title: "Crate Digging: For People Who Dig in the Crates"
-  header_tite: ""
-  header_image: ""
-  description: "We dig in crates looking for rare records, great records, and samples."
+  title: 'Crate Digging: For People Who Dig in the Crates'
+  header_tite: ''
+  header_image: ''
+  description: 'We dig in crates looking for rare records, great records, and samples.'
 - subscribers: 388583
   created: 1252626881
   url: /r/cringe/
@@ -583,17 +583,17 @@
   category: Video
   title: When it just hurts to watch
   header_tite: "Don't forget to feed the rabbits!"
-  header_image: ""
-  description: "/r/cringe: a place to share embarassing personal stories and videos of awkward situations."
+  header_image: ''
+  description: '/r/cringe: a place to share embarassing personal stories and videos of awkward situations.'
 - subscribers: 3549
   created: 1309086940
   url: /r/crustpunk/
   name: crustpunk
   key: crustpunk
   category: Alternative
-  title: "Crust: grindcore, power violence, crust, fastcore, sludge"
+  title: 'Crust: grindcore, power violence, crust, fastcore, sludge'
   header_tite: fuck off and die
-  header_image: ""
+  header_image: ''
   description: >-
     Short, fast, loud, brutal, heavy, obnoxious. Not just crust, but also grind,
     d-beat, brutal hardcore, fastcore, power violence, etc. Too punk for metal,
@@ -611,9 +611,9 @@
   name: Cyberpunk_Music
   key: cyberpunk_music
   category: Other
-  title: "Cyberpunk Music | What we listen to"
+  title: 'Cyberpunk Music | What we listen to'
   header_tite: Noise
-  header_image: ""
+  header_image: ''
   description: Noise.
 - subscribers: 719
   created: 1357944093
@@ -623,7 +623,7 @@
   category: Electronic
   title: "Move Dem' Jeans "
   header_tite: PAAAAAAAARRRRTTTTTTTY
-  header_image: ""
+  header_image: ''
   description: "Anything not on the top-100 charts, club dance anthems, or chart pop songs. Just the new jams.\n\n♫\n\n☐ \n\n☑\n\n☐ \n\n☑"
 - subscribers: 610
   created: 1363600765
@@ -633,7 +633,7 @@
   category: Other
   title: Dank Music
   header_tite: Danktunes
-  header_image: ""
+  header_image: ''
   description: Dank Tunes is a place for people to share wonderful music of all sorts.
 - subscribers: 2712
   created: 1314560905
@@ -642,9 +642,9 @@
   key: darkjazz
   category: Blues / Funk / Jazz / Country
   title: darkjazz
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 4284
   created: 1263615009
   url: /r/darkstep/
@@ -652,18 +652,18 @@
   key: darkstep
   category: Electronic
   title: "Darkstep Drum 'n' Bass"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 7678
   created: 1276670395
   url: /r/Deathcore/
   name: Deathcore
   key: deathcore
   category: Core
-  title: "/r/Deathcore - news, reviews, videos &amp; discussion"
+  title: '/r/Deathcore - news, reviews, videos &amp; discussion'
   header_tite: PHIL B0-0-000-0-0-0ZEMAN
-  header_image: ""
+  header_image: ''
   description: 'Deathcore is an extreme metal subgenre/subgenre of metalcore. It is an amalgamation of death metal with metalcore or hardcore punk, or both. It is defined by an "excessive" use of death metal riffs, blast beats and use of hardcore punk breakdowns.'
 - subscribers: 1641
   created: 1300272456
@@ -671,10 +671,10 @@
   name: DeepFunk
   key: deepfunk
   category: Blues / Funk / Jazz / Country
-  title: "A place for new age funk, rare grooves and fat shit"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  title: 'A place for new age funk, rare grooves and fat shit'
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 15929
   created: 1268278968
   url: /r/deephouse/
@@ -682,9 +682,9 @@
   key: deephouse
   category: Electronic
   title: Deep House
-  header_tite: ""
-  header_image: ""
-  description: "All your Deep House music needs, in one place."
+  header_tite: ''
+  header_image: ''
+  description: 'All your Deep House music needs, in one place.'
 - subscribers: 143737
   created: 1364241590
   url: /r/DeepIntoYouTube/
@@ -693,8 +693,8 @@
   category: Video
   title: The Dark Depths of YouTube
   header_tite: Deep Into YouTube
-  header_image: ""
-  description: "A place to venture into the deep, dark depths of youtube to find things you never thought you would."
+  header_image: ''
+  description: 'A place to venture into the deep, dark depths of youtube to find things you never thought you would.'
 - subscribers: 3606
   created: 1267584966
   url: /r/Disco/
@@ -702,9 +702,9 @@
   key: disco
   category: Electronic
   title: "Disco: Reddit's Disceddit"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 1246
   created: 1238950737
   url: /r/djmixes/
@@ -712,19 +712,19 @@
   key: djmixes
   category: Other
   title: DJ Mixes
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 32755
   created: 1245938399
   url: /r/DnB/
   name: DnB
   key: dnb
   category: Electronic
-  title: "/r/dnb - Drum &amp; Bass for adults."
+  title: '/r/dnb - Drum &amp; Bass for adults.'
   header_tite: '"Why does it look like you''re chewing on a bee?"'
-  header_image: ""
-  description: "All things drum &amp; bass."
+  header_image: ''
+  description: 'All things drum &amp; bass.'
 - subscribers: 4659166
   created: 1206105722
   url: /r/Documentaries/
@@ -733,7 +733,7 @@
   category: Video
   title: Documentaries
   header_tite: tl;dw
-  header_image: ""
+  header_image: ''
   description: tl;dw
 - subscribers: 4036
   created: 1250407607
@@ -742,8 +742,8 @@
   key: downtempo
   category: Electronic
   title: Downtempo
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: The smoothest electronic music in town.
 - subscribers: 3325
   created: 1319451086
@@ -752,8 +752,8 @@
   key: dreampop
   category: Electronic
   title: Dream Pop Music
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: Dream Pop is an atmospheric subgenre of alternative rock that relies on sonic textures as much as melody.
 - subscribers: 3644
   created: 1280162813
@@ -763,18 +763,18 @@
   category: Electronic
   title: Drumstep. The unholy marriage of DnB and Dubstep.
   header_tite: "When I bang the drum, you shake your ass. It's as simple as that."
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 3512
   created: 1271603516
   url: /r/dub/
   name: dub
   key: dub
   category: Other
-  title: "This is a subreddit for Dub tracks, info and discussion"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  title: 'This is a subreddit for Dub tracks, info and discussion'
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 89798
   created: 1211997723
   url: /r/dubstep/
@@ -783,8 +783,8 @@
   category: Electronic
   title: /r/dubstep - The Home of Dubstep on Reddit
   header_tite: Bassweight.... literally.
-  header_image: ""
-  description: "A place for sharing, finding, and discussing music in the Dubstep genre."
+  header_image: ''
+  description: 'A place for sharing, finding, and discussing music in the Dubstep genre.'
 - subscribers: 393
   created: 1341516526
   url: /r/dystopianhiphop/
@@ -792,8 +792,8 @@
   key: dystopianhiphop
   category: Rap / Hip Hop
   title: THE FUTURE IZ MY GUNZ
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: "A subreddit for dark, dystopian world-is-ending-rapshit. Not very strict on what is strictly HipHop and what's related. Brit-core, Grime and horrorcore is welcome."
 - subscribers: 122
   created: 1341517173
@@ -802,8 +802,8 @@
   key: dystopianmusic
   category: Other
   title: Dystopian Music
-  header_tite: "oh, god, no."
-  header_image: ""
+  header_tite: 'oh, god, no.'
+  header_image: ''
   description: "A sub-reddit for dystopian music. Yep. We realize of course there are entire genres dedicated to the theme, the goal is to discover new dystopian music regardless of genres. To give you an idea: Artists like Nick Cave, El-P, Tom Waits, Nine Inch Nails, Burzum or Moss. It's the feeling, not the artist, not the genre."
 - subscribers: 1084
   created: 1230711599
@@ -812,9 +812,9 @@
   key: ebm
   category: Electronic
   title: Electronic Body Music
-  header_tite: ""
-  header_image: ""
-  description: "A subreddit for people to discuss &amp; share EBM artists, tracks and events."
+  header_tite: ''
+  header_image: ''
+  description: 'A subreddit for people to discuss &amp; share EBM artists, tracks and events.'
 - subscribers: 50753
   created: 1220902853
   url: /r/EDM/
@@ -823,7 +823,7 @@
   category: Electronic
   title: Electronic Dance Music
   header_tite: EDM
-  header_image: ""
+  header_image: ''
   description: A subreddit for fans of Electronic Dance Music.
 - subscribers: 3375
   created: 1204498726
@@ -833,7 +833,7 @@
   category: Electronic
   title: r/electro - computor controlled
   header_tite: reddit
-  header_image: ""
+  header_image: ''
   description: electro-funk and electro-techno.
 - subscribers: 34316
   created: 1279704000
@@ -841,10 +841,10 @@
   name: electrohouse
   key: electrohouse
   category: Electronic
-  title: "electrohouse: yeahhhhhhhhhh"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  title: 'electrohouse: yeahhhhhhhhhh'
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 1231
   created: 1240103769
   url: /r/electronica/
@@ -852,9 +852,9 @@
   key: electronica
   category: Electronic
   title: Electronica
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 4326
   created: 1284860434
   url: /r/ElectronicJazz/
@@ -862,8 +862,8 @@
   key: electronicjazz
   category: Electronic
   title: ElectronicJazz
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: "Place for electronic jazz, electro-jazz, jazztronica, jazz house, nu-jazz, future jazz, jazz lounge, etc. \n\nAlso, relaxing acid jazz and jazzy downtempo."
 - subscribers: 1023
   created: 1356887045
@@ -872,8 +872,8 @@
   key: electronicmagic
   category: Electronic
   title: electronic magic
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: >-
     **W**elcome to r/electronicmagic, a place for beats and atmospheres that are
     designed to take you on an emotional journey.
@@ -891,8 +891,8 @@
   category: Electronic
   title: Beep Bloop.
   header_tite: Beep blOOMWUBWUBWUBWUBWUBEEEEEEEEEEEWUBWUBWAHWAHWUBWUB...
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 3096
   created: 1290367305
   url: /r/Electropop/
@@ -901,7 +901,7 @@
   category: Electronic
   title: Electropop
   header_tite: Reddit
-  header_image: ""
+  header_image: ''
   description: >-
     Electropop is a pop-orientated form of electronic music primarily consisting
     the use of synthesizers.
@@ -917,28 +917,28 @@
   key: electroswing
   category: Electronic
   title: electroswing
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 4894
   created: 1294107507
   url: /r/EmoScreamo/
   name: EmoScreamo
   key: emoscreamo
   category: Alternative
-  title: "Emo/Screamo Music: The Skramz, Emo, Emoviolence, Screamo Community"
+  title: 'Emo/Screamo Music: The Skramz, Emo, Emoviolence, Screamo Community'
   header_tite: Real Emo since 2001
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 2688
   created: 1341718828
   url: /r/epicmetal/
   name: epicmetal
   key: epicmetal
   category: Metal
-  title: "Epic Metal: Join the Journey"
+  title: 'Epic Metal: Join the Journey'
   header_tite: My metal is bigger than yours
-  header_image: ""
+  header_image: ''
   description: A subreddit dedicated to the grandest of metal.
 - subscribers: 23352
   created: 1362875485
@@ -947,29 +947,29 @@
   key: fastworkers
   category: Video
   title: Fast Workers
-  header_tite: ""
-  header_image: ""
-  description: "Videos of talented workers, who are speedy and accurate."
+  header_tite: ''
+  header_image: ''
+  description: 'Videos of talented workers, who are speedy and accurate.'
 - subscribers: 1478
   created: 1269381205
   url: /r/fidget/
   name: fidget
   key: fidget
   category: Electronic
-  title: "Fidget! LETS RAGE"
-  header_tite: "Fidget!"
-  header_image: ""
-  description: "We love most EDM! join us please submit links"
+  title: 'Fidget! LETS RAGE'
+  header_tite: 'Fidget!'
+  header_image: ''
+  description: 'We love most EDM! join us please submit links'
 - subscribers: 6422
   created: 1292629468
   url: /r/folkmetal/
   name: folkmetal
   key: folkmetal
   category: Metal
-  title: "Folk Metal - news, reviews, videos &amp; discussion."
+  title: 'Folk Metal - news, reviews, videos &amp; discussion.'
   header_tite: Go folk yourself
-  header_image: ""
-  description: "Folk metal is a sub-genre of heavy metal that developed in Europe during the 1990s. As the name suggests, the genre is a fusion of heavy metal with traditional folk music. This includes the widespread use of folk instruments and, to a lesser extent, traditional singing styles."
+  header_image: ''
+  description: 'Folk metal is a sub-genre of heavy metal that developed in Europe during the 1990s. As the name suggests, the genre is a fusion of heavy metal with traditional folk music. This includes the widespread use of folk instruments and, to a lesser extent, traditional singing styles.'
 - subscribers: 15997
   created: 1305205782
   url: /r/FolkPunk/
@@ -978,8 +978,8 @@
   category: Blues / Funk / Jazz / Country
   title: Folk-Punk
   header_tite: The subreddit for Gypsies
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 5147
   created: 1350223977
   url: /r/FoodVideos/
@@ -987,19 +987,19 @@
   key: foodvideos
   category: Video
   title: Videos about food
-  header_tite: ""
-  header_image: ""
-  description: "Post videos about food!"
+  header_tite: ''
+  header_image: ''
+  description: 'Post videos about food!'
 - subscribers: 1324
   created: 1284238404
   url: /r/footwork/
   name: footwork
   key: footwork
   category: Electronic
-  title: "juke, jittin, ghettotech, footwurk, fast shit"
+  title: 'juke, jittin, ghettotech, footwurk, fast shit'
   header_tite: booty.
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 4335
   created: 1325051065
   url: /r/FrenchHouse/
@@ -1008,7 +1008,7 @@
   category: Electronic
   title: French House Music
   header_tite: "we don't need no water let the muthafucka burn!"
-  header_image: ""
+  header_image: ''
   description: "This subreddit is dedicated to the snazzy-snappy-funaklicious-sampled goodness of French House and to the people here on Reddit who love it as much as I do. Let's all start an awesome community and share our talents for discovering great beats!"
 - subscribers: 211130
   created: 1353314128
@@ -1017,9 +1017,9 @@
   key: fullmoviesonyoutube
   category: Video
   title: Full Movies On YouTube
-  header_tite: "Full Movies On YouTube!"
-  header_image: ""
-  description: "Full Movies on YouTube!"
+  header_tite: 'Full Movies On YouTube!'
+  header_image: ''
+  description: 'Full Movies on YouTube!'
 - subscribers: 5989
   created: 1262802091
   url: /r/funk/
@@ -1027,9 +1027,9 @@
   key: funk
   category: Blues / Funk / Jazz / Country
   title: Funk styles
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 2438
   created: 1295815902
   url: /r/funkhouse/
@@ -1037,9 +1037,9 @@
   key: funkhouse
   category: Electronic
   title: Funky House
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 3856
   created: 1216249668
   url: /r/FunkSouMusic/
@@ -1047,9 +1047,9 @@
   key: funksoumusic
   category: Blues / Funk / Jazz / Country
   title: Funk and Soul Music
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 60424
   created: 1271155150
   url: /r/futurebeats/
@@ -1058,7 +1058,7 @@
   category: Electronic
   title: experimental beat music
   header_tite: Flying Lotus is a baller
-  header_image: ""
+  header_image: ''
   description: "For sharing and discussing experimental beat music from all genres and eras. 'Future', here, is a state of mind."
 - subscribers: 7493
   created: 1271869911
@@ -1066,9 +1066,9 @@
   name: futurefunkairlines
   key: futurefunkairlines
   category: Electronic
-  title: "Future Funk Airlines: Return to the Source"
-  header_tite: "MOVE Bombing, Philly"
-  header_image: ""
+  title: 'Future Funk Airlines: Return to the Source'
+  header_tite: 'MOVE Bombing, Philly'
+  header_image: ''
   description: |-
     For lovers of good music and good times ♪
 
@@ -1079,10 +1079,10 @@
   name: futuregarage
   key: futuregarage
   category: Electronic
-  title: "Home of Post-Dubstep, Future Garage and all things Bass Music"
-  header_tite: "The new /r/futuregarage logo, thanks to QuitoPR!"
-  header_image: ""
-  description: ""
+  title: 'Home of Post-Dubstep, Future Garage and all things Bass Music'
+  header_tite: 'The new /r/futuregarage logo, thanks to QuitoPR!'
+  header_image: ''
+  description: ''
 - subscribers: 7695
   created: 1325311735
   url: /r/futurepopmusic/
@@ -1090,8 +1090,8 @@
   key: futurepopmusic
   category: Electronic
   title: experimental electronic pop music
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: |-
     For experimental electronic pop music.
     'Future', here, is a state of mind.
@@ -1101,9 +1101,9 @@
   name: futuresynth
   key: futuresynth
   category: Electronic
-  title: "futuresynth: in synth we trust"
-  header_tite: ""
-  header_image: ""
+  title: 'futuresynth: in synth we trust'
+  header_tite: ''
+  header_image: ''
   description: "Future Synth is the sounds of yesteryear, today! It's 70s, 80s, &amp; early 90s inspired music created that covers multiple subgenres (pop, romance, high school coming of age, old school video games, highway chase, outrun, summer crush,  sci-fi soundtrack, etc) in the nostalgia infused Retro Synth community."
 - subscribers: 2061
   created: 1265141526
@@ -1112,18 +1112,18 @@
   key: gabber
   category: Electronic
   title: /r/gabber
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 45124
   created: 1270050012
   url: /r/gamemusic/
   name: gamemusic
   key: gamemusic
   category: Other
-  title: "/r/gamemusic: The Best Video Game Music Subreddit."
+  title: '/r/gamemusic: The Best Video Game Music Subreddit.'
   header_tite: Please understand.
-  header_image: ""
+  header_image: ''
   description: |-
     The subreddit for video game music, new and old.
 
@@ -1135,9 +1135,9 @@
   key: garagepunk
   category: Alternative
   title: Punk of the garage nature
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 1527
   created: 1349467958
   url: /r/GermanRap/
@@ -1145,18 +1145,18 @@
   key: germanrap
   category: Rap / Hip Hop
   title: German Rap
-  header_tite: ""
-  header_image: ""
-  description: "For all you lovers of the German Rap Art. Whether you just enjoy some nice beats, want to expand your German music knowledge or are just looking for that one song you heard when you did your Europe Trip and were passing through this wonderful land."
+  header_tite: ''
+  header_image: ''
+  description: 'For all you lovers of the German Rap Art. Whether you just enjoy some nice beats, want to expand your German music knowledge or are just looking for that one song you heard when you did your Europe Trip and were passing through this wonderful land.'
 - subscribers: 4548
   created: 1269709817
   url: /r/glitch/
   name: glitch
   key: glitch
   category: Electronic
-  title: "Glitch, broken sonic artifacts."
-  header_tite: ""
-  header_image: ""
+  title: 'Glitch, broken sonic artifacts.'
+  header_tite: ''
+  header_image: ''
   description: |-
     A subreddit for glitch music of all types.
 
@@ -1170,7 +1170,7 @@
   category: Electronic
   title: Glitch Hop
   header_tite: _glitchedBeats
-  header_image: ""
+  header_image: ''
   description: '"Lazers and kick drums and square waves and wonk and acid and time stretched chopped reversed inverted goodness."'
 - subscribers: 2404
   created: 1290134786
@@ -1178,10 +1178,10 @@
   name: Glitchop
   key: glitchop
   category: Electronic
-  title: "Glitch-Hop, Psyphy, Muffincore"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  title: 'Glitch-Hop, Psyphy, Muffincore'
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 9822
   created: 1269707949
   url: /r/grime/
@@ -1189,9 +1189,9 @@
   key: grime
   category: Electronic
   title: Grime
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 2321
   created: 1246745078
   url: /r/grindcore/
@@ -1199,18 +1199,18 @@
   key: grindcore
   category: Core
   title: grindcore
-  header_tite: ""
-  header_image: ""
-  description: "**Grindcore:** the potent hybrid of death metal and hardcore punk that emerged in the 1980s with bands like Repulsion, Napalm Death, Bolt Thrower, Carcass, Blood and Carbonized."
+  header_tite: ''
+  header_image: ''
+  description: '**Grindcore:** the potent hybrid of death metal and hardcore punk that emerged in the 1980s with bands like Repulsion, Napalm Death, Bolt Thrower, Carcass, Blood and Carbonized.'
 - subscribers: 8113
   created: 1245929927
   url: /r/grunge/
   name: grunge
   key: grunge
   category: Alternative
-  title: "Grunge: The Seattle Sound"
+  title: 'Grunge: The Seattle Sound'
   header_tite: Back out into the wild...
-  header_image: ""
+  header_image: ''
   description: Grunge Rock
 - subscribers: 1002
   created: 1311742880
@@ -1219,18 +1219,18 @@
   key: gunk
   category: Other
   title: gunk
-  header_tite: "永遠にネバネバしたもの "
-  header_image: ""
-  description: "the music subreddit for channeling teenage mutant glue sniffing psycho dreams, a prelude to the psychotic beach bum depression induced by junkfood and huffing siphoned gas out of the Oscar Meyer mobile"
+  header_tite: '永遠にネバネバしたもの '
+  header_image: ''
+  description: 'the music subreddit for channeling teenage mutant glue sniffing psycho dreams, a prelude to the psychotic beach bum depression induced by junkfood and huffing siphoned gas out of the Oscar Meyer mobile'
 - subscribers: 43502
   created: 1349427974
   url: /r/happycrowds/
   name: happycrowds
   key: happycrowds
   category: Video
-  title: "Happy Crowds, Responsive Audiences, and Participating Patrons"
-  header_tite: "Joyous, Loud, and Boisterous Crowds"
-  header_image: ""
+  title: 'Happy Crowds, Responsive Audiences, and Participating Patrons'
+  header_tite: 'Joyous, Loud, and Boisterous Crowds'
+  header_image: ''
   description: "A subreddit for clips of massive audience support for a musician, athlete, performer, entertainer, whathaveyou. Crowds singing along, chanting the name of a champion, dancing in the aisles, cheering until it's deafening, the rolling slow clap, etc. We're looking for the clips that give you a chill and make you wish you were there."
 - subscribers: 13810
   created: 1212856918
@@ -1238,9 +1238,9 @@
   name: Hardcore
   key: hardcore
   category: Core
-  title: "Came for sex, found music"
+  title: 'Came for sex, found music'
   header_tite: bernie or bust baby
-  header_image: ""
+  header_image: ''
   description: A place for hardcore punk music and fans.
 - subscribers: 4170
   created: 1281494822
@@ -1248,9 +1248,9 @@
   name: HardRock
   key: hardrock
   category: Rock
-  title: "/r/HardRock: Because they like it hard."
+  title: '/r/HardRock: Because they like it hard.'
   header_tite: "Back home, I'm done rockin' out."
-  header_image: ""
+  header_image: ''
   description: "For everything from Eric Clapton to Ozzy Osbourne.    \n\nIncluding 90's Alt Rock, 80's Stadium Rock, Grunge, Stoner Rock, Punk Rock, etc."
 - subscribers: 225
   created: 1288045577
@@ -1258,10 +1258,10 @@
   name: hardtek
   key: hardtek
   category: Electronic
-  title: "speed up those bpm!"
+  title: 'speed up those bpm!'
   header_tite: Free Party - Free People
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 6494
   created: 1314205693
   url: /r/HeadBangToThis/
@@ -1270,18 +1270,18 @@
   category: Metal
   title: Find your new favorite metal band.
   header_tite: Find your new favorite metal band.
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 3336
   created: 1282352237
   url: /r/heythatwasin/
   name: heythatwasin
   key: heythatwasin
   category: Other
-  title: "Hey, That Was In... (These. Are. The breaks!)"
+  title: 'Hey, That Was In... (These. Are. The breaks!)'
   header_tite: "Yes, yes, y'all!"
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 9724
   created: 1201239861
   url: /r/hiphop/
@@ -1289,9 +1289,9 @@
   key: hiphop
   category: Rap / Hip Hop
   title: hip hop news
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 10946
   created: 1319011726
   url: /r/hiphop101/
@@ -1300,8 +1300,8 @@
   category: Rap / Hip Hop
   title: The dopest homework you ever had.
   header_tite: "If you don't know, now you know, nigga!"
-  header_image: ""
-  description: "Cause we all got at least one question, and we all got at least one answer too!"
+  header_image: ''
+  description: 'Cause we all got at least one question, and we all got at least one answer too!'
 - subscribers: 340364
   created: 1265053946
   url: /r/hiphopheads/
@@ -1310,7 +1310,7 @@
   category: Rap / Hip Hop
   title: Hip Hop Heads
   header_tite: Gangsta rap made me do it
-  header_image: ""
+  header_image: ''
   description: Everything hip-hop.
 - subscribers: 3401
   created: 1308367816
@@ -1318,9 +1318,9 @@
   name: HipHopInstrumentals
   key: hiphopinstrumentals
   category: Rap / Hip Hop
-  title: "Hip Hop Instrumentals "
-  header_tite: ""
-  header_image: ""
+  title: 'Hip Hop Instrumentals '
+  header_tite: ''
+  header_image: ''
   description: The subreddit for all instrumental Hip Hop music.
 - subscribers: 27476
   created: 1216602015
@@ -1328,10 +1328,10 @@
   name: House
   key: house
   category: Electronic
-  title: "[I ♥ ⌂ ♫] Reddit House | Share and discover house music"
+  title: '[I ♥ ⌂ ♫] Reddit House | Share and discover house music'
   header_tite: d(⌒‿ ⌒)b
-  header_image: ""
-  description: "For house music enthusiasts!"
+  header_image: ''
+  description: 'For house music enthusiasts!'
 - subscribers: 9219
   created: 1253052870
   url: /r/idm/
@@ -1340,8 +1340,8 @@
   category: Electronic
   title: IDM
   header_tite: crazy stars for music flying spacemen
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 45
   created: 1387094417
   url: /r/Illbient/
@@ -1349,8 +1349,8 @@
   key: illbient
   category: Other
   title: Ill Ambient
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: A subreddit for that  ill ambient sound.
 - subscribers: 29828
   created: 1210785537
@@ -1359,8 +1359,8 @@
   key: indie
   category: Other
   title: indie music
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: /r/indie is the place to share and discuss indie music.
 - subscribers: 19547
   created: 1313804178
@@ -1369,9 +1369,9 @@
   key: indiefolk
   category: Blues / Funk / Jazz / Country
   title: Where the banjo meets the beard.
-  header_tite: "The name of the sub-reddit is still IndieFolk even when you just hover over it. I bet you were expecting something simple and short. Nope! There are not enough hidden hover headers! If you found this congrads, may this be the pinnacle of your life and you remember it forever."
-  header_image: ""
-  description: "A Subreddit for Indie &amp; Folk music. Feel free to post away!"
+  header_tite: 'The name of the sub-reddit is still IndieFolk even when you just hover over it. I bet you were expecting something simple and short. Nope! There are not enough hidden hover headers! If you found this congrads, may this be the pinnacle of your life and you remember it forever.'
+  header_image: ''
+  description: 'A Subreddit for Indie &amp; Folk music. Feel free to post away!'
 - subscribers: 4292
   created: 1291737634
   url: /r/indiewok/
@@ -1379,9 +1379,9 @@
   key: indiewok
   category: Other
   title: Expand your ears
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 7187
   created: 1242448145
   url: /r/industrialmusic/
@@ -1389,18 +1389,18 @@
   key: industrialmusic
   category: Other
   title: Industrial Music
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 272
   created: 1420324484
   url: /r/Industrialtechno/
   name: Industrialtechno
   key: industrialtechno
   category: Electronic
-  title: "Industrial Techno "
-  header_tite: ""
-  header_image: ""
+  title: 'Industrial Techno '
+  header_tite: ''
+  header_image: ''
   description: "Industrial techno combines elements of industrial music, rhythmic noise, experimental genres and hard techno.  \n\nDo not confuse with Industrial Music, Hard Techno, Schranz or just plain Techno.\nNot looking for aggro tech (Combichrist etc...) or hardstyle/hardcore either."
 - subscribers: 1145
   created: 1321679067
@@ -1408,10 +1408,10 @@
   name: ipm
   key: ipm
   category: Other
-  title: "Indian &amp; Pakistani Music"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  title: 'Indian &amp; Pakistani Music'
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 590
   created: 1357789551
   url: /r/ITALIANMUSIC/
@@ -1419,8 +1419,8 @@
   key: italianmusic
   category: Other
   title: Italian Music
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: |-
     Popular Italian music from the 60's to today.
 
@@ -1432,9 +1432,9 @@
   key: jambands
   category: Other
   title: jamband
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 8536
   created: 1299363189
   url: /r/japanesemusic/
@@ -1442,8 +1442,8 @@
   key: japanesemusic
   category: Asian
   title: "Let's talk Japanese music."
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: "Let's talk Japanese music. The goal is to be as far-reaching as possible, so that we can all share in our knowledge of the best music that Japan has to offer. Maybe you're a fan of Classic rock? Or Hip-hop? Contemporary J-pop? Traditional Ongaku? Noise and other experiments? You name it: we're interested."
 - subscribers: 57112
   created: 1221714616
@@ -1452,8 +1452,8 @@
   key: jazz
   category: Blues / Funk / Jazz / Country
   title: Jazz
-  header_tite: "I vi ii V I vi ii V I I7 IV #ivdim7 I V I V I I I I"
-  header_image: ""
+  header_tite: 'I vi ii V I vi ii V I I7 IV #ivdim7 I V I V I I I I'
+  header_image: ''
   description: "The Jazz music subreddit. \n\n&gt;Jazz is the only music in the Western world in which the most risk yields the greatest results.\n\n*Keith Jarrett*"
 - subscribers: 4805
   created: 1342126439
@@ -1462,8 +1462,8 @@
   key: jazznoir
   category: Other
   title: Jazz Noir - scales in the dark
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: "Late night listening in Reddit's dark, smoky, musical speakeasy. Jazz, (film) noir, and beyond."
 - subscribers: 4726
   created: 1311678304
@@ -1471,10 +1471,10 @@
   name: jazzyhiphop
   key: jazzyhiphop
   category: Rap / Hip Hop
-  title: "Jazzy Hip Hop: for the Smooth Brothas and Sistas"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  title: 'Jazzy Hip Hop: for the Smooth Brothas and Sistas'
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 916
   created: 1305767341
   url: /r/juke/
@@ -1482,38 +1482,38 @@
   key: juke
   category: Electronic
   title: Juke Music
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 690
   created: 1328446788
   url: /r/jumpup/
   name: jumpup
   key: jumpup
   category: Electronic
-  title: "The arse of d&amp;b"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  title: 'The arse of d&amp;b'
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 1591
   created: 1297463151
   url: /r/KidSafeVideos/
   name: KidSafeVideos
   key: kidsafevideos
   category: Video
-  title: "Kid Safe Videos: Teach your kids about the internet without scarring them for life."
-  header_tite: "ok... this is the *last one*."
-  header_image: ""
-  description: ""
+  title: 'Kid Safe Videos: Teach your kids about the internet without scarring them for life.'
+  header_tite: 'ok... this is the *last one*.'
+  header_image: ''
+  description: ''
 - subscribers: 43272
   created: 1246818874
   url: /r/kpop/
   name: kpop
   key: kpop
   category: Asian
-  title: "Reddit K-pop | Share and discover Korean music"
-  header_tite: "안녕하세요! (An-nyeong-ha-se-yo!)"
-  header_image: ""
+  title: 'Reddit K-pop | Share and discover Korean music'
+  header_tite: '안녕하세요! (An-nyeong-ha-se-yo!)'
+  header_image: ''
   description: >-
     [K-pop (Korean popular music)](https://en.wikipedia.org/wiki/K-pop) is
     a musical genre consisting of pop, dance, electropop, hip hop, rock, R&amp;B,
@@ -1536,18 +1536,18 @@
   key: krautrock
   category: Rock
   title: krautrock
-  header_tite: ""
-  header_image: ""
-  description: "Krautrock is a genre of electronic, psychedelic, progressive, and avant garde music originating from West Germany in the 1960s and 1970s.  Key artists include Can, Amon Düül II, Ash Ra Tempel, Faust, Popol Vuh, Cluster, Tangerine Dream, Klaus Schulze, Neu!, and Kraftwerk."
+  header_tite: ''
+  header_image: ''
+  description: 'Krautrock is a genre of electronic, psychedelic, progressive, and avant garde music originating from West Germany in the 1960s and 1970s.  Key artists include Can, Amon Düül II, Ash Ra Tempel, Faust, Popol Vuh, Cluster, Tangerine Dream, Klaus Schulze, Neu!, and Kraftwerk.'
 - subscribers: 3893
   created: 1365357624
   url: /r/listentoconcerts/
   name: listentoconcerts
   key: listentoconcerts
   category: Other
-  title: "ListenToConcerts: Full-length Concerts of All Genres"
+  title: 'ListenToConcerts: Full-length Concerts of All Genres'
   header_tite: Bringing live music to your ears
-  header_image: ""
+  header_image: ''
   description: |-
     To satisfy your live music needs
 
@@ -1558,19 +1558,19 @@
   name: listentomusic
   key: listentomusic
   category: Other
-  title: "listentomusic: The sweet spot between mainstream and hipster"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  title: 'listentomusic: The sweet spot between mainstream and hipster'
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 4620260
   created: 1241582986
   url: /r/listentothis/
   name: listentothis
   key: listentothis
   category: Other
-  title: "r/ListenToThis: The New Music Machine"
-  header_tite: "Proving Hipster is the new Godwin, one thread at a time."
-  header_image: ""
+  title: 'r/ListenToThis: The New Music Machine'
+  header_tite: 'Proving Hipster is the new Godwin, one thread at a time.'
+  header_image: ''
   description: >-
     Listentothis is the place to discover new and overlooked music.
 
@@ -1593,8 +1593,8 @@
   key: listentous
   category: Other
   title: a democracy for music snobs
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: >-
     r/listentous -- a democracy for music snobs.
 
@@ -1616,9 +1616,9 @@
   name: makinghiphop
   key: makinghiphop
   category: Rap / Hip Hop
-  title: "Where beatmakers, lyricists, and rappers convene to produce exceedingly dope things"
+  title: 'Where beatmakers, lyricists, and rappers convene to produce exceedingly dope things'
   header_tite: Time to hit the lab
-  header_image: ""
+  header_image: ''
   description: "Do you dabble in making beats and wonder how they'd sound with someone rapping over them? Have you ever wanted to try your hand at rapping but don't know any quality producers? Hell, if you just want to provide input in any way, we at r/makinghiphop would appreciate it."
 - subscribers: 11839
   created: 1273330244
@@ -1627,9 +1627,9 @@
   key: mathrock
   category: Rock
   title: calculus and whatnot
-  header_tite: ""
-  header_image: ""
-  description: "suck it, dinkleberg"
+  header_tite: ''
+  header_image: ''
+  description: 'suck it, dinkleberg'
 - subscribers: 17307
   created: 1403486698
   url: /r/mealtimevideos/
@@ -1637,8 +1637,8 @@
   key: mealtimevideos
   category: Video
   title: Click and Consume
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: "Videos to watch when you're sitting down for a quick meal and need something to watch for 10 to 30 minutes."
 - subscribers: 6390
   created: 1304232180
@@ -1646,9 +1646,9 @@
   name: melodicdeathmetal
   key: melodicdeathmetal
   category: Metal
-  title: "Melodic Death Metal - news, reviews, videos and discussion."
-  header_tite: ""
-  header_image: ""
+  title: 'Melodic Death Metal - news, reviews, videos and discussion.'
+  header_tite: ''
+  header_image: ''
   description: >-
     Melodic death metal is a heavy metal music style that combines elements from
     the new wave of British heavy metal with elements of death metal. The term
@@ -1667,9 +1667,9 @@
   key: melodichardcore
   category: Core
   title: /r/MelodicHardcore - Hardcore Punk with catchy melodic guitars.
-  header_tite: ""
-  header_image: ""
-  description: "Melodic Hardcore is a subgenre of Hardcore Punk with a strong emphasis on melody in its guitar work. It is defined by the fast drum patterns and shouting vocals typical of hardcore, along with chiming melodic riffs."
+  header_tite: ''
+  header_image: ''
+  description: 'Melodic Hardcore is a subgenre of Hardcore Punk with a strong emphasis on melody in its guitar work. It is defined by the fast drum patterns and shouting vocals typical of hardcore, along with chiming melodic riffs.'
 - subscribers: 2072
   created: 1304867995
   url: /r/melodicmetal/
@@ -1677,8 +1677,8 @@
   key: melodicmetal
   category: Metal
   title: Melodic Heavy Metal
-  header_tite: "Kai Hansen is God!"
-  header_image: ""
+  header_tite: 'Kai Hansen is God!'
+  header_image: ''
   description: Melodic heavy metal.
 - subscribers: 110143
   created: 1208677463
@@ -1686,9 +1686,9 @@
   name: Metal
   key: metal
   category: Metal
-  title: "Metal: Shreddit"
+  title: 'Metal: Shreddit'
   header_tite: Shreddit
-  header_image: ""
+  header_image: ''
   description: |-
     Heavy metal music.
 
@@ -1699,9 +1699,9 @@
   name: Metalcore
   key: metalcore
   category: Metal
-  title: "/r/Metalcore - news, reviews, videos &amp; discussion"
-  header_tite: "Welcome to /r/metalcore, its just like /r/corejerk, except some of these people are serious."
-  header_image: ""
+  title: '/r/Metalcore - news, reviews, videos &amp; discussion'
+  header_tite: 'Welcome to /r/metalcore, its just like /r/corejerk, except some of these people are serious.'
+  header_image: ''
   description: >-
     Metalcore is a subgenre of hardcore punk combining various elements of
     extreme metal and hardcore punk. The name is a portmanteau of the two genres.
@@ -1721,8 +1721,8 @@
   category: Other
   title: minimal music
   header_tite: Minimal
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 763
   created: 1279825894
   url: /r/MINIMALTECH/
@@ -1730,9 +1730,9 @@
   key: minimaltech
   category: Electronic
   title: For those who really feel it...
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 8127
   created: 1213155440
   url: /r/mixes/
@@ -1740,8 +1740,8 @@
   key: mixes
   category: Other
   title: electronic music mixes
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: "From dubstep, techno, drum'n'bass, house, and experimental."
 - subscribers: 3470
   created: 1311096333
@@ -1750,9 +1750,9 @@
   key: mlptunes
   category: Other
   title: MLP remixes and original songs
-  header_tite: "hey, thats mine!"
-  header_image: ""
-  description: ""
+  header_tite: 'hey, thats mine!'
+  header_image: ''
+  description: ''
 - subscribers: 3045
   created: 1347147393
   url: /r/monsterfuzz/
@@ -1761,7 +1761,7 @@
   category: Other
   title: Obscure heaviness from the 60s and 70s
   header_tite: Obscure heaviness from the 60s and 70s
-  header_image: ""
+  header_image: ''
   description: |-
     In here lies the bones of heavy metal's ancestors.
 
@@ -1772,9 +1772,9 @@
   name: montageparodies
   key: montageparodies
   category: Video
-  title: "montageparodies: Satirize the videogame montage community, life"
+  title: 'montageparodies: Satirize the videogame montage community, life'
   header_tite: Pyrocynical is a furry
-  header_image: ""
+  header_image: ''
   description: Video parodies of the typical video game montage
 - subscribers: 4154
   created: 1303196268
@@ -1784,7 +1784,7 @@
   category: Electronic
   title: Moombahton
   header_tite: Electronic Sex Music
-  header_image: ""
+  header_image: ''
   description: "Moombahton is a variety of electronic music distinguished by it's incorporation of Reggaeton-style drums and a swaying, ass-shaking speed of 108 BPM."
 - subscribers: 4942
   created: 1321483392
@@ -1792,10 +1792,10 @@
   name: MotivatedMusic
   key: motivatedmusic
   category: Other
-  title: "MotivatedMusic: Music to get you pumped"
-  header_tite: "You CAN DO IT!"
-  header_image: ""
-  description: ""
+  title: 'MotivatedMusic: Music to get you pumped'
+  header_tite: 'You CAN DO IT!'
+  header_image: ''
+  description: ''
 - subscribers: 8622927
   created: 1201235432
   url: /r/Music/
@@ -1803,8 +1803,8 @@
   key: music
   category: Other
   title: Music
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: The musical community of reddit.
 - subscribers: 636
   created: 1301847747
@@ -1813,18 +1813,18 @@
   key: musiccritics
   category: Other
   title: Music reviews by redditors
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 184
   created: 1394458077
   url: /r/musicforprogramming/
   name: musicforprogramming
   key: musicforprogramming
   category: Other
-  title: "Productivity tunes galore!"
-  header_tite: ""
-  header_image: ""
+  title: 'Productivity tunes galore!'
+  header_tite: ''
+  header_image: ''
   description: A subreddit to share productivity music and reaching a productive mindset together.
 - subscribers: 10970
   created: 1255395859
@@ -1833,9 +1833,9 @@
   key: musicnews
   category: Other
   title: Music News
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 558
   created: 1367368944
   url: /r/MusicVideosOnYouTube/
@@ -1843,8 +1843,8 @@
   key: musicvideosonyoutube
   category: Other
   title: MusicVideosOnYouTube
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: Music Videos On YouTube
 - subscribers: 2119
   created: 1311349514
@@ -1852,10 +1852,10 @@
   name: newwave
   key: newwave
   category: Other
-  title: "New Wave Music - We love the 80s!"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  title: 'New Wave Music - We love the 80s!'
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 4303
   created: 1279999457
   url: /r/noiserock/
@@ -1864,8 +1864,8 @@
   category: Rock
   title: Noise Rock
   header_tite: Noise Rock
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 913
   created: 1360342784
   url: /r/NOLAMusic/
@@ -1874,8 +1874,8 @@
   category: Other
   title: New Orleans Music
   header_tite: Yeah you right
-  header_image: ""
-  description: "Dedicated to the greatest music city of them all! From Buddy Bolden to Big Freedia and everything in between. Music, news and discussion from the Crescent City."
+  header_image: ''
+  description: 'Dedicated to the greatest music city of them all! From Buddy Bolden to Big Freedia and everything in between. Music, news and discussion from the Crescent City.'
 - subscribers: 52712
   created: 1329179156
   url: /r/NotTimAndEric/
@@ -1883,8 +1883,8 @@
   key: nottimanderic
   category: Video
   title: Not Tim And Eric
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: This is subreddit for videos that are similar to content that could be found on the Tim and Eric show.
 - subscribers: 48524
   created: 1264134119
@@ -1893,8 +1893,8 @@
   key: obscuremedia
   category: Video
   title: " Films and shorts, Drug PSA's, random music video's, odd cartoons, Media of all sorts ETC."
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: >-
     Films and shorts, Drug PSA's, random music video's, odd cartoons, Media of
     all sorts, ETC.
@@ -1912,10 +1912,10 @@
   name: obscuremusic
   key: obscuremusic
   category: Other
-  title: "ObscureMusic: Exotic Aural Cuisine"
-  header_tite: ""
-  header_image: ""
-  description: "A subreddit for underground, bizarre, or otherwise obscure music."
+  title: 'ObscureMusic: Exotic Aural Cuisine'
+  header_tite: ''
+  header_image: ''
+  description: 'A subreddit for underground, bizarre, or otherwise obscure music.'
 - subscribers: 587
   created: 1305756968
   url: /r/oldiemusic/
@@ -1924,7 +1924,7 @@
   category: Other
   title: OldieMusic Theme Time
   header_tite: Moroder
-  header_image: ""
+  header_image: ''
   description: A music sub-Reddit  with a weekly theme
 - subscribers: 4978
   created: 1254735578
@@ -1932,10 +1932,10 @@
   name: opera
   key: opera
   category: Other
-  title: "Opera: For news and discussion about the operatic world."
+  title: 'Opera: For news and discussion about the operatic world.'
   header_tite: /r/opera logo by HyperSpaz
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 2483
   created: 1269973933
   url: /r/orchestra/
@@ -1943,9 +1943,9 @@
   key: orchestra
   category: Other
   title: Orchestra
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 3302
   created: 1273074114
   url: /r/OutlawCountry/
@@ -1953,9 +1953,9 @@
   key: outlawcountry
   category: Blues / Funk / Jazz / Country
   title: The Bad Boys of Country.
-  header_tite: ""
-  header_image: ""
-  description: "The badasses of country music. Waylon Jennings, Willie Nelson, David Allan Coe, Johnny Cash, Merle Haggard... the list goes on and on."
+  header_tite: ''
+  header_image: ''
+  description: 'The badasses of country music. Waylon Jennings, Willie Nelson, David Allan Coe, Johnny Cash, Merle Haggard... the list goes on and on.'
 - subscribers: 21818
   created: 1367267922
   url: /r/outrun/
@@ -1964,7 +1964,7 @@
   category: Other
   title: Outrun
   header_tite: Outrun
-  header_image: ""
+  header_image: ''
   description: "The sub with a touch of retrofuturism, 80’s romance, 90's nostalgia, cyberpunk, tropic highways and thrilling nights."
 - subscribers: 4758
   created: 1296016268
@@ -1972,10 +1972,10 @@
   name: partymusic
   key: partymusic
   category: Other
-  title: "Party Music | Good Time Tunes "
+  title: 'Party Music | Good Time Tunes '
   header_tite: "Let's get it poppin'"
-  header_image: ""
-  description: "A cross-genre music sub dedicated only to the party.  Electro, dub, rock, hip-hop, house, reggaeton, funk, trance, whatever. Just lighthearted music for jubilance, or the discussion thereof."
+  header_image: ''
+  description: 'A cross-genre music sub dedicated only to the party.  Electro, dub, rock, hip-hop, house, reggaeton, funk, trance, whatever. Just lighthearted music for jubilance, or the discussion thereof.'
 - subscribers: 84
   created: 1366982075
   url: /r/partymusicstation/
@@ -1983,19 +1983,19 @@
   key: partymusicstation
   category: Other
   title: Jams to complement your toast
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 23009
   created: 1296585680
   url: /r/poppunkers/
   name: poppunkers
   key: poppunkers
   category: Alternative
-  title: "/r/PopPunkers: discussion, news, songs, videos, reviews &amp; everything else Pop Punk!"
+  title: '/r/PopPunkers: discussion, news, songs, videos, reviews &amp; everything else Pop Punk!'
   header_tite: i wanna leave this town
-  header_image: ""
-  description: "The front page for all Pop Punk related content!"
+  header_image: ''
+  description: 'The front page for all Pop Punk related content!'
 - subscribers: 24353
   created: 1282944847
   url: /r/PostHardcore/
@@ -2003,9 +2003,9 @@
   key: posthardcore
   category: Core
   title: "/r/PostHardcore: Let's open this pit up!"
-  header_tite: "[FIR Friday]"
-  header_image: ""
-  description: "The front page for Post-Hardcore music, news, &amp; discussions!"
+  header_tite: '[FIR Friday]'
+  header_image: ''
+  description: 'The front page for Post-Hardcore music, news, &amp; discussions!'
 - subscribers: 3258
   created: 1256176637
   url: /r/postmetal/
@@ -2014,7 +2014,7 @@
   category: Metal
   title: Post Metal
   header_tite: We need more atmospheres.
-  header_image: ""
+  header_image: ''
   description: >-
     This is a subreddit strictly about post metal. From Minsk to Rosetta,
     anything that you should know about post metal: tour dates, news, etc.
@@ -2028,29 +2028,29 @@
   name: postpunk
   key: postpunk
   category: Alternative
-  title: "post-punk, shoegaze, new wave, darkwave, coldwave, minimal, twee dream jangle pop"
+  title: 'post-punk, shoegaze, new wave, darkwave, coldwave, minimal, twee dream jangle pop'
   header_tite: "post-punk, shoegaze, twee janle dream pop, new wave, darkwave, coldwave, minimal &amp; anything else you think will tickle everyone's fancy."
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 8815
   created: 1239311066
   url: /r/PowerMetal/
   name: PowerMetal
   key: powermetal
   category: Metal
-  title: "Valhalla: A Power Metal Dream"
-  header_tite: "VALHALLA! DELIVERANCE!"
-  header_image: ""
-  description: "For the appreciation, discussion, and sharing of power metal music (and its related genres) and the latest in relevant news."
+  title: 'Valhalla: A Power Metal Dream'
+  header_tite: 'VALHALLA! DELIVERANCE!'
+  header_image: ''
+  description: 'For the appreciation, discussion, and sharing of power metal music (and its related genres) and the latest in relevant news.'
 - subscribers: 29693
   created: 1283984230
   url: /r/progmetal/
   name: progmetal
   key: progmetal
   category: Metal
-  title: "ProgMetal: Progressive Metal Community"
+  title: 'ProgMetal: Progressive Metal Community'
   header_tite: "The Thinking Man's Shreddit."
-  header_image: ""
+  header_image: ''
   description: A place to discuss music and anything else related to progressive metal.
 - subscribers: 251
   created: 1241603391
@@ -2059,9 +2059,9 @@
   key: progressivetrance
   category: Electronic
   title: progressivetrance
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 676
   created: 1345513732
   url: /r/progtrance/
@@ -2069,19 +2069,19 @@
   key: progtrance
   category: Electronic
   title: Progressive Trance
-  header_tite: ""
-  header_image: ""
-  description: "For listening to and the discussion of progressive trance dance music!"
+  header_tite: ''
+  header_image: ''
+  description: 'For listening to and the discussion of progressive trance dance music!'
 - subscribers: 10308
   created: 1320125409
   url: /r/Psybient/
   name: Psybient
   key: psybient
   category: Other
-  title: "Psybient: chilled out psychedelic space music"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  title: 'Psybient: chilled out psychedelic space music'
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 16865
   created: 1309530140
   url: /r/psychedelicrock/
@@ -2090,8 +2090,8 @@
   category: Rock
   title: Far-out music for far-out people
   header_tite: PsychedelicRock
-  header_image: ""
-  description: "A place for all psychedelic rock; classic, contemporary, experimental, or *something else altogether*."
+  header_image: ''
+  description: 'A place for all psychedelic rock; classic, contemporary, experimental, or *something else altogether*.'
 - subscribers: 9688
   created: 1229695477
   url: /r/psytrance/
@@ -2099,8 +2099,8 @@
   key: psytrance
   category: Electronic
   title: psytrance
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: A subreddit for goa and psychedelic trance culture related links and discussion.
 - subscribers: 40108
   created: 1215700203
@@ -2109,9 +2109,9 @@
   key: punk
   category: Alternative
   title: Punk
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 6380
   created: 1289332199
   url: /r/Punk_Rock/
@@ -2119,19 +2119,19 @@
   key: punk_rock
   category: Rock
   title: Punk Rock
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 4616
   created: 1259551166
   url: /r/Punkskahardcore/
   name: Punkskahardcore
   key: punkskahardcore
   category: Alternative
-  title: "Oi, pick it up, break it down..."
-  header_tite: ""
-  header_image: ""
-  description: ""
+  title: 'Oi, pick it up, break it down...'
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 4444
   created: 1298934435
   url: /r/purplemusic/
@@ -2140,8 +2140,8 @@
   category: Electronic
   title: Dat Purple Stuff
   header_tite: "It's g-funk with a sense of computerized eroticism"
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 373
   created: 1302296344
   url: /r/queercore/
@@ -2149,8 +2149,8 @@
   key: queercore
   category: Other
   title: Queercore
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: A place for fans of queercore and for any music that is considered queercore.
 - subscribers: 3282
   created: 1268693293
@@ -2159,9 +2159,9 @@
   key: raggajungle
   category: Electronic
   title: Ragga Jungle
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 5940
   created: 1295557815
   url: /r/rapbattles/
@@ -2169,8 +2169,8 @@
   key: rapbattles
   category: Rap / Hip Hop
   title: r/RapBattles - Fresh Battles and Battle Rap Discussion
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: Rap Battles and anything to do with the Battlerap movement around the world.
 - subscribers: 19653
   created: 1294844563
@@ -2180,8 +2180,8 @@
   category: Electronic
   title: Dubstep Tunes and Culture
   header_tite: '"Dubstep is the music that''s from different places, different spaces, different genres, and it forms together magically. Everybody loves it, it''s like Voltron." - Joe Nice'
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 2565
   created: 1359898534
   url: /r/RealProgHouse/
@@ -2189,8 +2189,8 @@
   key: realproghouse
   category: Electronic
   title: Real Progressive House
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: "This is a subreddit for all the Progressive House lovers who are affected by the influx of commercialized house music that is now being labeled as progressive house.\n\nFor club house, big room house, bangers and big drops go to \n\n/r/BigRoom/\n\n/r/complextro/\n\n/r/electrohouse/\n\n/r/house/"
 - subscribers: 1664
   created: 1240488705
@@ -2199,9 +2199,9 @@
   key: redditmusicclub
   category: Other
   title: A music club for redditors
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 167
   created: 1382981561
   url: /r/redditpicks/
@@ -2209,9 +2209,9 @@
   key: redditpicks
   category: Video
   title: "reddit admin's favorite videos"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 11992
   created: 1222290405
   url: /r/reggae/
@@ -2219,9 +2219,9 @@
   key: reggae
   category: Other
   title: reggae
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 612
   created: 1296641585
   url: /r/Reggaeton/
@@ -2229,8 +2229,8 @@
   key: reggaeton
   category: Other
   title: r/Reggaeton - Latin Urban Music
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: A music genre which has its roots in Latin and Caribbean music.
 - subscribers: 14400
   created: 1315963535
@@ -2239,9 +2239,9 @@
   key: republicofmusic
   category: Other
   title: The Republic of Music
-  header_tite: ""
-  header_image: ""
-  description: "The Republic of Music is modeled after /r/music, but with a twist - only content created or published within the last three months will be allowed, and reposted or rehosted content is prohibited. Audio, video, news, reviews, art, pretty much anything music-related is allowed in this subreddit as long as it is no more than three months old."
+  header_tite: ''
+  header_image: ''
+  description: 'The Republic of Music is modeled after /r/music, but with a twist - only content created or published within the last three months will be allowed, and reposted or rehosted content is prohibited. Audio, video, news, reviews, art, pretty much anything music-related is allowed in this subreddit as long as it is no more than three months old.'
 - subscribers: 790
   created: 1263430188
   url: /r/rhythmicnoise/
@@ -2249,9 +2249,9 @@
   key: rhythmicnoise
   category: Other
   title: harsh distorted electronic beats
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 5871
   created: 1217365297
   url: /r/rock/
@@ -2259,9 +2259,9 @@
   key: rock
   category: Rock
   title: rock
-  header_tite: ""
-  header_image: ""
-  description: "Classic, indie, alternative, progressive and psychedelic rock --plus rap."
+  header_tite: ''
+  header_image: ''
+  description: 'Classic, indie, alternative, progressive and psychedelic rock --plus rap.'
 - subscribers: 319
   created: 1318375730
   url: /r/Rocksteady/
@@ -2269,29 +2269,29 @@
   key: rocksteady
   category: Other
   title: "Reddit's home for the rocksteady beat"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 1646
   created: 1274915726
   url: /r/RootsReggae/
   name: RootsReggae
   key: rootsreggae
   category: Other
-  title: "Roots &amp; Culture - Reggae Music"
-  header_tite: ""
-  header_image: ""
-  description: "Subreddit for posting tunes, videos, and discussions about reggae in a roots style."
+  title: 'Roots &amp; Culture - Reggae Music'
+  header_tite: ''
+  header_image: ''
+  description: 'Subreddit for posting tunes, videos, and discussions about reggae in a roots style.'
 - subscribers: 716
   created: 1253025523
   url: /r/sciencevideos/
   name: sciencevideos
   key: sciencevideos
   category: Video
-  title: "Science Videos: Amazing videos documenting the world we live in"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  title: 'Science Videos: Amazing videos documenting the world we live in'
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 10990
   created: 1205621102
   url: /r/shoegaze/
@@ -2299,9 +2299,9 @@
   key: shoegaze
   category: Other
   title: shoegaze
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 1408
   created: 1433888041
   url: /r/shoptours/
@@ -2309,8 +2309,8 @@
   key: shoptours
   category: Video
   title: Shop Tours
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: A subreddit for videos of workshop tours.
 - subscribers: 16593
   created: 1205292043
@@ -2318,10 +2318,10 @@
   name: Ska
   key: ska
   category: Alternative
-  title: "Ska "
-  header_tite: "PICKITUP! PICKITUP!"
-  header_image: ""
-  description: "This is the place to share, discuss, and skank to anything and everything about ska music."
+  title: 'Ska '
+  header_tite: 'PICKITUP! PICKITUP!'
+  header_image: ''
+  description: 'This is the place to share, discuss, and skank to anything and everything about ska music.'
 - subscribers: 1000
   created: 1291612836
   url: /r/Skweee/
@@ -2330,8 +2330,8 @@
   category: Electronic
   title: a community for people interested in the scandinavian lo-fi goodness
   header_tite: skweeeeee like a pig
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 3522
   created: 1318784288
   url: /r/sludge/
@@ -2339,38 +2339,38 @@
   key: sludge
   category: Other
   title: sludge
-  header_tite: "ALL HAIL [deleted]"
-  header_image: ""
-  description: "A place for fans of sludge/doom metal to congregate, post music, and discuss sludge-related topics; no jokes/meme images or other unrelated content are allowed as their own posts."
+  header_tite: 'ALL HAIL [deleted]'
+  header_image: ''
+  description: 'A place for fans of sludge/doom metal to congregate, post music, and discuss sludge-related topics; no jokes/meme images or other unrelated content are allowed as their own posts.'
 - subscribers: 1595
   created: 1305778568
   url: /r/Soulies/
   name: Soulies
   key: soulies
   category: Blues / Funk / Jazz / Country
-  title: "Soul Music Community "
-  header_tite: ""
-  header_image: ""
-  description: ""
+  title: 'Soul Music Community '
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 33
   created: 1295931983
   url: /r/soulof/
   name: soulof
   key: soulof
   category: Other
-  title: "soulof: where Reddit goes to get down"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  title: 'soulof: where Reddit goes to get down'
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 8073
   created: 1288363549
   url: /r/SoundsVintage/
   name: SoundsVintage
   key: soundsvintage
   category: Other
-  title: "r/SoundsVintage: Home of the *New* Oldies"
-  header_tite: ""
-  header_image: ""
+  title: 'r/SoundsVintage: Home of the *New* Oldies'
+  header_tite: ''
+  header_image: ''
   description: "The guidelines here are simple - submit only *new* music that sounds like it would be right at home on an oldies radio station. Anything that sounds like it came from 1900 through 1979 fits the bill. Artist popularity is not a concern. All music submitted here should be from after 1999. \n\nFunk/Soul/Motown/R&amp;B/Doo-Wop\nClassic Rock&amp;Roll/Garage/Psychedelic\nRockabilly/Surf/Pop/British Invasion\nOld-Time Country/Folk/Bluegrass\nBlues/Jazz/Jive/Latin/Caribbean"
 - subscribers: 4991
   created: 1268061467
@@ -2379,19 +2379,19 @@
   key: soundtracks
   category: Other
   title: "It's the music that makes the movie."
-  header_tite: ""
-  header_image: ""
-  description: "Reddit about film music, game music and other soundtracks."
+  header_tite: ''
+  header_image: ''
+  description: 'Reddit about film music, game music and other soundtracks.'
 - subscribers: 5796
   created: 1268776233
   url: /r/SpaceMusic/
   name: SpaceMusic
   key: spacemusic
   category: Other
-  title: "SpaceMusic: Musical space exploration"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  title: 'SpaceMusic: Musical space exploration'
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 17318
   created: 1237097080
   url: /r/stonerrock/
@@ -2400,8 +2400,8 @@
   category: Rock
   title: Stoner Rock
   header_tite: '"When you get into one of these groups, there’s only a couple of ways you can get out. One is death. The other is mental institutions. Or third, you can’t get out."'
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 13391
   created: 1286157651
   url: /r/swinghouse/
@@ -2409,8 +2409,8 @@
   key: swinghouse
   category: Electronic
   title: swinghouse
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: '"Swing house is a style of house music and subgenre of electronic dance music...It fused old jazz, swing, ragtime samples over "swung" electronic house beats." ~Wikipedia'
 - subscribers: 2691
   created: 1240457003
@@ -2419,8 +2419,8 @@
   key: synthpop
   category: Electronic
   title: Synthpop music on Reddit
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: >-
     A subreddit for fans of [synthpop
     music](https://en.wikipedia.org/wiki/Synthpop).
@@ -2436,10 +2436,10 @@
   name: synthwave
   key: synthwave
   category: Electronic
-  title: "Synthwave: Drum machines and dystopia"
-  header_tite: ""
-  header_image: ""
-  description: "News, reviews, videos, etc. on the dark, alienated synth music inspired by the Cold War era and beyond: minimal synth, cold/minimal/dark wave, early industrial, flexi/synth pop, NDW, post-punk, etc.."
+  title: 'Synthwave: Drum machines and dystopia'
+  header_tite: ''
+  header_image: ''
+  description: 'News, reviews, videos, etc. on the dark, alienated synth music inspired by the Cold War era and beyond: minimal synth, cold/minimal/dark wave, early industrial, flexi/synth pop, NDW, post-punk, etc..'
 - subscribers: 16386
   created: 1251550404
   url: /r/Techno/
@@ -2448,8 +2448,8 @@
   category: Electronic
   title: Techno
   header_tite: Techno
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 239
   created: 1297679875
   url: /r/techstep/
@@ -2457,8 +2457,8 @@
   key: techstep
   category: Electronic
   title: Techstep
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: A subreddit for sharing Techstep music.
 - subscribers: 10044
   created: 1290304075
@@ -2468,8 +2468,8 @@
   category: Video
   title: Behind the scenes
   header_tite: Ice to see you
-  header_image: ""
-  description: "Share videos of behind the scenes footage, interviews and making of documentaries."
+  header_image: ''
+  description: 'Share videos of behind the scenes footage, interviews and making of documentaries.'
 - subscribers: 10253
   created: 1388569704
   url: /r/TheMakingOfGames/
@@ -2478,7 +2478,7 @@
   category: Video
   title: The Making of Games
   header_tite: TheMakingOfGames
-  header_image: ""
+  header_image: ''
   description: "This subreddit is about the creation of our favourite games. Whether it's 'the making of', a presentation, podcast, concept art, or other 'behind the scenes' content, this is the place!"
 - subscribers: 42895
   created: 1314224993
@@ -2487,8 +2487,8 @@
   key: theocho
   category: Video
   title: "The Ocho: if it's almost a sport, we've got it here"
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: Grab life by the balls.
 - subscribers: 3843
   created: 1387585855
@@ -2496,10 +2496,10 @@
   name: TheWayWeWereOnVideo
   key: thewaywewereonvideo
   category: Video
-  title: "TheWayWeWereOnVideo: Videos From Another Time"
-  header_tite: ""
-  header_image: ""
-  description: "A collection of home movies or any other kinds of videos that capture **everyday life** of people from past decades. Inspired by /r/TheWayWeWere."
+  title: 'TheWayWeWereOnVideo: Videos From Another Time'
+  header_tite: ''
+  header_image: ''
+  description: 'A collection of home movies or any other kinds of videos that capture **everyday life** of people from past decades. Inspired by /r/TheWayWeWere.'
 - subscribers: 13458
   created: 1273371025
   url: /r/ThisIsOurMusic/
@@ -2508,8 +2508,8 @@
   category: Other
   title: "This is the Music Makers' Music!"
   header_tite: Feel Free To Post Your Music And Ask For Critique
-  header_image: ""
-  description: "This subreddit is dedicated to the musical artists that inhabit reddit. It is used to showcase new, in progress, or old pieces of music. It can also allow for the critique of your works in progress as well as the discussion of ideas that any musical artist can have. We are not genre specific and welcome all styles of music."
+  header_image: ''
+  description: 'This subreddit is dedicated to the musical artists that inhabit reddit. It is used to showcase new, in progress, or old pieces of music. It can also allow for the critique of your works in progress as well as the discussion of ideas that any musical artist can have. We are not genre specific and welcome all styles of music.'
 - subscribers: 2612
   created: 1298802136
   url: /r/TOUHOUMUSIC/
@@ -2517,9 +2517,9 @@
   key: touhoumusic
   category: Other
   title: Touhou Music
-  header_tite: "Back to Reddit!"
-  header_image: ""
-  description: "Share the best Touhou music with Reddit!"
+  header_tite: 'Back to Reddit!'
+  header_image: ''
+  description: 'Share the best Touhou music with Reddit!'
 - subscribers: 31197
   created: 1226420732
   url: /r/trailers/
@@ -2528,27 +2528,27 @@
   category: Video
   title: Movie Trailers
   header_tite: /r/trailers
-  header_image: ""
-  description: "This subreddit is dedicated to viewing the latest trailers!"
+  header_image: ''
+  description: 'This subreddit is dedicated to viewing the latest trailers!'
 - subscribers: 38163
   created: 1211159943
   url: /r/trance/
   name: trance
   key: trance
   category: Electronic
-  title: "Trancit: Everything Trance Music."
+  title: 'Trancit: Everything Trance Music.'
   header_tite: Become one with the Universe.
-  header_image: ""
-  description: "Trancit: Everything Trance Music."
+  header_image: ''
+  description: 'Trancit: Everything Trance Music.'
 - subscribers: 1110
   created: 1355272755
   url: /r/tranceandbass/
   name: tranceandbass
   key: tranceandbass
   category: Electronic
-  title: "Trance &amp; Bass: DnB meets Trance"
-  header_tite: ""
-  header_image: ""
+  title: 'Trance &amp; Bass: DnB meets Trance'
+  header_tite: ''
+  header_image: ''
   description: >-
     For fusions of drum and bass with trance, heavy basslines with epic
     supersaws, frantic beats with psychedelic arpeggios and massive bangers with
@@ -2565,19 +2565,19 @@
   key: trap
   category: Electronic
   title: /r/trap - The best subreddit on the internet
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 16346
   created: 1309292322
   url: /r/trapmuzik/
   name: trapmuzik
   key: trapmuzik
   category: Other
-  title: "That crack music!"
+  title: 'That crack music!'
   header_tite: Shop with you Tuesday and rob your ass Thursday.
-  header_image: ""
-  description: ""
+  header_image: ''
+  description: ''
 - subscribers: 38823
   created: 1274265972
   url: /r/treemusic/
@@ -2586,8 +2586,8 @@
   category: Other
   title: Music for the Trees
   header_tite: "DON'T CLICK HERE"
-  header_image: ""
-  description: "music of all genres, for a higher state of mind"
+  header_image: ''
+  description: 'music of all genres, for a higher state of mind'
 - subscribers: 16698
   created: 1270411737
   url: /r/triphop/
@@ -2595,9 +2595,9 @@
   key: triphop
   category: Electronic
   title: trip-hop
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 747
   created: 1335537041
   url: /r/TrueBlackMetal/
@@ -2606,7 +2606,7 @@
   category: Metal
   title: True Black Metal Madness
   header_tite: Unholy horde
-  header_image: ""
+  header_image: ''
   description: True underground black metal
 - subscribers: 500
   created: 1355535328
@@ -2616,7 +2616,7 @@
   category: Other
   title: Chill out.
   header_tite: Better than /r/circlemusic
-  header_image: ""
+  header_image: ''
   description: >-
     Would you like to gain entry to this super secret, super cool, hipster
     hideaway?
@@ -2636,19 +2636,19 @@
   name: Twee
   key: twee
   category: Other
-  title: "Twee!"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  title: 'Twee!'
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 6585
   created: 1323167564
   url: /r/under10k/
   name: under10k
   key: under10k
   category: Other
-  title: "under10k: music with under 10,000 listeners"
-  header_tite: ""
-  header_image: ""
+  title: 'under10k: music with under 10,000 listeners'
+  header_tite: ''
+  header_image: ''
   description: >-
     Under10k is for artists who have under 10,000 last.fm listeners and their
     most popular video on YouTube has under 10,000 views. This is a place for the
@@ -2667,9 +2667,9 @@
   key: vaporwave
   category: Electronic
   title: Music optimized for abandoned malls
-  header_tite: ""
-  header_image: ""
-  description: "Global capitalism is nearly there. At the end of the world there will only be liquid advertisement and gaseous desire. Sublimated from our bodies, our untethered senses will endlessly ride escalators through pristine artificial environments, more and less than human, drugged-up and drugged down, catalysed, consuming and consumed by a relentlessly rich economy of sensory information, valued by the pixel. The Virtual Plaza welcomes you, and you will welcome it too."
+  header_tite: ''
+  header_image: ''
+  description: 'Global capitalism is nearly there. At the end of the world there will only be liquid advertisement and gaseous desire. Sublimated from our bodies, our untethered senses will endlessly ride escalators through pristine artificial environments, more and less than human, drugged-up and drugged down, catalysed, consuming and consumed by a relentlessly rich economy of sensory information, valued by the pixel. The Virtual Plaza welcomes you, and you will welcome it too.'
 - subscribers: 24935
   created: 1201236231
   url: /r/video/
@@ -2677,8 +2677,8 @@
   key: video
   category: Video
   title: video
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: "reddit's videos"
 - subscribers: 9324262
   created: 1201232236
@@ -2687,8 +2687,8 @@
   key: videos
   category: Video
   title: Videos
-  header_tite: "Moving pixels, who knew?"
-  header_image: ""
+  header_tite: 'Moving pixels, who knew?'
+  header_image: ''
   description: A great place for video content of all kinds.
 - subscribers: 10741
   created: 1327981098
@@ -2697,8 +2697,8 @@
   key: vintageobscura
   category: Other
   title: Vintage Obscura -- Crate Diggers Unite
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: "* Is it music?\n* Is it obscure? \n* Is it at least 25 years old? \n* Is it amazing?"
 - subscribers: 2036
   created: 1323717027
@@ -2707,9 +2707,9 @@
   key: whitelabels
   category: Other
   title: "White Labels: Digital Music Exchange for Producers and DJ's"
-  header_tite: ""
-  header_image: ""
-  description: ""
+  header_tite: ''
+  header_image: ''
+  description: ''
 - subscribers: 12428
   created: 1382914601
   url: /r/WoahTunes/
@@ -2718,7 +2718,7 @@
   category: Other
   title: "The BEST music to hear while you're STONED"
   header_tite: thanks to /u/rilley
-  header_image: ""
+  header_image: ''
   description: |-
     The BEST music to listen to while you're STONED!
 
@@ -2729,9 +2729,9 @@
   name: WorldMusic
   key: worldmusic
   category: Other
-  title: "World Music "
+  title: 'World Music '
   header_tite: World Music
-  header_image: ""
+  header_image: ''
   description: |-
     Welcome to World Music
 
@@ -2743,8 +2743,8 @@
   key: wwcc
   category: Other
   title: Chiptune Collective - WWCC - Worldwide Chiptune Collective
-  header_tite: ""
-  header_image: ""
+  header_tite: ''
+  header_image: ''
   description: Chiptune Collective - Worldwide Chiptune Collective - The biggest moderated chiptune music database on the internet - Over 2500 entries and counting
 - subscribers: 196787
   created: 1331921987
@@ -2754,5 +2754,5 @@
   category: Video
   title: Youtube Haiku
   header_tite: Youtube Haiku
-  header_image: ""
+  header_image: ''
   description: "Youtube Haiku: Any almost poetic video under 14 seconds. Don't ask me why 14 seconds; it's just a number I have learned from experience.  Videos can still be poetic after 15 or longer, but no longer than 30 seconds."

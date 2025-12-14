@@ -1,4 +1,4 @@
-import { Song } from "@/lib/store/player-store"
+import { Song } from '@/lib/store/player-store'
 
 // ============================================================================
 // SONG PARSER
@@ -11,15 +11,15 @@ export function parseSong(data: any): Song {
   // Parse thumbnail
   let thumbnail = data.thumbnail
   if (thumbnail) {
-    if (thumbnail.startsWith("http:")) {
-      thumbnail = thumbnail.replace("http:", "https:")
-    } else if (thumbnail.startsWith("//")) {
-      thumbnail = "https:" + thumbnail
+    if (thumbnail.startsWith('http:')) {
+      thumbnail = thumbnail.replace('http:', 'https:')
+    } else if (thumbnail.startsWith('//')) {
+      thumbnail = 'https:' + thumbnail
     }
-    
+
     // Use higher quality preview if available
     if (data.preview?.images?.[0]?.source?.url) {
-      thumbnail = data.preview.images[0].source.url.replace(/&amp;/g, "&")
+      thumbnail = data.preview.images[0].source.url.replace(/&amp;/g, '&')
     }
   }
 
@@ -54,40 +54,40 @@ export function parseSong(data: any): Song {
 /**
  * Determine media type from post data
  */
-function determineMediaType(data: any): { 
-  type: Song["type"]
-  playable: boolean 
+function determineMediaType(data: any): {
+  type: Song['type']
+  playable: boolean
 } {
-  const domain = data.domain?.toLowerCase() || ""
-  const url = data.url?.toLowerCase() || ""
+  const domain = data.domain?.toLowerCase() || ''
+  const url = data.url?.toLowerCase() || ''
 
   // YouTube
   if (
-    domain === "youtube.com" ||
-    domain === "youtu.be" ||
-    domain === "m.youtube.com" ||
-    domain === "www.youtube.com"
+    domain === 'youtube.com' ||
+    domain === 'youtu.be' ||
+    domain === 'm.youtube.com' ||
+    domain === 'www.youtube.com'
   ) {
-    return { type: "youtube", playable: true }
+    return { type: 'youtube', playable: true }
   }
 
   // SoundCloud
-  if (domain === "soundcloud.com" || domain === "www.soundcloud.com") {
-    return { type: "soundcloud", playable: true }
+  if (domain === 'soundcloud.com' || domain === 'www.soundcloud.com') {
+    return { type: 'soundcloud', playable: true }
   }
 
   // Vimeo
-  if (domain === "vimeo.com" || domain === "www.vimeo.com") {
-    return { type: "vimeo", playable: true }
+  if (domain === 'vimeo.com' || domain === 'www.vimeo.com') {
+    return { type: 'vimeo', playable: true }
   }
 
   // MP3
-  if (url.endsWith(".mp3")) {
-    return { type: "mp3", playable: true }
+  if (url.endsWith('.mp3')) {
+    return { type: 'mp3', playable: true }
   }
 
   // Not playable
-  return { type: "none", playable: false }
+  return { type: 'none', playable: false }
 }
 
 /**
@@ -108,11 +108,11 @@ function formatTimeAgo(date: Date): string {
   for (const [unit, secondsInUnit] of Object.entries(intervals)) {
     const interval = Math.floor(seconds / secondsInUnit)
     if (interval >= 1) {
-      return `${interval} ${unit}${interval === 1 ? "" : "s"} ago`
+      return `${interval} ${unit}${interval === 1 ? '' : 's'} ago`
     }
   }
 
-  return "just now"
+  return 'just now'
 }
 
 // ============================================================================
@@ -125,7 +125,7 @@ function formatTimeAgo(date: Date): string {
 export function filterPlayableSongs(posts: any[]): any[] {
   if (!Array.isArray(posts)) return []
 
-  return posts.filter((post) => {
+  return posts.filter(post => {
     if (!post?.data) return false
 
     const data = post.data
@@ -133,20 +133,20 @@ export function filterPlayableSongs(posts: any[]): any[] {
     // Exclude self posts
     if (data.is_self) return false
 
-    const domain = data.domain?.toLowerCase() || ""
-    const url = data.url?.toLowerCase() || ""
+    const domain = data.domain?.toLowerCase() || ''
+    const url = data.url?.toLowerCase() || ''
 
     // Check if it's a playable domain
     return (
-      domain === "youtube.com" ||
-      domain === "youtu.be" ||
-      domain === "m.youtube.com" ||
-      domain === "www.youtube.com" ||
-      domain === "soundcloud.com" ||
-      domain === "www.soundcloud.com" ||
-      domain === "vimeo.com" ||
-      domain === "www.vimeo.com" ||
-      url.endsWith(".mp3")
+      domain === 'youtube.com' ||
+      domain === 'youtu.be' ||
+      domain === 'm.youtube.com' ||
+      domain === 'www.youtube.com' ||
+      domain === 'soundcloud.com' ||
+      domain === 'www.soundcloud.com' ||
+      domain === 'vimeo.com' ||
+      domain === 'www.vimeo.com' ||
+      url.endsWith('.mp3')
     )
   })
 }
@@ -188,11 +188,11 @@ export function extractVimeoId(url: string): string | null {
  * Format seconds to MM:SS
  */
 export function formatTime(seconds: number): string {
-  if (!isFinite(seconds) || isNaN(seconds)) return "0:00"
-  
+  if (!isFinite(seconds) || isNaN(seconds)) return '0:00'
+
   const mins = Math.floor(seconds / 60)
   const secs = Math.floor(seconds % 60)
-  return `${mins}:${secs.toString().padStart(2, "0")}`
+  return `${mins}:${secs.toString().padStart(2, '0')}`
 }
 
 /**
@@ -200,10 +200,10 @@ export function formatTime(seconds: number): string {
  */
 export function formatNumber(num: number): string {
   if (num >= 1000000) {
-    return (num / 1000000).toFixed(1) + "M"
+    return (num / 1000000).toFixed(1) + 'M'
   }
   if (num >= 1000) {
-    return (num / 1000).toFixed(1) + "K"
+    return (num / 1000).toFixed(1) + 'K'
   }
   return num.toString()
 }
@@ -213,17 +213,17 @@ export function formatNumber(num: number): string {
  */
 export function isValidMediaUrl(url: string): boolean {
   if (!url) return false
-  
+
   try {
     const urlObj = new URL(url)
-    const domain = urlObj.hostname.toLowerCase().replace("www.", "")
-    
+    const domain = urlObj.hostname.toLowerCase().replace('www.', '')
+
     return (
-      domain === "youtube.com" ||
-      domain === "youtu.be" ||
-      domain === "soundcloud.com" ||
-      domain === "vimeo.com" ||
-      url.toLowerCase().endsWith(".mp3")
+      domain === 'youtube.com' ||
+      domain === 'youtu.be' ||
+      domain === 'soundcloud.com' ||
+      domain === 'vimeo.com' ||
+      url.toLowerCase().endsWith('.mp3')
     )
   } catch {
     return false
@@ -234,15 +234,15 @@ export function isValidMediaUrl(url: string): boolean {
  * Get platform name from domain
  */
 export function getPlatformName(domain: string): string {
-  const normalizedDomain = domain.toLowerCase().replace("www.", "")
-  
+  const normalizedDomain = domain.toLowerCase().replace('www.', '')
+
   const platforms: Record<string, string> = {
-    "youtube.com": "YouTube",
-    "youtu.be": "YouTube",
-    "soundcloud.com": "SoundCloud",
-    "vimeo.com": "Vimeo",
+    'youtube.com': 'YouTube',
+    'youtu.be': 'YouTube',
+    'soundcloud.com': 'SoundCloud',
+    'vimeo.com': 'Vimeo',
   }
-  
+
   return platforms[normalizedDomain] || domain
 }
 
@@ -256,11 +256,7 @@ export function generateSongKey(song: Song, index: number): string {
 /**
  * Check if song is currently playing
  */
-export function isSongPlaying(
-  song: Song,
-  currentSong: Song | null,
-  isPlaying: boolean
-): boolean {
+export function isSongPlaying(song: Song, currentSong: Song | null, isPlaying: boolean): boolean {
   return currentSong?.id === song.id && isPlaying
 }
 
@@ -268,17 +264,17 @@ export function isSongPlaying(
  * Get song duration in human-readable format
  */
 export function formatDuration(seconds: number): string {
-  if (!seconds || !isFinite(seconds)) return "Unknown"
-  
+  if (!seconds || !isFinite(seconds)) return 'Unknown'
+
   const hours = Math.floor(seconds / 3600)
   const minutes = Math.floor((seconds % 3600) / 60)
   const secs = Math.floor(seconds % 60)
-  
+
   if (hours > 0) {
-    return `${hours}:${minutes.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`
+    return `${hours}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
   }
-  
-  return `${minutes}:${secs.toString().padStart(2, "0")}`
+
+  return `${minutes}:${secs.toString().padStart(2, '0')}`
 }
 
 /**
@@ -295,8 +291,8 @@ export function calculateProgress(currentTime: number, duration: number): number
 export function shuffleArray<T>(array: T[]): T[] {
   const shuffled = [...array]
   for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
   }
   return shuffled
 }
@@ -309,13 +305,13 @@ export function debounce<T extends (...args: any[]) => any>(
   wait: number
 ): (...args: Parameters<T>) => void {
   let timeout: NodeJS.Timeout | null = null
-  
+
   return function executedFunction(...args: Parameters<T>) {
     const later = () => {
       timeout = null
       func(...args)
     }
-    
+
     if (timeout) clearTimeout(timeout)
     timeout = setTimeout(later, wait)
   }
@@ -329,7 +325,7 @@ export function throttle<T extends (...args: any[]) => any>(
   limit: number
 ): (...args: Parameters<T>) => void {
   let inThrottle: boolean = false
-  
+
   return function executedFunction(...args: Parameters<T>) {
     if (!inThrottle) {
       func(...args)

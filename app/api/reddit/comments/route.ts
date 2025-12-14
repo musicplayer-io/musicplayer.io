@@ -1,6 +1,6 @@
-import { NextRequest, NextResponse } from "next/server"
+import { NextRequest, NextResponse } from 'next/server'
 
-export const runtime = "edge"
+export const runtime = 'edge'
 
 /**
  * Fetch comments for a Reddit post
@@ -9,13 +9,10 @@ export const runtime = "edge"
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url)
-    const permalink = searchParams.get("permalink")
+    const permalink = searchParams.get('permalink')
 
     if (!permalink) {
-      return NextResponse.json(
-        { error: "Missing permalink parameter" },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: 'Missing permalink parameter' }, { status: 400 })
     }
 
     // Build Reddit API URL for comments - get all with no limit
@@ -23,7 +20,7 @@ export async function GET(request: NextRequest) {
 
     const response = await fetch(url, {
       headers: {
-        "User-Agent": "Reddit Music Player/1.0",
+        'User-Agent': 'Reddit Music Player/1.0',
       },
     })
 
@@ -44,9 +41,9 @@ export async function GET(request: NextRequest) {
       count: formattedComments.length,
     })
   } catch (error: any) {
-    console.error("Comments fetch error:", error)
+    console.error('Comments fetch error:', error)
     return NextResponse.json(
-      { error: error.message || "Failed to fetch comments" },
+      { error: error.message || 'Failed to fetch comments' },
       { status: 500 }
     )
   }
@@ -60,12 +57,12 @@ function parseComments(children: any[]): any[] {
 
   for (const item of children) {
     // Skip non-comment items (like "more" links)
-    if (item.kind !== "t1") continue
+    if (item.kind !== 't1') continue
 
     const comment = item.data
 
     // Skip AutoModerator and deleted
-    if (comment.author === "AutoModerator" || comment.author === "[deleted]") {
+    if (comment.author === 'AutoModerator' || comment.author === '[deleted]') {
       continue
     }
 
@@ -104,10 +101,10 @@ function formatTimeAgo(timestamp: number): string {
   const months = Math.floor(diff / 2592000)
   const years = Math.floor(diff / 31536000)
 
-  if (years > 0) return `${years} year${years > 1 ? "s" : ""} ago`
-  if (months > 0) return `${months} month${months > 1 ? "s" : ""} ago`
-  if (days > 0) return `${days} day${days > 1 ? "s" : ""} ago`
-  if (hours > 0) return `${hours} hour${hours > 1 ? "s" : ""} ago`
-  if (minutes > 0) return `${minutes} minute${minutes > 1 ? "s" : ""} ago`
-  return "just now"
+  if (years > 0) return `${years} year${years > 1 ? 's' : ''} ago`
+  if (months > 0) return `${months} month${months > 1 ? 's' : ''} ago`
+  if (days > 0) return `${days} day${days > 1 ? 's' : ''} ago`
+  if (hours > 0) return `${hours} hour${hours > 1 ? 's' : ''} ago`
+  if (minutes > 0) return `${minutes} minute${minutes > 1 ? 's' : ''} ago`
+  return 'just now'
 }

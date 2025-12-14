@@ -31,7 +31,6 @@ dist
 # IDE
 *.sublime-project
 *.sublime-workspace
-.vscode/
 .idea/
 *.swp
 *.swo

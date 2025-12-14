@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useEffect, useRef, useState } from "react"
-import { Song } from "@/lib/store/player-store"
-import { usePlayerStore } from "@/lib/store/player-store"
-import { extractVimeoId } from "@/lib/utils/song-utils"
+import { useEffect, useRef, useState } from 'react'
+import { Song } from '@/lib/store/player-store'
+import { usePlayerStore } from '@/lib/store/player-store'
+import { extractVimeoId } from '@/lib/utils/song-utils'
 
 declare global {
   interface Window {
@@ -42,18 +42,18 @@ export function VimeoPlayer({ song }: VimeoPlayerProps) {
 
         player.ready().then(() => {
           if (!mounted || videoIdRef.current !== videoId) return
-          
+
           setIsReady(true)
-          
+
           try {
             player.setVolume(volume / 100)
           } catch (e) {
-            console.error("Vimeo volume error:", e)
+            console.error('Vimeo volume error:', e)
           }
 
-          player.on("timeupdate", (data: any) => {
+          player.on('timeupdate', (data: any) => {
             if (!mounted || videoIdRef.current !== videoId) return
-            
+
             try {
               if (data?.seconds && typeof data.seconds === 'number') {
                 setCurrentTime(data.seconds)
@@ -65,7 +65,7 @@ export function VimeoPlayer({ song }: VimeoPlayerProps) {
 
           player.getDuration().then((dur: number) => {
             if (!mounted || videoIdRef.current !== videoId) return
-            
+
             try {
               if (dur > 0 && isFinite(dur)) {
                 setDuration(dur)
@@ -75,7 +75,7 @@ export function VimeoPlayer({ song }: VimeoPlayerProps) {
             }
           })
 
-          player.on("ended", () => {
+          player.on('ended', () => {
             if (!mounted || videoIdRef.current !== videoId) return
             const state = usePlayerStore.getState()
             state.next()
@@ -86,17 +86,17 @@ export function VimeoPlayer({ song }: VimeoPlayerProps) {
           }
         })
 
-        player.on("error", (e: any) => {
-          console.error("Vimeo error:", e)
+        player.on('error', (e: any) => {
+          console.error('Vimeo error:', e)
         })
       } catch (error) {
-        console.error("Vimeo init error:", error)
+        console.error('Vimeo init error:', error)
       }
     }
 
     if (!window.Vimeo) {
-      const script = document.createElement("script")
-      script.src = "https://player.vimeo.com/api/player.js"
+      const script = document.createElement('script')
+      script.src = 'https://player.vimeo.com/api/player.js'
       script.async = true
       script.onload = initPlayer
       document.body.appendChild(script)
@@ -109,18 +109,18 @@ export function VimeoPlayer({ song }: VimeoPlayerProps) {
       mounted = false
       videoIdRef.current = null
       setIsReady(false)
-      
+
       if (player) {
         try {
           player.pause()
-          player.off("timeupdate")
-          player.off("ended")
-          player.off("error")
+          player.off('timeupdate')
+          player.off('ended')
+          player.off('error')
         } catch (e) {
           // Silently ignore
         }
       }
-      
+
       playerRef.current = null
     }
   }, [videoId])

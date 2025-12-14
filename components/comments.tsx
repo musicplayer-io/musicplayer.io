@@ -1,7 +1,7 @@
-"use client"
+'use client'
 
-import { useEffect, useState } from "react"
-import { ArrowUp } from "lucide-react"
+import { useEffect, useState } from 'react'
+import { ArrowUp } from 'lucide-react'
 
 interface Comment {
   id: string
@@ -23,13 +23,13 @@ function CommentItem({ comment, depth = 0 }: { comment: Comment; depth?: number 
   const hasReplies = comment.replies && comment.replies.length > 0
 
   return (
-    <div className={depth > 0 ? "ml-4 pl-4 border-l-2 border-white/10" : ""}>
+    <div className={depth > 0 ? 'ml-4 pl-4 border-l-2 border-white/10' : ''}>
       <div className="p-4 rounded-lg bg-[#181818] border border-white/5 mb-3 hover:border-white/10 transition-colors">
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mb-2">
           <div className="text-sm font-medium text-white truncate">/u/{comment.author}</div>
           <div className="text-xs text-gray-500 whitespace-nowrap">• {comment.created_ago}</div>
         </div>
-        <p className="text-sm text-gray-300 whitespace-pre-wrap break-words leading-relaxed">
+        <p className="text-sm text-gray-300 whitespace-pre-wrap wrap-break-word leading-relaxed">
           {comment.body}
         </p>
         <div className="flex items-center gap-4 mt-3 flex-wrap">
@@ -42,8 +42,8 @@ function CommentItem({ comment, depth = 0 }: { comment: Comment; depth?: number 
               onClick={() => setShowReplies(!showReplies)}
               className="text-xs text-[#FDC00F] hover:text-[#f99b1d] transition-colors"
             >
-              {showReplies ? "Hide" : "Show"} {comment.replies.length}{" "}
-              {comment.replies.length === 1 ? "reply" : "replies"}
+              {showReplies ? 'Hide' : 'Show'} {comment.replies.length}{' '}
+              {comment.replies.length === 1 ? 'reply' : 'replies'}
             </button>
           )}
         </div>
@@ -52,7 +52,7 @@ function CommentItem({ comment, depth = 0 }: { comment: Comment; depth?: number 
       {/* Nested Replies */}
       {hasReplies && showReplies && (
         <div className="space-y-3">
-          {comment.replies.map((reply) => (
+          {comment.replies.map(reply => (
             <CommentItem key={reply.id} comment={reply} depth={depth + 1} />
           ))}
         </div>
@@ -82,7 +82,7 @@ export function Comments({ permalink }: CommentsProps) {
           setComments(data.comments || [])
         }
       } catch (error) {
-        console.error("Failed to load comments:", error)
+        console.error('Failed to load comments:', error)
       } finally {
         setLoading(false)
       }
@@ -110,7 +110,7 @@ export function Comments({ permalink }: CommentsProps) {
 
   return (
     <div className="space-y-3">
-      {comments.map((comment) => (
+      {comments.map(comment => (
         <CommentItem key={comment.id} comment={comment} />
       ))}
     </div>

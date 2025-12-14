@@ -1,10 +1,10 @@
 // components/share-modal.tsx
-"use client"
+'use client'
 
-import { useState, useEffect } from "react"
-import { X, Copy, Check, Twitter, Facebook, Share2 } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import { useState, useEffect } from 'react'
+import { X, Copy, Check, Twitter, Facebook, Share2 } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 
 interface ShareModalProps {
   isOpen: boolean
@@ -15,7 +15,7 @@ interface ShareModalProps {
 export function ShareModal({ isOpen, onClose, subreddits }: ShareModalProps) {
   const [copied, setCopied] = useState(false)
   const [copiedShort, setCopiedShort] = useState(false)
-  
+
   // Generate URLs
   const baseUrl = typeof window !== 'undefined' ? window.location.origin : ''
   const subredditString = subreddits.join('+')
@@ -47,7 +47,7 @@ export function ShareModal({ isOpen, onClose, subreddits }: ShareModalProps) {
 
   const handleShare = (platform: 'twitter' | 'facebook' | 'reddit') => {
     const text = `I 💛 Music Player for Reddit. I'm listening to ${subreddits.map(s => `/r/${s}`).join(', ')}`
-    
+
     let url = ''
     switch (platform) {
       case 'twitter':
@@ -62,7 +62,7 @@ export function ShareModal({ isOpen, onClose, subreddits }: ShareModalProps) {
         url = `https://reddit.com/r/musicplayer/submit?title=${encodeURIComponent(redditText)}&url=${encodeURIComponent(fullLink)}&sub=musicplayer`
         break
     }
-    
+
     if (url) {
       window.open(url, '_blank', 'width=600,height=400')
     }
@@ -71,10 +71,13 @@ export function ShareModal({ isOpen, onClose, subreddits }: ShareModalProps) {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm" onClick={onClose}>
-      <div 
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-xs"
+      onClick={onClose}
+    >
+      <div
         className="bg-[#1a1a1a] border border-border rounded-lg p-6 max-w-md w-full mx-4 shadow-xl"
-        onClick={(e) => e.stopPropagation()}
+        onClick={e => e.stopPropagation()}
       >
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
@@ -103,7 +106,7 @@ export function ShareModal({ isOpen, onClose, subreddits }: ShareModalProps) {
                 value={fullLink}
                 readOnly
                 className="flex-1 bg-[#111] border-border text-white text-sm"
-                onClick={(e) => (e.target as HTMLInputElement).select()}
+                onClick={e => (e.target as HTMLInputElement).select()}
               />
               <Button
                 onClick={() => handleCopy(fullLink, 'full')}
@@ -128,7 +131,7 @@ export function ShareModal({ isOpen, onClose, subreddits }: ShareModalProps) {
                 value={shortLink}
                 readOnly
                 className="flex-1 bg-[#111] border-border text-white text-sm"
-                onClick={(e) => (e.target as HTMLInputElement).select()}
+                onClick={e => (e.target as HTMLInputElement).select()}
               />
               <Button
                 onClick={() => handleCopy(shortLink, 'short')}
@@ -173,4 +176,3 @@ export function ShareModal({ isOpen, onClose, subreddits }: ShareModalProps) {
     </div>
   )
 }
-

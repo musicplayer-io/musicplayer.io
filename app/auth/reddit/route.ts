@@ -11,10 +11,7 @@ export async function POST(request: NextRequest) {
     const { code } = await request.json()
 
     if (!code) {
-      return NextResponse.json(
-        { error: 'Missing authorization code' },
-        { status: 400 }
-      )
+      return NextResponse.json({ error: 'Missing authorization code' }, { status: 400 })
     }
 
     const clientId = process.env.REDDIT_CLIENT_ID || 'YOUR_CLIENT_ID'
@@ -26,14 +23,14 @@ export async function POST(request: NextRequest) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'Authorization': 'Basic ' + btoa(`${clientId}:${clientSecret}`),
-        'User-Agent': 'Reddit Music Player/1.0'
+        Authorization: 'Basic ' + btoa(`${clientId}:${clientSecret}`),
+        'User-Agent': 'Reddit Music Player/1.0',
       },
       body: new URLSearchParams({
         grant_type: 'authorization_code',
         code,
-        redirect_uri: redirectUri
-      })
+        redirect_uri: redirectUri,
+      }),
     })
 
     const tokenData = await tokenResponse.json()
@@ -45,9 +42,9 @@ export async function POST(request: NextRequest) {
     // Get user info
     const userResponse = await fetch('https://oauth.reddit.com/api/v1/me', {
       headers: {
-        'Authorization': `Bearer ${tokenData.access_token}`,
-        'User-Agent': 'Reddit Music Player/1.0'
-      }
+        Authorization: `Bearer ${tokenData.access_token}`,
+        'User-Agent': 'Reddit Music Player/1.0',
+      },
     })
 
     const userData = await userResponse.json()
@@ -56,14 +53,10 @@ export async function POST(request: NextRequest) {
       access_token: tokenData.access_token,
       refresh_token: tokenData.refresh_token,
       expires_in: tokenData.expires_in,
-      username: userData.name
+      username: userData.name,
     })
-
   } catch (error: any) {
     console.error('Reddit auth error:', error)
-    return NextResponse.json(
-      { error: error.message || 'Authentication failed' },
-      { status: 500 }
-    )
+    return NextResponse.json({ error: error.message || 'Authentication failed' }, { status: 500 })
   }
 }

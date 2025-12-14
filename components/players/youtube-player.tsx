@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useEffect, useRef, useState } from "react"
-import { Song } from "@/lib/store/player-store"
-import { usePlayerStore } from "@/lib/store/player-store"
-import { extractYouTubeId } from "@/lib/utils/song-utils"
+import { useEffect, useRef, useState } from 'react'
+import { Song } from '@/lib/store/player-store'
+import { usePlayerStore } from '@/lib/store/player-store'
+import { extractYouTubeId } from '@/lib/utils/song-utils'
 
 declare global {
   interface Window {
@@ -23,7 +23,7 @@ export function YouTubePlayer({ song }: YouTubePlayerProps) {
   const videoIdRef = useRef<string | null>(null)
   const [isReady, setIsReady] = useState(false)
   const { isPlaying, volume, setCurrentTime, setDuration } = usePlayerStore()
-  
+
   const videoId = extractYouTubeId(song.url)
 
   // Initialize YouTube player
@@ -40,19 +40,19 @@ export function YouTubePlayer({ song }: YouTubePlayerProps) {
 
       // Clear container before creating new player
       const container = containerRef.current
-      container.innerHTML = ""
-      
+      container.innerHTML = ''
+
       // Create new div for player
-      const playerDiv = document.createElement("div")
+      const playerDiv = document.createElement('div')
       container.appendChild(playerDiv)
 
       try {
         player = new window.YT.Player(playerDiv, {
           videoId,
-          width: "100%",
-          height: "100%",
+          width: '100%',
+          height: '100%',
           playerVars: {
-            autoplay: 1,  // Always autoplay like original
+            autoplay: 1, // Always autoplay like original
             controls: 0,
             modestbranding: 1,
             rel: 0,
@@ -60,11 +60,11 @@ export function YouTubePlayer({ song }: YouTubePlayerProps) {
           events: {
             onReady: (event: any) => {
               if (!mounted || videoIdRef.current !== videoId) return
-              
+
               playerRef.current = event.target
               window.__youtubePlayer = event.target
               setIsReady(true)
-              
+
               try {
                 event.target.setVolume(volume)
                 event.target.playVideo()
@@ -75,11 +75,11 @@ export function YouTubePlayer({ song }: YouTubePlayerProps) {
               // Start update interval
               updateInterval = setInterval(() => {
                 if (!mounted || !playerRef.current || videoIdRef.current !== videoId) return
-                
+
                 try {
                   const time = playerRef.current.getCurrentTime()
                   const dur = playerRef.current.getDuration()
-                  
+
                   if (typeof time === 'number' && time >= 0 && isFinite(time)) {
                     setCurrentTime(time)
                   }
@@ -93,9 +93,9 @@ export function YouTubePlayer({ song }: YouTubePlayerProps) {
             },
             onStateChange: (event: any) => {
               if (!mounted || videoIdRef.current !== videoId) return
-              
+
               const state = usePlayerStore.getState()
-              
+
               // 0 = ended, -1 = unstarted, 1 = playing, 2 = paused, 3 = buffering, 5 = video cued
               if (event.data === 0) {
                 // Song ended - advance to next
@@ -108,22 +108,22 @@ export function YouTubePlayer({ song }: YouTubePlayerProps) {
               }
             },
             onError: (event: any) => {
-              console.error("YouTube player error:", event.data)
+              console.error('YouTube player error:', event.data)
             },
           },
         })
       } catch (error) {
-        console.error("YouTube player init error:", error)
+        console.error('YouTube player init error:', error)
       }
     }
 
     // Load YouTube API if needed
     if (!window.YT) {
-      const tag = document.createElement("script")
-      tag.src = "https://www.youtube.com/iframe_api"
+      const tag = document.createElement('script')
+      tag.src = 'https://www.youtube.com/iframe_api'
       tag.async = true
-      
-      const firstScript = document.getElementsByTagName("script")[0]
+
+      const firstScript = document.getElementsByTagName('script')[0]
       firstScript.parentNode?.insertBefore(tag, firstScript)
 
       window.onYouTubeIframeAPIReady = initPlayer
@@ -136,7 +136,7 @@ export function YouTubePlayer({ song }: YouTubePlayerProps) {
       mounted = false
       videoIdRef.current = null
       setIsReady(false)
-      
+
       if (updateInterval) {
         clearInterval(updateInterval)
       }
@@ -150,11 +150,11 @@ export function YouTubePlayer({ song }: YouTubePlayerProps) {
         }
         player = null
       }
-      
+
       playerRef.current = null
-      
+
       if (containerRef.current) {
-        containerRef.current.innerHTML = ""
+        containerRef.current.innerHTML = ''
       }
     }
   }, [videoId])

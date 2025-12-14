@@ -1,28 +1,28 @@
 // components/song-panel.tsx
-"use client"
+'use client'
 
-import { useState } from "react"
-import { Music, ArrowUp, ArrowDown, ExternalLink, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea"
-import { usePlaylistStore } from "@/lib/store"
-import { useAuth } from "@/lib/hooks/use-auth"
-import { usePlaylistStore as useStore } from "@/lib/store"
-import { YouTubePlayer } from "@/components/players/youtube-player"
-import { SoundCloudPlayer } from "@/components/players/soundcloud-player"
-import { VimeoPlayer } from "@/components/players/vimeo-player"
-import { MP3Player } from "@/components/players/mp3-player"
-import { Comments } from "@/components/comments"
-import { MessageCircle, Building2, TrendingUp } from "lucide-react"
+import { useState } from 'react'
+import { Music, ArrowUp, ArrowDown, ExternalLink, X } from 'lucide-react'
+import { Button } from '@/components/ui/button'
+import { Textarea } from '@/components/ui/textarea'
+import { usePlaylistStore } from '@/lib/store'
+import { useAuth } from '@/lib/hooks/use-auth'
+import { usePlaylistStore as useStore } from '@/lib/store'
+import { YouTubePlayer } from '@/components/players/youtube-player'
+import { SoundCloudPlayer } from '@/components/players/soundcloud-player'
+import { VimeoPlayer } from '@/components/players/vimeo-player'
+import { MP3Player } from '@/components/players/mp3-player'
+import { Comments } from '@/components/comments'
+import { MessageCircle, Building2, TrendingUp } from 'lucide-react'
 
 interface SongPanelProps {
   onClose?: () => void
 }
 
 export function SongPanel({ onClose }: SongPanelProps = {}) {
-  const currentSong = usePlaylistStore((state) => state.currentSong)
+  const currentSong = usePlaylistStore(state => state.currentSong)
   const { isAuthenticated, login } = useAuth()
-  const addMessage = useStore((state) => state.addMessage)
+  const addMessage = useStore(state => state.addMessage)
   const [voteDirection, setVoteDirection] = useState<number>(0)
 
   const handleVote = async (direction: number) => {
@@ -36,8 +36,8 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
             text: 'Log In',
             className: 'yellow',
             callback: login,
-          }
-        ]
+          },
+        ],
       })
       return
     }
@@ -87,53 +87,61 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
         <div className="mb-8">
           <h1 className="text-lg font-semibold text-white mb-6">Current Song</h1>
         </div>
-        
+
         {/* Promotional Content - Perfect Design */}
         <div className="space-y-4 mb-8">
           {/* SEO Audit */}
-          <a 
-            href="https://seoaudit.com" 
-            target="_blank" 
+          <a
+            href="https://seoaudit.com"
+            target="_blank"
             rel="noopener noreferrer"
             className="group flex items-start gap-4 p-4 rounded-lg bg-[#181818] border border-white/5 hover:bg-[#222222] hover:border-[#FDC00F]/30 transition-all duration-200"
           >
-            <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-[#FDC00F]/20 to-[#f99b1d]/20 flex items-center justify-center group-hover:scale-105 transition-transform">
+            <div className="shrink-0 w-10 h-10 rounded-lg bg-linear-to-br from-[#FDC00F]/20 to-[#f99b1d]/20 flex items-center justify-center group-hover:scale-105 transition-transform">
               <MessageCircle className="w-5 h-5 text-[#FDC00F]" />
             </div>
             <div className="flex-1 min-w-0">
-              <h3 className="text-white font-semibold mb-1 group-hover:text-[#FDC00F] transition-colors">SEO Audit</h3>
-              <p className="text-gray-400 text-sm leading-relaxed">Get a SEO audit for your website</p>
+              <h3 className="text-white font-semibold mb-1 group-hover:text-[#FDC00F] transition-colors">
+                SEO Audit
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Get a SEO audit for your website
+              </p>
             </div>
           </a>
 
           {/* LinkDR */}
-          <a 
-            href="https://linkdr.com" 
-            target="_blank" 
+          <a
+            href="https://linkdr.com"
+            target="_blank"
             rel="noopener noreferrer"
             className="group flex items-start gap-4 p-4 rounded-lg bg-[#181818] border border-white/5 hover:bg-[#222222] hover:border-[#FDC00F]/30 transition-all duration-200"
           >
-            <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500/20 to-blue-600/20 flex items-center justify-center group-hover:scale-105 transition-transform">
+            <div className="shrink-0 w-10 h-10 rounded-lg bg-linear-to-br from-blue-500/20 to-blue-600/20 flex items-center justify-center group-hover:scale-105 transition-transform">
               <Building2 className="w-5 h-5 text-blue-400" />
             </div>
             <div className="flex-1 min-w-0">
-              <h3 className="text-white font-semibold mb-1 group-hover:text-blue-400 transition-colors">LinkDR</h3>
+              <h3 className="text-white font-semibold mb-1 group-hover:text-blue-400 transition-colors">
+                LinkDR
+              </h3>
               <p className="text-gray-400 text-sm leading-relaxed">Link Building Services</p>
             </div>
           </a>
 
           {/* MagicSpace SEO */}
-          <a 
-            href="https://magicspaceseo.com" 
-            target="_blank" 
+          <a
+            href="https://magicspaceseo.com"
+            target="_blank"
             rel="noopener noreferrer"
             className="group flex items-start gap-4 p-4 rounded-lg bg-[#181818] border border-white/5 hover:bg-[#222222] hover:border-[#FDC00F]/30 transition-all duration-200"
           >
-            <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
+            <div className="shrink-0 w-10 h-10 rounded-lg bg-linear-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center group-hover:scale-105 transition-transform">
               <TrendingUp className="w-5 h-5 text-purple-400" />
             </div>
             <div className="flex-1 min-w-0">
-              <h3 className="text-white font-semibold mb-1 group-hover:text-purple-400 transition-colors">MagicSpace SEO</h3>
+              <h3 className="text-white font-semibold mb-1 group-hover:text-purple-400 transition-colors">
+                MagicSpace SEO
+              </h3>
               <p className="text-gray-400 text-sm leading-relaxed">The best SEO agency for SaaS</p>
             </div>
           </a>
@@ -170,35 +178,63 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
 
       {/* Video Player Area - Enhanced */}
       <div className="mb-8">
-        {currentSong.type === "youtube" && (
-          <div className="aspect-video bg-black rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10" style={{ boxShadow: '0 0 40px rgba(253, 192, 15, 0.15), 0 0 80px rgba(253, 192, 15, 0.08), 0 20px 40px rgba(0, 0, 0, 0.5)' }}>
+        {currentSong.type === 'youtube' && (
+          <div
+            className="aspect-video bg-black rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10"
+            style={{
+              boxShadow:
+                '0 0 40px rgba(253, 192, 15, 0.15), 0 0 80px rgba(253, 192, 15, 0.08), 0 20px 40px rgba(0, 0, 0, 0.5)',
+            }}
+          >
             <YouTubePlayer song={currentSong} />
           </div>
         )}
-        {currentSong.type === "soundcloud" && (
-          <div className="aspect-video bg-black rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10" style={{ boxShadow: '0 0 40px rgba(253, 192, 15, 0.15), 0 0 80px rgba(253, 192, 15, 0.08), 0 20px 40px rgba(0, 0, 0, 0.5)' }}>
+        {currentSong.type === 'soundcloud' && (
+          <div
+            className="aspect-video bg-black rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10"
+            style={{
+              boxShadow:
+                '0 0 40px rgba(253, 192, 15, 0.15), 0 0 80px rgba(253, 192, 15, 0.08), 0 20px 40px rgba(0, 0, 0, 0.5)',
+            }}
+          >
             <SoundCloudPlayer song={currentSong} />
           </div>
         )}
-        {currentSong.type === "vimeo" && (
-          <div className="aspect-video bg-black rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10" style={{ boxShadow: '0 0 40px rgba(253, 192, 15, 0.15), 0 0 80px rgba(253, 192, 15, 0.08), 0 20px 40px rgba(0, 0, 0, 0.5)' }}>
+        {currentSong.type === 'vimeo' && (
+          <div
+            className="aspect-video bg-black rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10"
+            style={{
+              boxShadow:
+                '0 0 40px rgba(253, 192, 15, 0.15), 0 0 80px rgba(253, 192, 15, 0.08), 0 20px 40px rgba(0, 0, 0, 0.5)',
+            }}
+          >
             <VimeoPlayer song={currentSong} />
           </div>
         )}
-        {currentSong.type === "mp3" && (
-          <div className="aspect-video bg-black rounded-xl overflow-hidden relative shadow-2xl ring-1 ring-white/10" style={{ boxShadow: '0 0 40px rgba(253, 192, 15, 0.15), 0 0 80px rgba(253, 192, 15, 0.08), 0 20px 40px rgba(0, 0, 0, 0.5)' }}>
-            {currentSong.thumbnail && 
-             currentSong.thumbnail !== "self" && 
-             currentSong.thumbnail !== "default" && 
-             currentSong.thumbnail !== "nsfw" &&
-             (currentSong.thumbnail.startsWith("http") || currentSong.thumbnail.startsWith("//")) ? (
+        {currentSong.type === 'mp3' && (
+          <div
+            className="aspect-video bg-black rounded-xl overflow-hidden relative shadow-2xl ring-1 ring-white/10"
+            style={{
+              boxShadow:
+                '0 0 40px rgba(253, 192, 15, 0.15), 0 0 80px rgba(253, 192, 15, 0.08), 0 20px 40px rgba(0, 0, 0, 0.5)',
+            }}
+          >
+            {currentSong.thumbnail &&
+            currentSong.thumbnail !== 'self' &&
+            currentSong.thumbnail !== 'default' &&
+            currentSong.thumbnail !== 'nsfw' &&
+            (currentSong.thumbnail.startsWith('http') || currentSong.thumbnail.startsWith('//')) ? (
               <img
-                src={currentSong.thumbnail.startsWith("//") ? `https:${currentSong.thumbnail}` : currentSong.thumbnail}
+                src={
+                  currentSong.thumbnail.startsWith('//')
+                    ? `https:${currentSong.thumbnail}`
+                    : currentSong.thumbnail
+                }
                 alt={currentSong.title}
                 className="w-full h-full object-cover"
               />
             ) : (
-              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#1a1a1a] to-[#111]">
+              <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-[#1a1a1a] to-[#111]">
                 <Music className="w-16 h-16 text-gray-600" />
               </div>
             )}
@@ -211,33 +247,41 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
 
       {/* Song Title & Actions */}
       <div className="mb-8 px-4 md:px-0">
-        <h2 className="text-base md:text-lg font-bold text-white mb-2 leading-tight">{currentSong.title}</h2>
+        <h2 className="text-base md:text-lg font-bold text-white mb-2 leading-tight">
+          {currentSong.title}
+        </h2>
         <p className="text-sm text-gray-400 mb-6">by {currentSong.author}</p>
-        
+
         {/* Action Buttons - Clean */}
         <div className="flex items-center justify-center gap-2 md:gap-3 mb-3 md:mb-4">
           <button
             onClick={() => handleVote(1)}
             className={`flex flex-col items-center justify-center px-3 py-2 rounded-md transition-colors min-h-[60px] text-center ${
-              voteDirection === 1 
-                ? "bg-[#FDC00F]/10 text-[#FDC00F]" 
-                : "text-gray-400 hover:text-[#FDC00F] hover:bg-[#FDC00F]/10"
+              voteDirection === 1
+                ? 'bg-[#FDC00F]/10 text-[#FDC00F]'
+                : 'text-gray-400 hover:text-[#FDC00F] hover:bg-[#FDC00F]/10'
             }`}
             title="Upvote"
           >
-            <ArrowUp className={`w-5 h-5 mb-1 mx-auto ${voteDirection === 1 ? "text-[#FDC00F]" : "text-gray-400"}`} strokeWidth={3} />
+            <ArrowUp
+              className={`w-5 h-5 mb-1 mx-auto ${voteDirection === 1 ? 'text-[#FDC00F]' : 'text-gray-400'}`}
+              strokeWidth={3}
+            />
             <span className="text-xs text-center">Upvote</span>
           </button>
           <button
             onClick={() => handleVote(-1)}
             className={`flex flex-col items-center justify-center px-3 py-2 rounded-md transition-colors min-h-[60px] text-center ${
-              voteDirection === -1 
-                ? "bg-red-500/10 text-red-400" 
-                : "text-gray-400 hover:text-red-400 hover:bg-red-500/10"
+              voteDirection === -1
+                ? 'bg-red-500/10 text-red-400'
+                : 'text-gray-400 hover:text-red-400 hover:bg-red-500/10'
             }`}
             title="Downvote"
           >
-            <ArrowDown className={`w-5 h-5 mb-1 mx-auto ${voteDirection === -1 ? "text-red-400" : "text-gray-400"}`} strokeWidth={3} />
+            <ArrowDown
+              className={`w-5 h-5 mb-1 mx-auto ${voteDirection === -1 ? 'text-red-400' : 'text-gray-400'}`}
+              strokeWidth={3}
+            />
             <span className="text-xs text-center">Downvote</span>
           </button>
           <a
@@ -247,13 +291,22 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
             className="flex flex-col items-center justify-center px-3 py-2 rounded-md text-gray-400 hover:text-[#FF4500] hover:bg-[#FF4500]/10 transition-colors min-h-[60px] text-center"
             title="View on Reddit"
           >
-            <svg className="w-5 h-5 mb-1 text-gray-400 mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <svg
+              className="w-5 h-5 mb-1 text-gray-400 mx-auto"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <g clipPath="url(#akarIconsRedditFill0)">
-                <path fillRule="evenodd" d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12S5.373 0 12 0s12 5.373 12 12Zm-4.312-.942c.194.277.304.604.316.942a1.751 1.751 0 0 1-.972 1.596c.014.176.014.352 0 .528c0 2.688-3.132 4.872-6.996 4.872c-3.864 0-6.996-2.184-6.996-4.872a3.444 3.444 0 0 1 0-.528a1.75 1.75 0 1 1 1.932-2.868a8.568 8.568 0 0 1 4.68-1.476l.888-4.164a.372.372 0 0 1 .444-.288l2.94.588a1.2 1.2 0 1 1-.156.732L13.2 5.58l-.78 3.744a8.544 8.544 0 0 1 4.62 1.476a1.751 1.751 0 0 1 2.648.258ZM8.206 12.533a1.2 1.2 0 1 0 1.996 1.334a1.2 1.2 0 0 0-1.996-1.334Zm3.806 4.891c1.065.044 2.113-.234 2.964-.876a.335.335 0 1 0-.468-.48A3.936 3.936 0 0 1 12 16.8a3.924 3.924 0 0 1-2.496-.756a.324.324 0 0 0-.456.456a4.608 4.608 0 0 0 2.964.924Zm2.081-3.178c.198.132.418.25.655.25a1.199 1.199 0 0 0 1.212-1.248a1.2 1.2 0 1 0-1.867.998Z" clipRule="evenodd"/>
+                <path
+                  fillRule="evenodd"
+                  d="M24 12c0 6.627-5.373 12-12 12S0 18.627 0 12S5.373 0 12 0s12 5.373 12 12Zm-4.312-.942c.194.277.304.604.316.942a1.751 1.751 0 0 1-.972 1.596c.014.176.014.352 0 .528c0 2.688-3.132 4.872-6.996 4.872c-3.864 0-6.996-2.184-6.996-4.872a3.444 3.444 0 0 1 0-.528a1.75 1.75 0 1 1 1.932-2.868a8.568 8.568 0 0 1 4.68-1.476l.888-4.164a.372.372 0 0 1 .444-.288l2.94.588a1.2 1.2 0 1 1-.156.732L13.2 5.58l-.78 3.744a8.544 8.544 0 0 1 4.62 1.476a1.751 1.751 0 0 1 2.648.258ZM8.206 12.533a1.2 1.2 0 1 0 1.996 1.334a1.2 1.2 0 0 0-1.996-1.334Zm3.806 4.891c1.065.044 2.113-.234 2.964-.876a.335.335 0 1 0-.468-.48A3.936 3.936 0 0 1 12 16.8a3.924 3.924 0 0 1-2.496-.756a.324.324 0 0 0-.456.456a4.608 4.608 0 0 0 2.964.924Zm2.081-3.178c.198.132.418.25.655.25a1.199 1.199 0 0 0 1.212-1.248a1.2 1.2 0 1 0-1.867.998Z"
+                  clipRule="evenodd"
+                />
               </g>
               <defs>
                 <clipPath id="akarIconsRedditFill0">
-                  <path fill="#000000" d="M0 0h24v24H0z"/>
+                  <path fill="#000000" d="M0 0h24v24H0z" />
                 </clipPath>
               </defs>
             </svg>
@@ -265,16 +318,21 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
               target="_blank"
               rel="noopener noreferrer"
               className={`flex flex-col items-center justify-center px-3 py-2 rounded-md transition-colors min-h-[60px] text-center ${
-                currentSong.domain === "youtube.com" || currentSong.domain === "youtu.be"
-                  ? "text-gray-400 hover:text-red-500 hover:bg-red-500/10"
-                  : "text-gray-400 hover:text-white hover:bg-white/5"
+                currentSong.domain === 'youtube.com' || currentSong.domain === 'youtu.be'
+                  ? 'text-gray-400 hover:text-red-500 hover:bg-red-500/10'
+                  : 'text-gray-400 hover:text-white hover:bg-white/5'
               }`}
-              title={`Open on ${currentSong.domain === "youtube.com" || currentSong.domain === "youtu.be" ? "YouTube" : currentSong.domain}`}
+              title={`Open on ${currentSong.domain === 'youtube.com' || currentSong.domain === 'youtu.be' ? 'YouTube' : currentSong.domain}`}
             >
-              {(currentSong.domain === "youtube.com" || currentSong.domain === "youtu.be") ? (
+              {currentSong.domain === 'youtube.com' || currentSong.domain === 'youtu.be' ? (
                 <>
-                  <svg className="w-5 h-5 mb-1 text-gray-400 mx-auto" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                  <svg
+                    className="w-5 h-5 mb-1 text-gray-400 mx-auto"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                   </svg>
                   <span className="text-xs text-center">YouTube</span>
                 </>
@@ -294,13 +352,20 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
             <div className="text-[10px] font-bold text-[#FDC00F] mb-1 leading-none">
               {currentSong.score?.toLocaleString() || '0'}
             </div>
-            <div className="text-[10px] font-medium text-gray-400 uppercase tracking-wide">Karma</div>
+            <div className="text-[10px] font-medium text-gray-400 uppercase tracking-wide">
+              Karma
+            </div>
           </div>
           <div className="p-3 bg-[#181818] rounded-lg border border-white/5 hover:border-white/10 transition-colors">
-            <div className="text-[10px] font-semibold text-white mb-1 truncate leading-tight" title={`/u/${currentSong.author}`}>
+            <div
+              className="text-[10px] font-semibold text-white mb-1 truncate leading-tight"
+              title={`/u/${currentSong.author}`}
+            >
               /u/{currentSong.author || 'Unknown'}
             </div>
-            <div className="text-[10px] font-medium text-gray-400 uppercase tracking-wide">Author</div>
+            <div className="text-[10px] font-medium text-gray-400 uppercase tracking-wide">
+              Author
+            </div>
           </div>
           <div className="p-3 bg-[#181818] rounded-lg border border-white/5 hover:border-white/10 transition-colors">
             <div className="text-[10px] font-semibold text-gray-300 mb-1 leading-tight">
@@ -309,17 +374,22 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
             <div className="text-[10px] font-medium text-gray-400 uppercase tracking-wide">Age</div>
           </div>
           <div className="p-3 bg-[#181818] rounded-lg border border-white/5 hover:border-white/10 transition-colors">
-            <div className="text-[10px] font-semibold text-gray-300 mb-1 truncate leading-tight" title={`/r/${currentSong.subreddit}`}>
+            <div
+              className="text-[10px] font-semibold text-gray-300 mb-1 truncate leading-tight"
+              title={`/r/${currentSong.subreddit}`}
+            >
               /r/{currentSong.subreddit || 'Unknown'}
             </div>
-            <div className="text-[10px] font-medium text-gray-400 uppercase tracking-wide">Subreddit</div>
+            <div className="text-[10px] font-medium text-gray-400 uppercase tracking-wide">
+              Subreddit
+            </div>
           </div>
         </div>
       </div>
-      
+
       {/* Selftext */}
       {currentSong.selftext && (
-        <div className="mb-8 p-5 bg-gradient-to-br from-[#181818] to-[#1a1a1a] rounded-xl border border-white/10 hover:border-white/20 transition-all duration-200 shadow-lg">
+        <div className="mb-8 p-5 bg-linear-to-br from-[#181818] to-[#1a1a1a] rounded-xl border border-white/10 hover:border-white/20 transition-all duration-200 shadow-lg">
           <div className="text-sm text-gray-300 leading-relaxed prose prose-invert max-w-none">
             <div dangerouslySetInnerHTML={{ __html: currentSong.selftext }} />
           </div>
@@ -331,16 +401,18 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
         <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/10">
           <div>
             <h2 className="text-xl font-bold text-white mb-1">Comments</h2>
-            <p className="text-xs text-gray-500">{currentSong.num_comments} {currentSong.num_comments === 1 ? 'comment' : 'comments'}</p>
+            <p className="text-xs text-gray-500">
+              {currentSong.num_comments} {currentSong.num_comments === 1 ? 'comment' : 'comments'}
+            </p>
           </div>
         </div>
         <div className="mb-4 w-full max-w-full overflow-x-hidden">
           <Comments permalink={currentSong.permalink} />
         </div>
         {/* Comment Form - Enhanced */}
-        <form 
+        <form
           className="mt-6 pt-6 border-t border-white/10 space-y-4"
-          onSubmit={async (e) => {
+          onSubmit={async e => {
             e.preventDefault()
             const formData = new FormData(e.currentTarget)
             const commentText = formData.get('comment') as string
@@ -354,8 +426,8 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
                     text: 'Log In',
                     className: 'yellow',
                     callback: login,
-                  }
-                ]
+                  },
+                ],
               })
               return
             }
@@ -408,8 +480,8 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
         >
           <Textarea
             name="comment"
-            className="w-full p-4 bg-[#181818] border border-white/10 text-white rounded-xl resize-none focus:outline-none focus:border-[#FDC00F]/50 focus:ring-2 focus:ring-[#FDC00F]/20 focus-visible:ring-offset-0 text-sm min-h-[100px] transition-all duration-200"
-            placeholder={isAuthenticated ? "Add a comment..." : "Log in to add a comment..."}
+            className="w-full p-4 bg-[#181818] border border-white/10 text-white rounded-xl resize-none focus:outline-hidden focus:border-[#FDC00F]/50 focus:ring-2 focus:ring-[#FDC00F]/20 focus-visible:ring-offset-0 text-sm min-h-[100px] transition-all duration-200"
+            placeholder={isAuthenticated ? 'Add a comment...' : 'Log in to add a comment...'}
             rows={4}
             disabled={!isAuthenticated}
           />
@@ -418,11 +490,10 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
             disabled={!isAuthenticated}
             className="w-full bg-[#FDC00F] hover:bg-[#f99b1d] text-black font-semibold disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-[#FDC00F]/20 hover:shadow-[#FDC00F]/40 transition-all duration-200 py-3 rounded-xl"
           >
-            {isAuthenticated ? "Post Comment" : "Log In to Comment"}
+            {isAuthenticated ? 'Post Comment' : 'Log In to Comment'}
           </Button>
         </form>
       </div>
     </div>
   )
 }
-

@@ -40,7 +40,7 @@ function AuthCallbackContent() {
         const response = await fetch('/api/auth/reddit', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ code })
+          body: JSON.stringify({ code }),
         })
 
         const data = await response.json()
@@ -56,7 +56,6 @@ function AuthCallbackContent() {
 
         setStatus('Login successful! Redirecting...')
         setTimeout(() => router.push('/'), 1000)
-
       } catch (error: any) {
         setStatus(`Login failed: ${error.message}`)
         setTimeout(() => router.push('/'), 3000)

@@ -1,9 +1,9 @@
-"use client"
+'use client'
 
-import { useEffect, useRef } from "react"
-import { Song } from "@/lib/store/player-store"
-import { usePlayerStore } from "@/lib/store/player-store"
-import { Music } from "lucide-react"
+import { useEffect, useRef } from 'react'
+import { Song } from '@/lib/store/player-store'
+import { usePlayerStore } from '@/lib/store/player-store'
+import { Music } from 'lucide-react'
 
 interface MP3PlayerProps {
   song: Song
@@ -31,14 +31,14 @@ export function MP3Player({ song }: MP3PlayerProps) {
       usePlayerStore.getState().next()
     }
 
-    audio.addEventListener("timeupdate", handleTimeUpdate)
-    audio.addEventListener("durationchange", handleDurationChange)
-    audio.addEventListener("ended", handleEnded)
+    audio.addEventListener('timeupdate', handleTimeUpdate)
+    audio.addEventListener('durationchange', handleDurationChange)
+    audio.addEventListener('ended', handleEnded)
 
     return () => {
-      audio.removeEventListener("timeupdate", handleTimeUpdate)
-      audio.removeEventListener("durationchange", handleDurationChange)
-      audio.removeEventListener("ended", handleEnded)
+      audio.removeEventListener('timeupdate', handleTimeUpdate)
+      audio.removeEventListener('durationchange', handleDurationChange)
+      audio.removeEventListener('ended', handleEnded)
     }
   }, [])
 
@@ -62,14 +62,10 @@ export function MP3Player({ song }: MP3PlayerProps) {
 
   return (
     <div className="relative w-full h-full">
-      {song.thumbnail && song.thumbnail !== "self" ? (
-        <img
-          src={song.thumbnail}
-          alt={song.title}
-          className="w-full h-full object-cover"
-        />
+      {song.thumbnail && song.thumbnail !== 'self' ? (
+        <img src={song.thumbnail} alt={song.title} className="w-full h-full object-cover" />
       ) : (
-        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-secondary to-background">
+        <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-secondary to-background">
           <Music className="w-24 h-24 text-muted-foreground" />
         </div>
       )}
