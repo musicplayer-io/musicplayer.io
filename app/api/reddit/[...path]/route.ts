@@ -76,7 +76,6 @@ export async function GET(request: NextRequest) {
 
     // Fetch from Reddit with retries
     let response: Response | null = null
-    let lastError: any = null
 
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
@@ -86,7 +85,8 @@ export async function GET(request: NextRequest) {
 
         response = await fetch(redditUrl, {
           headers: {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+            'User-Agent':
+              'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
             Accept: 'application/json',
           },
           next: { revalidate: 60 }, // Next.js cache
@@ -95,7 +95,6 @@ export async function GET(request: NextRequest) {
         if (response.ok) break
         if (response.status !== 403 || attempt === 2) break
       } catch (error) {
-        lastError = error
         if (attempt === 2) throw error
       }
     }

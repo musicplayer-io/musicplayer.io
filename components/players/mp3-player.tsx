@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useEffect, useRef } from 'react'
 import { Song } from '@/lib/store/player-store'
 import { usePlayerStore } from '@/lib/store/player-store'
@@ -40,7 +41,7 @@ export function MP3Player({ song }: MP3PlayerProps) {
       audio.removeEventListener('durationchange', handleDurationChange)
       audio.removeEventListener('ended', handleEnded)
     }
-  }, [])
+  }, [setCurrentTime, setDuration])
 
   useEffect(() => {
     const audio = audioRef.current
@@ -63,7 +64,7 @@ export function MP3Player({ song }: MP3PlayerProps) {
   return (
     <div className="relative w-full h-full">
       {song.thumbnail && song.thumbnail !== 'self' ? (
-        <img src={song.thumbnail} alt={song.title} className="w-full h-full object-cover" />
+        <Image src={song.thumbnail} alt={song.title} fill className="object-cover" sizes="100vw" />
       ) : (
         <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-secondary to-background">
           <Music className="w-24 h-24 text-muted-foreground" />

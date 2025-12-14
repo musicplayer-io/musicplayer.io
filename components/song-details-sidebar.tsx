@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { ThumbsUp, ThumbsDown, MessageCircle, ExternalLink, LogIn } from 'lucide-react'
 import { usePlayerStore } from '@/lib/store/player-store'
 import { useState } from 'react'
@@ -21,7 +22,7 @@ export function SongDetailsSidebar() {
     )
   }
 
-  const handleVote = (type: 'up' | 'down') => {
+  const handleVote = (_type: 'up' | 'down') => {
     setShowLoginPrompt(true)
   }
 
@@ -48,18 +49,17 @@ export function SongDetailsSidebar() {
             currentSong.thumbnail !== 'nsfw' &&
             (currentSong.thumbnail.startsWith('http') ||
               currentSong.thumbnail.startsWith('//')) && (
-              <div className="aspect-video rounded-lg overflow-hidden bg-secondary">
-                <img
+              <div className="aspect-video rounded-lg overflow-hidden bg-secondary relative">
+                <Image
                   src={
                     currentSong.thumbnail.startsWith('//')
                       ? `https:${currentSong.thumbnail}`
                       : currentSong.thumbnail
                   }
                   alt={currentSong.title}
-                  className="w-full h-full object-cover"
-                  onError={e => {
-                    e.currentTarget.style.display = 'none'
-                  }}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
             )}

@@ -1,6 +1,7 @@
 // components/song-panel.tsx
 'use client'
 
+import Image from 'next/image'
 import { useState } from 'react'
 import { Music, ArrowUp, ArrowDown, ExternalLink, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
@@ -224,14 +225,16 @@ export function SongPanel({ onClose }: SongPanelProps = {}) {
             currentSong.thumbnail !== 'default' &&
             currentSong.thumbnail !== 'nsfw' &&
             (currentSong.thumbnail.startsWith('http') || currentSong.thumbnail.startsWith('//')) ? (
-              <img
+              <Image
                 src={
                   currentSong.thumbnail.startsWith('//')
                     ? `https:${currentSong.thumbnail}`
                     : currentSong.thumbnail
                 }
                 alt={currentSong.title}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center bg-linear-to-br from-[#1a1a1a] to-[#111]">

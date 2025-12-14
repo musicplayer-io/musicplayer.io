@@ -30,6 +30,7 @@ export function YouTubePlayer({ song }: YouTubePlayerProps) {
   useEffect(() => {
     if (!videoId || !containerRef.current) return
 
+    const container = containerRef.current
     let mounted = true
     let player: any = null
     let updateInterval: NodeJS.Timeout | null = null
@@ -68,7 +69,7 @@ export function YouTubePlayer({ song }: YouTubePlayerProps) {
               try {
                 event.target.setVolume(volume)
                 event.target.playVideo()
-              } catch (e) {
+              } catch (_e) {
                 // Silently handle errors
               }
 
@@ -86,7 +87,7 @@ export function YouTubePlayer({ song }: YouTubePlayerProps) {
                   if (typeof dur === 'number' && dur > 0 && isFinite(dur)) {
                     setDuration(dur)
                   }
-                } catch (e) {
+                } catch (_e) {
                   // Ignore errors during cleanup
                 }
               }, 100)
@@ -104,7 +105,7 @@ export function YouTubePlayer({ song }: YouTubePlayerProps) {
                 // Paused but should be playing
                 try {
                   event.target.playVideo()
-                } catch (e) {}
+                } catch (_e) {}
               }
             },
             onError: (event: any) => {
@@ -145,7 +146,7 @@ export function YouTubePlayer({ song }: YouTubePlayerProps) {
         try {
           player.stopVideo()
           player.destroy()
-        } catch (e) {
+        } catch (_e) {
           // Silently ignore cleanup errors
         }
         player = null
@@ -153,11 +154,11 @@ export function YouTubePlayer({ song }: YouTubePlayerProps) {
 
       playerRef.current = null
 
-      if (containerRef.current) {
-        containerRef.current.innerHTML = ''
+      if (container) {
+        container.innerHTML = ''
       }
     }
-  }, [videoId])
+  }, [videoId, setCurrentTime, setDuration, volume])
 
   // Handle play/pause
   useEffect(() => {
@@ -170,7 +171,7 @@ export function YouTubePlayer({ song }: YouTubePlayerProps) {
         } else {
           playerRef.current.pauseVideo()
         }
-      } catch (e) {
+      } catch (_e) {
         // Silently handle errors
       }
     }
@@ -186,7 +187,7 @@ export function YouTubePlayer({ song }: YouTubePlayerProps) {
 
     try {
       playerRef.current.setVolume(volume)
-    } catch (e) {
+    } catch (_e) {
       // Ignore
     }
   }, [volume, isReady, videoId])

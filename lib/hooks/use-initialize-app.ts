@@ -85,7 +85,7 @@ export function useInitializeApp() {
         fetchFromSubreddits(defaultSubs)
       }
     }
-  }, [pathname, searchParams]) // React to pathname and searchParams changes
+  }, [pathname, searchParams, fetchFromSubreddits, selectedSubreddits, setSelectedSubreddits]) // React to pathname and searchParams changes
 
   // ==========================================
   // KEYBOARD SHORTCUTS

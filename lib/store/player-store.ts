@@ -91,7 +91,7 @@ const STORAGE_KEYS = {
   volume: 'reddit_music_player_volume',
 } as const
 
-function loadFromStorage<T>(key: string, defaultValue: T): T {
+function _loadFromStorage<T>(key: string, defaultValue: T): T {
   if (typeof window === 'undefined') return defaultValue
   try {
     const item = localStorage.getItem(key)

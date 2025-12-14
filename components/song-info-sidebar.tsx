@@ -123,7 +123,7 @@ export function SongInfoSidebar() {
     }
 
     loadComments()
-  }, [currentSong?.id])
+  }, [currentSong])
 
   if (!currentSong) {
     return (

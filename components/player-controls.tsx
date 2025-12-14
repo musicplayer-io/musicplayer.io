@@ -38,14 +38,18 @@ export function PlayerControls() {
       if (currentSong.type === 'youtube' && (window as any).YT && (window as any).__youtubePlayer) {
         try {
           ;(window as any).__youtubePlayer.seekTo(newTime, true)
-        } catch {}
+        } catch {
+          // ignore
+        }
       }
 
       // Vimeo
       if (currentSong.type === 'vimeo' && (window as any).__vimeoPlayer) {
         try {
           ;(window as any).__vimeoPlayer.setCurrentTime(newTime)
-        } catch {}
+        } catch {
+          // ignore
+        }
       }
 
       // MP3
@@ -62,7 +66,9 @@ export function PlayerControls() {
             const position = (newTime / dur) * 1000
             widget.seekTo(position)
           })
-        } catch {}
+        } catch {
+          // ignore
+        }
       }
     }
   }

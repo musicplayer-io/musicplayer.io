@@ -58,7 +58,7 @@ export function VimeoPlayer({ song }: VimeoPlayerProps) {
               if (data?.seconds && typeof data.seconds === 'number') {
                 setCurrentTime(data.seconds)
               }
-            } catch (e) {
+            } catch (_e) {
               // Ignore
             }
           })
@@ -70,7 +70,7 @@ export function VimeoPlayer({ song }: VimeoPlayerProps) {
               if (dur > 0 && isFinite(dur)) {
                 setDuration(dur)
               }
-            } catch (e) {
+            } catch (_e) {
               // Ignore
             }
           })
@@ -116,14 +116,14 @@ export function VimeoPlayer({ song }: VimeoPlayerProps) {
           player.off('timeupdate')
           player.off('ended')
           player.off('error')
-        } catch (e) {
+        } catch (_e) {
           // Silently ignore
         }
       }
 
       playerRef.current = null
     }
-  }, [videoId])
+  }, [videoId, isPlaying, setCurrentTime, setDuration, volume])
 
   useEffect(() => {
     if (!isReady || !playerRef.current || videoIdRef.current !== videoId) return
@@ -134,7 +134,7 @@ export function VimeoPlayer({ song }: VimeoPlayerProps) {
       } else {
         playerRef.current.pause()
       }
-    } catch (e) {
+    } catch (_e) {
       // Ignore
     }
   }, [isPlaying, isReady, videoId])
@@ -144,7 +144,7 @@ export function VimeoPlayer({ song }: VimeoPlayerProps) {
 
     try {
       playerRef.current.setVolume(volume / 100)
-    } catch (e) {
+    } catch (_e) {
       // Ignore
     }
   }, [volume, isReady, videoId])

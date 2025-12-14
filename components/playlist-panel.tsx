@@ -1,7 +1,8 @@
 'use client'
 
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
-import { Play, Pause, Shuffle, ChevronDown } from 'lucide-react'
+import { Play, Shuffle, ChevronDown } from 'lucide-react'
 import { usePlayerStore } from '@/lib/store/player-store'
 import { useRedditAPI } from '@/lib/hooks/use-reddit-api'
 
@@ -10,13 +11,11 @@ export function PlaylistPanel() {
   const {
     songs,
     currentIndex,
-    currentSong,
     isPlaying,
     sortMethod,
     topPeriod,
     loading,
     after,
-    selectedSubreddits,
     setSortMethod,
     setTopPeriod,
     setCurrentSong,
@@ -31,7 +30,7 @@ export function PlaylistPanel() {
       try {
         setIsTransitioning(true)
         await fetchSongs()
-      } catch (err) {
+      } catch {
         // ignore - fetchSongs logs errors
       } finally {
         setIsTransitioning(false)
@@ -40,8 +39,7 @@ export function PlaylistPanel() {
 
     // Always refresh the playlist when sort or top period changes
     doFetch()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sortMethod, topPeriod])
+  }, [sortMethod, topPeriod, fetchSongs])
 
   const handleSortChange = (newSort: 'hot' | 'new' | 'top') => {
     if (newSort === sortMethod) return // Don't reload if same
@@ -213,13 +211,12 @@ export function PlaylistPanel() {
                       <td className="py-3 px-4 overflow-hidden">
                         <div className="flex items-center gap-3 min-w-0">
                           {song.thumbnail && song.thumbnail !== 'self' && (
-                            <img
+                            <Image
                               src={song.thumbnail}
                               alt=""
-                              className="w-10 h-10 rounded object-cover shrink-0"
-                              onError={e => {
-                                e.currentTarget.style.display = 'none'
-                              }}
+                              width={40}
+                              height={40}
+                              className="rounded object-cover shrink-0"
                             />
                           )}
                           <div className="min-w-0 flex-1">
@@ -263,13 +260,12 @@ export function PlaylistPanel() {
                 >
                   <div className="flex items-center gap-3">
                     {song.thumbnail && song.thumbnail !== 'self' && (
-                      <img
+                      <Image
                         src={song.thumbnail}
                         alt=""
-                        className="w-12 h-12 rounded object-cover shrink-0"
-                        onError={e => {
-                          e.currentTarget.style.display = 'none'
-                        }}
+                        width={48}
+                        height={48}
+                        className="rounded object-cover shrink-0"
                       />
                     )}
                     <div className="min-w-0 flex-1">

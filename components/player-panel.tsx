@@ -1,6 +1,6 @@
 'use client'
 
-import { Music, ExternalLink, MessageCircle, ArrowUp, Send } from 'lucide-react'
+import { Music, ExternalLink, MessageCircle, ArrowUp } from 'lucide-react'
 import { usePlayerStore } from '@/lib/store/player-store'
 import { LoginModal } from './login-modal'
 import { YouTubePlayer } from './players/youtube-player'
@@ -100,7 +100,7 @@ export function PlayerPanel() {
         console.error('[Mobile] Failed to load comments:', err)
         setLoadingComments(false)
       })
-  }, [currentSong?.id])
+  }, [currentSong])
 
   const handleLogin = (action: string) => {
     setLoginAction(action)

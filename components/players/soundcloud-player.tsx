@@ -45,7 +45,7 @@ export function SoundCloudPlayer({ song }: SoundCloudPlayerProps) {
           try {
             widget.setVolume(volume)
             if (isPlaying) widget.play()
-          } catch (e) {
+          } catch (_e) {
             // SoundCloud ready error - silently handle
           }
 
@@ -57,7 +57,7 @@ export function SoundCloudPlayer({ song }: SoundCloudPlayerProps) {
               if (e?.currentPosition && typeof e.currentPosition === 'number') {
                 setCurrentTime(e.currentPosition / 1000)
               }
-            } catch (err) {
+            } catch (_err) {
               // Ignore
             }
           })
@@ -70,7 +70,7 @@ export function SoundCloudPlayer({ song }: SoundCloudPlayerProps) {
               if (dur > 0 && isFinite(dur)) {
                 setDuration(dur / 1000)
               }
-            } catch (err) {
+            } catch (_err) {
               // Ignore
             }
           })
@@ -83,10 +83,10 @@ export function SoundCloudPlayer({ song }: SoundCloudPlayerProps) {
           })
         })
 
-        widget.bind(window.SC.Widget.Events.ERROR, (e: any) => {
+        widget.bind(window.SC.Widget.Events.ERROR, (_e: any) => {
           // SoundCloud error - silently handle
         })
-      } catch (error) {
+      } catch (_error) {
         // SoundCloud init error - silently handle
       }
     }
@@ -121,14 +121,14 @@ export function SoundCloudPlayer({ song }: SoundCloudPlayerProps) {
           widget.unbind(window.SC.Widget.Events.PLAY_PROGRESS)
           widget.unbind(window.SC.Widget.Events.FINISH)
           widget.unbind(window.SC.Widget.Events.ERROR)
-        } catch (e) {
+        } catch (_e) {
           // Silently ignore
         }
       }
 
       widgetRef.current = null
     }
-  }, [song.url])
+  }, [song.url, setCurrentTime, setDuration, isPlaying, volume])
 
   useEffect(() => {
     if (!isReady || !widgetRef.current || songUrlRef.current !== song.url) return
@@ -139,7 +139,7 @@ export function SoundCloudPlayer({ song }: SoundCloudPlayerProps) {
       } else {
         widgetRef.current.pause()
       }
-    } catch (e) {
+    } catch (_e) {
       // Ignore
     }
   }, [isPlaying, isReady, song.url])
@@ -149,7 +149,7 @@ export function SoundCloudPlayer({ song }: SoundCloudPlayerProps) {
 
     try {
       widgetRef.current.setVolume(volume)
-    } catch (e) {
+    } catch (_e) {
       // Ignore
     }
   }, [volume, isReady, song.url])

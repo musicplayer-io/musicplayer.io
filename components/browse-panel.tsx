@@ -25,14 +25,8 @@ export function BrowsePanel() {
 
   const router = useRouter()
   const pathname = usePathname()
-  const {
-    selectedSubreddits,
-    setSelectedSubreddits,
-    searchQuery,
-    setSearchQuery,
-    sortMethod,
-    topPeriod,
-  } = usePlayerStore()
+  const { selectedSubreddits, setSelectedSubreddits, setSearchQuery, sortMethod, topPeriod } =
+    usePlayerStore()
   const { fetchFromSubreddits, fetchSearch } = useRedditAPI()
 
   // Update URL path when subreddits change
@@ -70,17 +64,6 @@ export function BrowsePanel() {
     updateUrlPath(newSelected)
 
     // Fetch immediately with current sort settings
-    if (newSelected.length > 0) {
-      await fetchFromSubreddits(newSelected)
-    }
-  }
-
-  const removeSubreddit = async (key: string) => {
-    const newSelected = selectedSubreddits.filter(s => s !== key)
-    setSelectedSubreddits(newSelected)
-    updateUrlPath(newSelected)
-
-    // Fetch if there are still subreddits selected
     if (newSelected.length > 0) {
       await fetchFromSubreddits(newSelected)
     }

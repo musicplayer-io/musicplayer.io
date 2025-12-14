@@ -90,7 +90,7 @@ interface PlaylistStore {
 }
 
 // Load from localStorage on initialization
-const loadSubredditsFromStorage = (): string[] => {
+const _loadSubredditsFromStorage = (): string[] => {
   if (typeof window === 'undefined') return []
   try {
     const stored = localStorage.getItem('redditMusicPlayer_subreddits')
@@ -105,7 +105,7 @@ const loadSubredditsFromStorage = (): string[] => {
 }
 
 // Load sort method from localStorage
-const loadSortMethodFromStorage = (): 'hot' | 'new' | 'top' => {
+const _loadSortMethodFromStorage = (): 'hot' | 'new' | 'top' => {
   if (typeof window === 'undefined') return 'hot'
   try {
     const stored = localStorage.getItem('redditMusicPlayer_sortMethod')
@@ -119,7 +119,7 @@ const loadSortMethodFromStorage = (): 'hot' | 'new' | 'top' => {
 }
 
 // Load top method from localStorage
-const loadTopMethodFromStorage = (): 'day' | 'week' | 'month' | 'year' | 'all' => {
+const _loadTopMethodFromStorage = (): 'day' | 'week' | 'month' | 'year' | 'all' => {
   if (typeof window === 'undefined') return 'week'
   try {
     const stored = localStorage.getItem('redditMusicPlayer_topMethod')

@@ -1,7 +1,12 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
   output: 'standalone',
   reactStrictMode: true,
+  reactCompiler: true,
+  experimental: {
+    useCache: true,
+  },
   images: {
     remotePatterns: [
       {
@@ -18,9 +23,6 @@ const nextConfig = {
       },
     ],
   },
-  // Performance optimizations
-  compress: true,
-  poweredByHeader: false,
   // Optimize static files
   async headers() {
     return [
@@ -45,4 +47,5 @@ const nextConfig = {
     ]
   },
 }
-module.exports = nextConfig
+
+export default nextConfig

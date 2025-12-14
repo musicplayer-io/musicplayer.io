@@ -1,7 +1,6 @@
 import { useRef, useCallback } from 'react'
 import { usePlayerStore } from '@/lib/store/player-store'
 import { parseSong, filterPlayableSongs } from '@/lib/utils/song-utils'
-import type { Song } from '@/lib/store/player-store'
 
 // ============================================================================
 // REDDIT API HOOK
@@ -15,24 +14,6 @@ export function useRedditAPI() {
   usePlayerStore.subscribe(state => {
     storeRef.current = state
   })
-
-  /**
-   * Fetch songs from Reddit
-   */
-  const fetchSongs = useCallback(async (pagination?: string) => {
-    const state = storeRef.current
-
-    // Use search if query exists
-    if (state.searchQuery) {
-      return fetchSearch(state.searchQuery, pagination)
-    }
-
-    // Use selected subreddits or default to listentothis
-    const subreddits =
-      state.selectedSubreddits.length > 0 ? state.selectedSubreddits : ['listentothis']
-
-    return fetchFromSubreddits(subreddits, pagination)
-  }, [])
 
   /**
    * Fetch from subreddits
@@ -186,6 +167,27 @@ export function useRedditAPI() {
       }
     }
   }, [])
+
+  /**
+   * Fetch songs from Reddit
+   */
+  const fetchSongs = useCallback(
+    async (pagination?: string) => {
+      const state = storeRef.current
+
+      // Use search if query exists
+      if (state.searchQuery) {
+        return fetchSearch(state.searchQuery, pagination)
+      }
+
+      // Use selected subreddits or default to listentothis
+      const subreddits =
+        state.selectedSubreddits.length > 0 ? state.selectedSubreddits : ['listentothis']
+
+      return fetchFromSubreddits(subreddits, pagination)
+    },
+    [fetchFromSubreddits, fetchSearch]
+  )
 
   return {
     fetchSongs,
