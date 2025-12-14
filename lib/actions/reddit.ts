@@ -5,8 +5,26 @@ import { z } from 'zod'
 import { cacheLife } from 'next/cache'
 import { handleRedditApiError } from '@/lib/utils/error-handler'
 
-const USER_AGENT =
-  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+// Reddit requires User-Agent in format: <platform>:<app ID>:<version> (by /u/<username>)
+const REDDIT_USERNAME = process.env.REDDIT_USERNAME || 'musicplayer'
+const USER_AGENT = `web:musicplayer.io:v0.6.14 (by /u/${REDDIT_USERNAME})`
+
+// Reddit client ID for API authentication (better rate limits)
+const REDDIT_CLIENT_ID = process.env.REDDIT_CLIENT_ID
+if (!REDDIT_CLIENT_ID) {
+  throw new Error('Missing REDDIT_CLIENT_ID environment variable. Required for Reddit API calls.')
+}
+
+// Create Basic auth header with client ID (empty secret for unauthenticated requests)
+// This provides better rate limits than completely unauthenticated requests
+const getAuthHeader = (accessToken?: string): string => {
+  if (accessToken) {
+    return `Bearer ${accessToken}`
+  }
+  // Use Basic auth with client ID for unauthenticated requests
+  // Format: client_id: (empty password)
+  return 'Basic ' + btoa(`${REDDIT_CLIENT_ID}:`)
+}
 
 // Validation schemas
 const SubredditSchema = z
@@ -77,13 +95,13 @@ async function fetchSubredditPostsCached(
   accessToken: string | undefined
 ) {
   'use cache'
-  cacheLife('minutes') // Cache for 15 minutes (default)
+  cacheLife('hours') // Cache for hours - Reddit data updated multiple times per day
 
   const baseUrl = accessToken ? 'https://oauth.reddit.com' : 'https://www.reddit.com'
   const headers: HeadersInit = {
     'User-Agent': USER_AGENT,
     Accept: 'application/json',
-    ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
+    Authorization: getAuthHeader(accessToken),
   }
 
   const params = new URLSearchParams({ limit })
@@ -94,6 +112,7 @@ async function fetchSubredditPostsCached(
 
   const response = await fetch(url, {
     headers,
+    next: { revalidate: 3600 }, // Revalidate after 1 hour (in seconds)
   })
 
   if (!response.ok) {
@@ -112,13 +131,13 @@ async function searchRedditCached(
   accessToken: string | undefined
 ) {
   'use cache'
-  cacheLife('minutes') // Cache for 15 minutes (default)
+  cacheLife('hours') // Cache for hours - Reddit search results updated multiple times per day
 
   const baseUrl = accessToken ? 'https://oauth.reddit.com' : 'https://www.reddit.com'
   const headers: HeadersInit = {
     'User-Agent': USER_AGENT,
     Accept: 'application/json',
-    ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
+    Authorization: getAuthHeader(accessToken),
   }
 
   const params = new URLSearchParams({
@@ -133,6 +152,7 @@ async function searchRedditCached(
 
   const response = await fetch(url, {
     headers,
+    next: { revalidate: 3600 }, // Revalidate after 1 hour (in seconds)
   })
 
   if (!response.ok) {
@@ -144,19 +164,20 @@ async function searchRedditCached(
 
 async function getCommentsCached(permalink: string, accessToken: string | undefined) {
   'use cache'
-  cacheLife('minutes') // Cache for 15 minutes (default)
+  cacheLife('hours') // Cache for hours - Comments updated multiple times per day
 
   const baseUrl = accessToken ? 'https://oauth.reddit.com' : 'https://www.reddit.com'
   const headers: HeadersInit = {
     'User-Agent': USER_AGENT,
     Accept: 'application/json',
-    ...(accessToken ? { Authorization: `Bearer ${accessToken}` } : {}),
+    Authorization: getAuthHeader(accessToken),
   }
 
   const url = `${baseUrl}${permalink}.json?limit=100&depth=10&sort=top`
 
   const response = await fetch(url, {
     headers,
+    next: { revalidate: 3600 }, // Revalidate after 1 hour (in seconds)
   })
 
   if (!response.ok) {

@@ -6,6 +6,9 @@ import { z } from 'zod'
 const REDDIT_CLIENT_ID = process.env.REDDIT_CLIENT_ID
 const REDDIT_CLIENT_SECRET = process.env.REDDIT_CLIENT_SECRET
 const REDDIT_REDIRECT_URI = process.env.NEXT_PUBLIC_SITE_URL + '/auth/callback'
+// Reddit requires User-Agent in format: <platform>:<app ID>:<version> (by /u/<username>)
+const REDDIT_USERNAME = process.env.REDDIT_USERNAME || 'musicplayer'
+const USER_AGENT = `web:musicplayer.io:v0.6.14 (by /u/${REDDIT_USERNAME})`
 
 if (!REDDIT_CLIENT_ID || !REDDIT_CLIENT_SECRET) {
   throw new Error(
@@ -56,8 +59,7 @@ export async function loginWithReddit(code: string) {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
         Authorization: 'Basic ' + btoa(`${REDDIT_CLIENT_ID}:${REDDIT_CLIENT_SECRET}`),
-        'User-Agent':
-          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'User-Agent': USER_AGENT,
       },
       body: new URLSearchParams({
         grant_type: 'authorization_code',
@@ -93,8 +95,7 @@ export async function loginWithReddit(code: string) {
     const userResponse = await fetch('https://oauth.reddit.com/api/v1/me', {
       headers: {
         Authorization: `Bearer ${successTokenData.access_token}`,
-        'User-Agent':
-          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'User-Agent': USER_AGENT,
       },
     })
 
