@@ -173,7 +173,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📄 License
 
-[GPLv3](LICENSE.md) © Ilias Ismanalijev
+[O’Saasy](LICENSE.md) © Ilias Ism
 
 ## 🙏 Acknowledgments
 
